@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'jost';
+  font-optical-sizing: auto;
+  font-weight: 300 400 550;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/Jost-VariableFont_wght.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'plakat';
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url('/fonts/GTFPlakatGroteskTRIAL-Bold.woff2') format("woff2");
+}
+
+:root {
+
+  /* Color styles */
+  --dark:   hsl(254, 54%, 9%);
+  --light: 	hsl(0, 100%, 97%);
+  --orange: hsl(29, 86%, 64%);
+  --pink: 	hsl(324, 81%, 71%);
+  --green:  hsl(137, 63%, 64%);
+  --purple:	hsl(274, 71%, 70%);
+
+  /* Fluid typography */
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+  /* 12.5px → 12.8px */
+  --fontsize--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  /* 15px → 16px */
+  --fontsize--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  /* 18px → 20px */
+  --fontsize-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* 21.6px → 25px */
+  --fontsize-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  /* 25.92px → 31.25px */
+  --fontsize-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  /* 31.104px → 39.0625px */
+  --fontsize-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  /* 37.3248px → 48.8281px */
+  --fontsize-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+  /* 44.7898px → 61.0352px */
+  --fontsize-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+  /* 53.7477px → 76.2939px */
+  --fontsize-6: clamp(3.3592rem, 2.8691rem + 2.4507vw, 4.7684rem);
+
+  /* 
+  // Typography variables
+  */
+  --font-body: 'jost', sans-serif;
+  --font-display: 'plakat', sans-serif;
+
+  /* 
+  // Typography utility helpers (u-)
+  */
+  .u-font-body {
+    font-family: var(--font-body);
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+
+  .u-font-display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+  }
+
+  .u-subtitle {
+    font-size: var(--fontsize--1);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    font-family: 'jost';    
+  }
+
+  .u-fontsize--2 {
+    font-size: var(--fontsize--2);
+  }
+  
+  .u-fontsize--1 {
+    font-size: var(--fontsize--1);
+  }
+  
+  .u-fontsize-0 {
+    font-size: var(--fontsize-0);
+  }
+  
+  .u-fontsize-1 {
+    font-size: var(--fontsize-1);
+  }
+  
+  .u-fontsize-2 {
+    font-size: var(--fontsize-2);
+  }
+  
+  .u-fontsize-3 {
+    font-size: var(--fontsize-3);
+  }
+  
+  .u-fontsize-4 {
+    font-size: var(--fontsize-4);
+  }
+  
+  .u-fontsize-5 {
+    font-size: var(--fontsize-5);
+  }
+  
+  .u-fontsize-6 {
+    font-size: var(--fontsize-6);
+  }
+
+  /* 
+  // Typography defaults
+  */
+  font-family: var(--font-body);
+  color: var(--dark);
+
+  h1, h2, h3, h4 {
+    --font-family: var(--font-display);
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  p, blockquote, ul, ol, li, pre {
+    --font-family: var(--font-body);
+    font-family: var(--font-family);    
+    font-size: var(--fontsize-0);
+    text-wrap: balance;
+  }
+  
+  /*
+  // Blocks of content
+  */
+  .u-wysiwyg {
+
+    p {
+      margin-block-end: var(--space-s);      
+      text-wrap: wrap;
+    }
+  }
+
+  /*
+  // Body
+  */
+  body {
+    background-color: var(--light);
+  }
+}

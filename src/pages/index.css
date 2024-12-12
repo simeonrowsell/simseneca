@@ -1,0 +1,9 @@
+.main {
+  margin: var(--space-s);
+  background-color: red;
+  height: 100vh;
+}
+
+h1 {
+  color: pink;
+}

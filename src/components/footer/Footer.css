@@ -1,0 +1,90 @@
+.site-footer-wrapper {
+  container-type: inline-size;
+  container-name: site-footer;
+}
+
+.footer-contact {
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  .footer-contact__blurb {
+    flex-basis: 25%;
+  }
+
+  .footer-contact__email {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+
+    .copy-email {
+      justify-content: start;
+    }
+  }
+}
+
+.footer-sign-off {
+  background-color: var(--purple);
+
+  .footer-sign-off__top {
+    border-bottom: 1px solid var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+  }
+  
+  .lum-logo {
+    max-width: 100px;
+    height: auto;
+    margin-block-end: var(--space-xs);
+  }
+
+  .footer-sign-off__nav {
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      
+      li:not(:last-of-type) {
+        margin-inline-end: var(--space-l);
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  .footer-sign-off__legals {
+    text-align: left;
+  }
+}
+
+@container site-footer (min-width: 1010px) {
+
+  .footer-contact {
+    flex-direction: row;
+    align-items: flex-end;
+
+    .copy-email-wrapper .copy-email {
+      justify-content: end;
+    }
+  }
+
+  .footer-sign-off {
+    
+    .footer-sign-off__legals {
+      text-align: right;
+    }
+  }  
+}

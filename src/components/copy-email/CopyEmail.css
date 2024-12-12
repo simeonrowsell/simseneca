@@ -1,0 +1,107 @@
+.copy-email-wrapper {
+  container-type: inline-size;
+  container-name: copy-email;
+  
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.copy-email {
+  display: flex;
+  flex-wrap: wrap-reverse;  
+  gap: var(--space-s);
+  align-items: center;
+  justify-content: end;
+
+  &.hovered {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .orb {
+    display: none;
+  }
+
+  address {
+    /* Override italic browser default */
+    font-style: normal;
+    font-size: var(--fontsize-1);
+  }
+
+  .copy-email__button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid var(--dark);
+    transition:
+      0.5s ease background-color,
+      0.05s ease scale
+    ;
+
+    &.hovered {
+      cursor: pointer;
+    }
+
+    &.copied {
+      cursor: pointer;
+      background-color: var(--purple);
+    }
+
+    &:active {
+      scale: 0.975;
+    }
+
+    &:focus {
+      outline: 1px solid var(--dark);
+    }
+
+    &.large {
+      /* Large enough to support the copied state text */
+      width: 151px;
+    }
+
+    &.small {
+      width: 59px;
+      justify-content: center;
+    }
+
+    &.small { 
+
+      .label {
+        display: none;
+      }
+    }
+
+    svg { 
+      height: 20px;
+      width: auto;
+    }
+  }
+}
+
+@container copy-email (min-width: 418px) {
+
+  .copy-email.small {
+
+    .orb {
+      display: block;
+    }
+  }
+}
+
+@container copy-email (min-width: 613px) {
+
+  .copy-email {
+
+    .orb {
+      display: block;
+    }
+  }
+
+  .copy-email.large address {
+    font-size: var(--fontsize-3);
+  }
+}

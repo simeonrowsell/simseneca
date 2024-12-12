@@ -1,0 +1,31 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+
+  .testimonial__quote {
+
+    .quote-title {
+      /* Local variables */
+      --colour: var(--orange);
+
+      color: var(--colour);
+
+      &.green {
+        --colour: var(--green);
+      }
+
+      &.pink {
+        --colour: var(--pink);
+      }
+
+      &.purple {
+        --colour: var(--purple);
+      }
+    }
+
+    .quote-body {
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+
+// Props for the page title and description
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+// set some defaults
+const {
+	title = 'Sim Seneca | Product designer, blogger, human-being',
+	description = 'The personal site of Sim Seneca',
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:wght@700&display=swap" rel="stylesheet">

@@ -1,0 +1,99 @@
+---
+import { SmallEmail } from "./small-email.tsx"
+---
+
+<div class="u-container">
+  <header class="main-header">    
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="main-nav__menu" role="menu">
+        <li class="logo">
+          <a href="/" class="u-font-display" aria-label="Sim Seneca Home">Sim Seneca</a>
+        </li>
+        <li role="none">
+          <a href="/blog" role="menuitem" class="u-subtitle">Blog</a>
+        </li>
+        <li role="none">
+          <button role="menuitem" aria-disabled="true" tabindex="-1" class="u-subtitle disabled-link" disabled>Work</button>
+        </li>
+        <li role="none">
+          <button role="menuitem" aria-disabled="true" tabindex="-1" class="u-subtitle disabled-link" disabled>About</button>
+        </li>
+      </ul>
+    </nav>  
+    <nav class="secondary-nav" aria-label="Contact navigation">
+      <ul class="secondary-nav__menu" role="menu">
+        <li>
+          <SmallEmail client:load />
+        </li>
+        <li>
+          <a href="https://read.cv/simseneca" class="menu-item u-subtitle" role="menuitem">read.cv</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<style>
+  .main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .main-nav,
+  .secondary-nav {
+    display: flex;
+    flex-direction: row;
+    padding: var(--space-m) 0;
+  }
+
+  .main-nav__menu,
+  .secondary-nav__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    li {
+      margin-right: var(--space-m);
+
+      &:last-of-type {
+        margin-right: 0;        
+      }
+
+      &.logo a {
+        font-size: var(--fontsize-1);
+      }
+
+      a[role="menuitem"],
+      button {
+        padding: var(--space-xs);
+      }
+
+      button:disabled {
+        padding-block: 0;
+      }
+
+      a.disabled-link {
+        opacity: .5;
+        cursor: default;
+      }      
+    }
+  }
+
+  .secondary-nav {
+    display: flex;
+    align-items: baseline;
+    padding-left: var(--space-s);
+    border-left: 2px solid var(--navy);
+
+    li {
+      margin-right: var(--space-2xs); 
+
+      a[role="menuitem"] {
+        padding: var(--space-xs);
+      }
+    }
+  }
+</style>

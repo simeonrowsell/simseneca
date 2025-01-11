@@ -18,20 +18,18 @@
 
     &.hovered {
       cursor: pointer;
+      color: var(--purple);
+
+      svg path {
+        fill: var(--purple);
+      }
     }
 
     &.copied {
       cursor: pointer;
       background-color: #F8D9D3;
       transition-duration: 0.3s;
-    }
-
-    .orb {
-      height: 10px;
-      width: 10px;
-      background-color: var(--purple);
-      border-radius: 50%;
-    }
+    }    
 
     address {
       /* Override italic browser default */
@@ -62,7 +60,6 @@
 
   .copied-email-toast__email {    
     color: var(--white);
-    font-style: italic;
   }
 }
 

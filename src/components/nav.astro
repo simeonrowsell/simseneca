@@ -10,7 +10,9 @@ import { SmallEmail } from "./small-email.tsx"
           <a href="/" class="u-font-display" aria-label="Sim Seneca Home">Sim Seneca</a>
         </li>
         <li role="none">
-          <a href="/blog" role="menuitem" class="u-subtitle">Blog</a>
+          <a href="/blog" role="menuitem" class="u-subtitle">
+            <span>Blog</span>
+          </a>
         </li>
         <li role="none">
           <button role="menuitem" aria-disabled="true" tabindex="-1" class="u-subtitle disabled-link" disabled>Work</button>
@@ -26,7 +28,9 @@ import { SmallEmail } from "./small-email.tsx"
           <SmallEmail client:load />
         </li>
         <li>
-          <a href="https://read.cv/simseneca" class="menu-item u-subtitle" role="menuitem">read.cv</a>
+          <a href="https://read.cv/simseneca" class="u-subtitle" role="menuitem">
+            <span>read.cv</span>
+          </a>
         </li>
       </ul>
     </nav>
@@ -56,7 +60,7 @@ import { SmallEmail } from "./small-email.tsx"
     align-items: baseline;
 
     li {
-      margin-right: var(--space-m);
+      margin-right: var(--space-s);
 
       &:last-of-type {
         margin-right: 0;        
@@ -64,21 +68,68 @@ import { SmallEmail } from "./small-email.tsx"
 
       &.logo a {
         font-size: var(--fontsize-1);
+        margin-right: var(--space-m);
+
+        &:hover {
+          color: var(--purple);
+        }
       }
 
-      a[role="menuitem"],
-      button {
-        padding: var(--space-xs);
+      a[role="menuitem"] {
+        display: inline-flex;
+        position: relative;
+        padding-inline: var(--space-xs);
+        padding-block: var(--space-3xs);
+        
+        & > span {
+          transition: all .1s ease;
+        }
+
+        &:hover > span {
+          color: var(--purple);
+          transform: translateY(-3px);
+        }
+
+        &::after {
+          content: '';
+          left: var(--space-xs);
+          bottom: 0;
+          height: 2px;
+          background-color: var(--purple);
+          position: absolute;          
+          width: 0%;
+          transition: width .2s ease;
+        }
+
+        &:hover::after {
+          width: calc(100% - calc(2 * var(--space-xs)));
+        }
       }
 
-      button:disabled {
-        padding-block: 0;
-      }
+      button.disabled-link:disabled {
+        padding-inline: var(--space-xs);
+        position: relative;
+        color: var(--navy-light);        
+        
+        &::after {
+          content: 'Working on it...';
+          display: none;
+          white-space: nowrap;
+          position: absolute;
+          left: -50%;
+          top: 40px;
+          border-radius: 7px;
+          color: var(--beige);
+          background: var(--purple);
+          padding: var(--space-xs);
+          font-size: .8rem;
+          border: 2px solid var(--navy);
+        }
 
-      a.disabled-link {
-        opacity: .5;
-        cursor: default;
-      }      
+        &:hover::after {
+          display: inline-flex;
+        }
+      }
     }
   }
 
@@ -89,11 +140,7 @@ import { SmallEmail } from "./small-email.tsx"
     border-left: 2px solid var(--navy);
 
     li {
-      margin-right: var(--space-2xs); 
-
-      a[role="menuitem"] {
-        padding: var(--space-xs);
-      }
+      margin-right: var(--space-2xs);
     }
   }
 </style>

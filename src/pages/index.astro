@@ -11,12 +11,17 @@ import BaseLayout from "../layouts/base-layout.astro"
 					<div>
 						<h1 class="u-fontsize-6 u-font-display u-mrg-be-xs">A full-stack<br /> Product Designer</h1>
 						<h2 class="u-fontsize-3 u-font-display u-mrg-be-l">who also codes and does creative generalist stuff and whatever</h2>
-						<h3 class="u-fontsize-1 u-font-body">Human-centred, purpose-lead design with curious, can-do people. Seeking something real in the digital world. Nice to have you along.</h3>
+						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">I design human-centred, purpose-lead digital experiences with curious, can-do people. Seeking something real in the digital world. Nice to have you along.</h3>
+						<div class="current-status u-flex">
+							<div class="orb"></div>
+							<p>Freelancing and up for working with you!</p>
+						</div>
 					</div>
 				</div>
-				<div class="home-hero__image">					
+				<figure class="home-hero__image">					
 					<img src="/sim_profile.png" alt="Graphic illustration of Sim smiling in a red shirt on a purple background">
-				</div>
+					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
+				</figure>
 			</div>
 		</div>
 	</section>
@@ -48,16 +53,29 @@ import BaseLayout from "../layouts/base-layout.astro"
 				width: 65%;
 				text-wrap: pretty;
 			}
+
+			.current-status {
+				gap: var(--space-2xs);
+				align-items: center;
+			}
 		}		
 
 		.home-hero__image {
 			flex: 1;
 			max-width: 400px;
+			text-align: right;
 
 			img {
 				width: 100%;
-				border-radius: 10px;
+				border-radius: 10px 10px 0px 10px;
 				border: 2px solid var(--navy);
+			}
+
+			figcaption {
+				display: inline-flex;
+				background: rgba(255, 255, 255, 0.4);
+				border-radius: 0px 0px 10px 10px;
+				border: 2px solid rgba(255, 255, 255, .6);
 			}
 		}
 	}

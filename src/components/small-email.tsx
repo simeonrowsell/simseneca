@@ -65,7 +65,7 @@ export const SmallEmail = ({
       {isCopied && (
         <div className={classNames("copied-email-toast", "u-pad-i-l u-pad-b-m", "u-fontsize-1")}>
           <span className={classNames("copied-email-toast__email", "u-font-display")}>sim@simseneca.co.uk</span> 
-          <span>copied 👍</span>
+          <span>copied ✌️</span>
         </div>
       )}      
     </>

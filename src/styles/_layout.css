@@ -624,6 +624,7 @@
 
   /* Container */
   .u-container {        
+    max-width: min(100%, 1700px);
     margin-inline: auto;
     padding-inline: var(--space-xl-2xl);
   }

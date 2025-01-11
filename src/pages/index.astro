@@ -46,7 +46,7 @@ import BaseLayout from "../layouts/base-layout.astro"
 
 			h1,
 			h2 {
-				color: var(--red);
+				color: var(--accent-1-primary);
 			}
 
 			h3 {
@@ -68,14 +68,15 @@ import BaseLayout from "../layouts/base-layout.astro"
 			img {
 				width: 100%;
 				border-radius: 10px 10px 0px 10px;
-				border: 2px solid var(--navy);
+				border: 2px solid var(--primary-border);
 			}
 
 			figcaption {
 				display: inline-flex;
-				background: rgba(255, 255, 255, 0.4);
+				background: var(--third-bg);
 				border-radius: 0px 0px 10px 10px;
-				border: 2px solid rgba(255, 255, 255, .6);
+				border: 2px solid var(--secondary-border);
+				border-top: none;
 			}
 		}
 	}

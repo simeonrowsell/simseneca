@@ -32,6 +32,14 @@ import { SmallEmail } from "./small-email.tsx"
             <span>read.cv</span>
           </a>
         </li>
+        <li>
+          <button
+              type="button"
+              data-theme-toggle
+              aria-label="Change to light theme"
+            >Theme toggle
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -43,7 +51,7 @@ import { SmallEmail } from "./small-email.tsx"
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--navy);
+    border-bottom: 2px solid var(--primary-border);
   }
 
   .main-nav,
@@ -71,7 +79,7 @@ import { SmallEmail } from "./small-email.tsx"
         margin-right: var(--space-m);
 
         &:hover {
-          color: var(--purple);
+          color: var(--accent-2-primary);
         }
       }
 
@@ -86,7 +94,7 @@ import { SmallEmail } from "./small-email.tsx"
         }
 
         &:hover > span {
-          color: var(--purple);
+          color: var(--accent-2-primary);
           transform: translateY(-3px);
         }
 
@@ -95,7 +103,7 @@ import { SmallEmail } from "./small-email.tsx"
           left: var(--space-xs);
           bottom: 0;
           height: 2px;
-          background-color: var(--purple);
+          background-color: var(--accent-2-primary);
           position: absolute;          
           width: 0%;
           transition: width .2s ease;
@@ -109,7 +117,7 @@ import { SmallEmail } from "./small-email.tsx"
       button.disabled-link:disabled {
         padding-inline: var(--space-xs);
         position: relative;
-        color: var(--navy-light);        
+        color: var(--muted-text);        
         
         &::after {
           content: 'Working on it...';
@@ -119,11 +127,11 @@ import { SmallEmail } from "./small-email.tsx"
           left: -50%;
           top: 40px;
           border-radius: 7px;
-          color: var(--beige);
-          background: var(--purple);
+          color: var(--primary-text);
+          background: var(--accent-2-primary);
           padding: var(--space-xs);
           font-size: .8rem;
-          border: 2px solid var(--navy);
+          border: 2px solid var(--primary-border);
         }
 
         &:hover::after {
@@ -134,10 +142,9 @@ import { SmallEmail } from "./small-email.tsx"
   }
 
   .secondary-nav {
-    display: flex;
     align-items: baseline;
     padding-left: var(--space-s);
-    border-left: 2px solid var(--navy);
+    border-left: 2px solid var(--primary-border);
 
     li {
       margin-right: var(--space-2xs);

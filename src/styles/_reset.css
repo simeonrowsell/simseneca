@@ -37,8 +37,6 @@ body {
   min-height: 100vh;  
   /* Added by @sim */
   line-height: 1.35;
-  margin: 0 auto;
-  max-width: 2000px;
 }
 
 /* Set shorter line heights on headings and interactive elements */

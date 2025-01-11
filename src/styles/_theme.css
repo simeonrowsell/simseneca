@@ -6,15 +6,36 @@
   src: url('/RocaRegular.woff') format("woff");
 }
 
-:root {
+[data-theme="light"] {
+  /* Light colors */
+  --primary-bg: #FCEDEB;
+  --secondary-bg: white;
+  --third-bg: #FDF2F1;
+  --primary-text: #252238;
+  --secondary-text: #393557;
+  --muted-text: #c6b9bd;
+  --accent-1-primary: #eb4c3d;
+  --accent-2-primary: #6d4eb1;
+  --primary-border: #252238;
+  --secondary-border: white;
+  --focus-border: #252238;
+}
 
-  /* Color styles */
-  --navy:   hsl(248, 24%, 18%);
-  --navy-light: hsl(340, 10%, 75%);
-  --beige: 	hsl(7, 74%, 95%);
-  --red: hsl(5, 81%, 58%);
-  --purple:	hsl(259, 39%, 50%);
-  --white:	hsl(0, 0%, 100%);
+[data-theme="dark"] {
+  /* Dark colors */
+  --primary-bg: #252238;
+  --secondary-bg: #393557;
+  --primary-text: #F6D3CE;
+  --secondary-text: #7D6E82;
+  --muted-text: #7D6E82;
+  --accent-1-primary: #e94a4a;
+  --accent-2-primary: #8961df;
+  --primary-border: #7D6E82;
+  --secondary-border: #393557;
+  --focus-border: #7D6E82;
+}
+
+:root {  
 
   /* Fluid typography */
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
@@ -111,7 +132,7 @@
   // Typography defaults
   */
   font-family: var(--font-body);
-  color: var(--dark);
+  color: var(--primary-text);
 
   h1, h2, h3, h4 {
     --font-family: var(--font-display);
@@ -127,7 +148,7 @@
   }
 
   a {
-    color: var(--navy);
+    color: var(--primary-text);
     text-decoration: none;
   }
   
@@ -140,20 +161,20 @@
       margin-block-end: var(--space-s);      
       text-wrap: wrap;
     }
-  }
+  }  
 
   /*
   // Body
   */
   body {
-    background-color: var(--light);
+    background-color: var(--primary-bg);
   }
 
   /* Orb */
   .orb {
     height: 10px;
     width: 10px;
-    background-color: var(--purple);
+    background-color: var(--accent-2-primary);
     border-radius: 50%;
   }
 }

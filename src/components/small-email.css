@@ -15,19 +15,24 @@
     border: none;
     transition: 2s ease background-color;
     border-radius: 5px;
+    color: var(--primary-text);
+
+    svg path {
+      fill: var(--primary-text);
+    }
 
     &.hovered {
       cursor: pointer;
-      color: var(--purple);
+      color: var(--accent-2-primary);
 
       svg path {
-        fill: var(--purple);
+        fill: var(--accent-2-primary);
       }
     }
 
     &.copied {
       cursor: pointer;
-      background-color: #F8D9D3;
+      background-color: var(--secondary-bg);
       transition-duration: 0.3s;
     }    
 
@@ -45,13 +50,13 @@
 }
 
 .copied-email-toast {
-  position: fixed;  
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--purple);
-  color: var(--beige);
+  background-color: var(--accent-2-primary);
+  color: var(--primary-text);
   border-radius: 10px;
-  border: 2px solid var(--navy);
+  border: 2px solid var(--primary-border);
   z-index: 1000;
   animation: fadeInOut 2.5s ease;
   display: flex;

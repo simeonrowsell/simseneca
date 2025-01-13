@@ -1,0 +1,117 @@
+---
+import { LargeEmail } from "./large-email.tsx";
+
+import { Image } from 'astro:assets';
+import simProfileImage from '../assets/images/sim_profile_square.png';
+---
+
+<footer class="main-footer">
+  <div class="footer-background"></div>
+  <div class="u-container main-footer--inner">
+    <div class="footer-contact u-flex">
+      <div class="footer-contact--blurb">
+        <p class="u-subtitle u-mrg-be-l">I love a chat</p>
+        <p class="u-fontsize-1 u-font-display u-mrg-be-3xl">Welcome to the footer where my contact details are, as you'd expect. Wouldn't want to let you down.</p>
+        <div class="footer-profile">
+          <Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />
+          <h3 class="u-fontsize-1 u-font-display">It's me, Sim</h3>
+        </div>
+      </div>
+      <div class="footer-contact--details">
+        <LargeEmail client:load />
+        <nav class="footer-links u-mrg-bs-l" role="menu">
+          <ul>
+            <li role="none">
+              <a href="/blog" role="menuitem" class="u-subtitle">
+                <span>linkedin</span>
+              </a>
+            </li>
+            <li role="none">
+              <a href="/blog" role="menuitem" class="u-subtitle">
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li role="none">
+              <a href="/blog" role="menuitem" class="u-subtitle">
+                <span>read.cv</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-signoff u-pad-b-l">
+        copyright stuff
+    </div>
+  </div>
+</footer>
+
+<style>
+  .main-footer {    
+    position: relative;
+
+    .footer-background {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      height: calc(100% - var(--space-3xl));
+      background-color: var(--navy);
+    }
+
+    .main-footer--inner {
+      position: relative;
+      z-index: 10;
+      /* transform: translateY(calc(-1 * var(--space-3xl)));       */
+    }
+  }
+
+  .footer-contact {
+    background-color: var(--accent-2-primary);
+    color: var(--primary-text);
+    border-radius: 10px;
+    border: 2px solid var(--primary-border);
+    gap: var(--space-2xl);
+    justify-content: space-between;
+    align-items: end;
+    padding: var(--space-2xl);
+
+    .footer-contact--blurb {
+      flex-basis: 40%;
+
+      .footer-profile {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--space-s);
+        color: var(--primary-text);
+
+        img {
+          width: 80px;
+          border-radius: 50%;
+          height: auto;
+          border: 1px solid var(--primary-border);
+        }
+      }            
+    }
+
+    .footer-contact--details {
+      
+      ul {
+        list-style: none;
+        display: flex;
+        gap: var(--space-s);
+        justify-content: end;
+
+        li a {
+          padding-inline: var(--space-2xs);
+        }
+      }
+    }
+  }
+
+  .footer-signoff {
+
+  }
+</style>

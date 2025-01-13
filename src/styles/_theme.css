@@ -48,7 +48,10 @@
   --toast-text: #FCEDEB;
 }
 
-:root {  
+:root {
+
+  /* Brand colours */
+  --navy: #252238;
 
   /* Fluid typography */
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
@@ -197,4 +200,37 @@
   transition-property: color, background-color, border-color, fill;
   transition-duration: .2s;
   transition-timing-function: ease;
+}
+
+/* Menu item links */
+a[role="menuitem"] {
+  display: inline-flex;
+  position: relative;
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-3xs);
+  transition: all .1s ease;
+  
+  & > span {
+    transition: all .1s ease;
+  }
+
+  &:hover > span {
+    color: var(--accent-2-primary);
+    transform: translateY(-3px);
+  }
+
+  &::after {
+    content: '';
+    left: var(--space-xs);
+    bottom: 0;
+    height: 2px;
+    background-color: var(--accent-2-primary);
+    position: absolute;          
+    width: 0%;
+    transition: width .2s ease;
+  }
+
+  &:hover::after {
+    width: calc(100% - calc(2 * var(--space-xs)));
+  }
 }

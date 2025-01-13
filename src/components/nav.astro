@@ -62,6 +62,7 @@ import ThemeToggle from "./theme-toggle.astro"
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    flex-wrap: wrap;
 
     li {
       margin-right: var(--space-s);
@@ -77,38 +78,7 @@ import ThemeToggle from "./theme-toggle.astro"
         &:hover {
           color: var(--accent-2-primary);
         }
-      }
-
-      a[role="menuitem"] {
-        display: inline-flex;
-        position: relative;
-        padding-inline: var(--space-xs);
-        padding-block: var(--space-3xs);
-        
-        & > span {
-          transition: all .1s ease;
-        }
-
-        &:hover > span {
-          color: var(--accent-2-primary);
-          transform: translateY(-3px);
-        }
-
-        &::after {
-          content: '';
-          left: var(--space-xs);
-          bottom: 0;
-          height: 2px;
-          background-color: var(--accent-2-primary);
-          position: absolute;          
-          width: 0%;
-          transition: width .2s ease;
-        }
-
-        &:hover::after {
-          width: calc(100% - calc(2 * var(--space-xs)));
-        }
-      }
+      }      
 
       button.disabled-link:disabled {
         padding-inline: var(--space-xs);

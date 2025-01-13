@@ -6,12 +6,17 @@ import simProfileImage from '../assets/images/sim_profile.png';
 ---
 
 <BaseLayout>
-	<section class="home-hero-wrapper u-pad-b-2xl">
+	<section class="home-hero-wrapper">
 		<div class="u-container">
-			<div class="home-hero u-flex">
+			<div class="home-hero u-flex u-pad-b-2xl">
+				<figure class="home-hero__image">	
+					<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />				
+					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
+				</figure>
 				<div class="home-hero__intro">
 					<img src="/sim_intro.svg" class="u-mrg-bs-s" alt="" role="presentation">
 					<div>
+						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, I'm Sim</p>
 						<h1 class="u-fontsize-6 u-font-display u-mrg-be-xs">A full-stack<br /> Product Designer</h1>
 						<h2 class="u-fontsize-3 u-font-display u-mrg-be-l">who also codes and does creative generalist stuff and whatever</h2>
 						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">I design human-centred, purpose-lead digital experiences with curious, can-do people. Seeking something real in the digital world. Nice to have you along.</h3>
@@ -20,11 +25,7 @@ import simProfileImage from '../assets/images/sim_profile.png';
 							<p>Freelancing and up for working with you!</p>
 						</div>
 					</div>
-				</div>
-				<figure class="home-hero__image">	
-					<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />				
-					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
-				</figure>
+				</div>				
 			</div>
 		</div>
 	</section>
@@ -34,17 +35,22 @@ import simProfileImage from '../assets/images/sim_profile.png';
 
 	.home-hero {		
 		justify-content: space-between;
-		align-items: end;
+		border-block-end: 2px solid var(--primary-border);
+		flex-direction: column;
 
 		.home-hero__intro {
 			display: flex;
 			align-items: start;
 			gap: var(--space-xs);
 			max-width: 800px;
-			flex-basis: 70%;
+			flex-basis: 100%;
 
 			img {
-				opacity: .4;
+				display: none;
+			}
+
+			.mobile-intro {
+				color: var(--secondary-text);
 			}
 
 			h1,
@@ -53,7 +59,7 @@ import simProfileImage from '../assets/images/sim_profile.png';
 			}
 
 			h3 {
-				width: 65%;
+				width: 100%;
 				text-wrap: pretty;
 			}
 
@@ -65,24 +71,72 @@ import simProfileImage from '../assets/images/sim_profile.png';
 
 		.home-hero__image {
 			flex: 1;
-			max-width: 400px;
+			max-width: 120px;
 			text-align: right;
 
 			img {
 				width: 100%;
 				height: auto;
-				border-radius: 10px 10px 0px 10px;
+				border-radius: 10px;
 				border: 2px solid var(--primary-border);
 			}
 
 			figcaption {
-				display: inline-flex;
-				background: var(--third-bg);
-				border-radius: 0px 0px 10px 10px;
-				border: 2px solid var(--secondary-border);
-				border-top: none;
+				display: none;
 			}
 		}
 	}
-	
+	@media (min-width: 800px) {
+
+		.home-hero {
+
+			.home-hero__intro {
+				flex-basis: 70%;				
+
+				h3 {
+					width: 65%;
+				}
+			}
+
+			.home-hero__image {
+				max-width: 200px;
+			}
+		}
+
+	}
+
+	@media (min-width: 1200px) {
+		.home-hero {
+			flex-direction: row-reverse;		
+			align-items: end;
+
+			.home-hero__intro {
+				
+				img {
+					display: block;
+					opacity: .4;
+				}
+
+				.mobile-intro {
+					display: none;
+				}
+			}
+
+			.home-hero__image {
+				max-width: 400px;
+
+				img {
+					border-radius: 10px 10px 0px 10px;
+				}
+
+				figcaption {
+					display: inline-flex;
+					background: var(--third-bg);
+					border-radius: 0px 0px 10px 10px;
+					border: 2px solid var(--secondary-border);
+					border-top: none;
+				}
+			}
+		}
+	}
 </style>

@@ -36,6 +36,8 @@
   --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
   /* Space l-xl: 36px → 60px */
   --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  /* Space l-2xl: 36px → 80px */
+  --space-l-2xl: clamp(2.25rem, 1.7283rem + 2.8261vw, 5rem);
   /* Space xl-2xl: 54px → 80px */
   --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
   /* Space 2xl-3xl: 72px → 120px */
@@ -626,7 +628,7 @@
   .u-container {        
     max-width: min(100%, 1700px);
     margin-inline: auto;
-    padding-inline: var(--space-xl-2xl);
+    padding-inline: var(--space-l-2xl);
   }
 
   /* 

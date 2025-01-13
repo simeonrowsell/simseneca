@@ -1,5 +1,6 @@
 ---
 import { SmallEmail } from "./small-email.tsx"
+import ThemeToggle from "./theme-toggle.astro"
 ---
 
 <div class="u-container">
@@ -33,12 +34,7 @@ import { SmallEmail } from "./small-email.tsx"
           </a>
         </li>
         <li>
-          <button
-              type="button"
-              data-theme-toggle
-              aria-label="Change to light theme"
-            >Theme toggle
-          </button>
+          <ThemeToggle />
         </li>
       </ul>
     </nav>
@@ -127,8 +123,8 @@ import { SmallEmail } from "./small-email.tsx"
           left: -50%;
           top: 40px;
           border-radius: 7px;
-          color: var(--primary-text);
-          background: var(--accent-2-primary);
+          background-color: var(--toast-bg);
+          color: var(--toast-text);
           padding: var(--space-xs);
           font-size: .8rem;
           border: 2px solid var(--primary-border);
@@ -148,6 +144,10 @@ import { SmallEmail } from "./small-email.tsx"
 
     li {
       margin-right: var(--space-2xs);
+    }
+
+    button[data-theme-toggle] {    
+      transform: translateY(12px);
     }
   }
 </style>

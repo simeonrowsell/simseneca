@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro"
+
+import { Image } from 'astro:assets';
+import simProfileImage from '../assets/images/sim_profile.png';
 ---
 
 <BaseLayout>
-	<section class="home-hero-wrapper u-pad-b-3xl">
+	<section class="home-hero-wrapper u-pad-b-2xl">
 		<div class="u-container">
 			<div class="home-hero u-flex">
 				<div class="home-hero__intro">
@@ -18,8 +21,8 @@ import BaseLayout from "../layouts/base-layout.astro"
 						</div>
 					</div>
 				</div>
-				<figure class="home-hero__image">					
-					<img src="/sim_profile.png" alt="Graphic illustration of Sim smiling in a red shirt on a purple background">
+				<figure class="home-hero__image">	
+					<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />				
 					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
 				</figure>
 			</div>
@@ -67,6 +70,7 @@ import BaseLayout from "../layouts/base-layout.astro"
 
 			img {
 				width: 100%;
+				height: auto;
 				border-radius: 10px 10px 0px 10px;
 				border: 2px solid var(--primary-border);
 			}

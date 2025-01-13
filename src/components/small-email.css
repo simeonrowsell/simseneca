@@ -32,7 +32,8 @@
 
     &.copied {
       cursor: pointer;
-      background-color: var(--secondary-bg);
+      /* TODO */
+      background: var(--secondary-bg);
       transition-duration: 0.3s;
     }    
 
@@ -53,8 +54,8 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--accent-2-primary);
-  color: var(--primary-text);
+  background-color: var(--toast-bg);
+  color: var(--toast-text);
   border-radius: 10px;
   border: 2px solid var(--primary-border);
   z-index: 1000;

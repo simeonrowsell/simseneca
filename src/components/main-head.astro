@@ -25,3 +25,18 @@ const {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<!-- Theme scripts -->
+<!-- Inline script to set theme before render -->
+<script is:inline>
+	(function () {
+		const localStorageTheme = localStorage.getItem("theme");
+  	const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+		const theme = localStorageTheme || (systemSettingDark ? "dark" : "light");
+		document.documentElement.setAttribute("data-theme", theme);
+		const themeButton = document.querySelector("[data-theme-toggle]");
+		themeButton.setAttribute("data-theme-value", currentTheme);
+	})();
+</script>
+<!-- Then bring in the script to watch for button clicks -->
+<script src="src/scripts/theme-toggle.js" defer></script>

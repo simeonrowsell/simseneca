@@ -42,7 +42,6 @@ export const LargeEmail = ({
           )}
           aria-label="Copy email address"
         >
-          <span class="orb"></span>
           <address
             className={classNames(  
               {"hovered": isHovered} // Add hovered class

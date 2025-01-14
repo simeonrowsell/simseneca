@@ -47,7 +47,7 @@ import ThemeToggle from "./theme-toggle.astro"
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--primary-border);
+    border-bottom: 2px solid var(--border-primary);
   }
 
   .main-nav,
@@ -76,14 +76,14 @@ import ThemeToggle from "./theme-toggle.astro"
         margin-right: var(--space-m);
 
         &:hover {
-          color: var(--accent-2-primary);
+          color: var(--accent-2);
         }
       }      
 
       button.disabled-link:disabled {
         padding-inline: var(--space-xs);
         position: relative;
-        color: var(--muted-text);        
+        color: var(--text-muted);        
         
         &::after {
           content: 'Working on it...';
@@ -93,11 +93,11 @@ import ThemeToggle from "./theme-toggle.astro"
           left: -50%;
           top: 40px;
           border-radius: 7px;
-          background-color: var(--toast-bg);
-          color: var(--toast-text);
+          background-color: var(--purple);
+          color: var(--beige);
           padding: var(--space-xs);
           font-size: .8rem;
-          border: 2px solid var(--primary-border);
+          border: 2px solid var(--border-primary);
         }
 
         &:hover::after {
@@ -110,7 +110,7 @@ import ThemeToggle from "./theme-toggle.astro"
   .secondary-nav {
     align-items: baseline;
     padding-left: var(--space-s);
-    border-left: 2px solid var(--primary-border);
+    border-left: 2px solid var(--border-primary);
 
     li {
       margin-right: var(--space-2xs);

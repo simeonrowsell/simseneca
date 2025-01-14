@@ -7,33 +7,36 @@
   }
 
   .large-email__button {
+    --colour: var(--beige);
+    --hovered: var(--beige-dark);
+
     display: flex;
     flex-direction: row;
-    gap: var(--space-2xs);
+    gap: var(--space-s);
     align-items: center;
     background-color: transparent;
     border: none;
-    transition: 2s ease background-color;
+    transition: 2s ease background-color, .1s ease color;
     border-radius: 5px;
-    color: var(--primary-text);
+    color: var(--colour);
 
     svg path {
-      fill: var(--primary-text);
+      fill: var(--colour);
+      transition: .1s ease fill;
     }
 
     &.hovered {
       cursor: pointer;
-      color: var(--accent-2-primary);
+      color: var(--hovered);
 
       svg path {
-        fill: var(--accent-2-primary);
+        fill: var(--hovered);
       }
     }
 
     &.copied {
       cursor: pointer;
-      /* TODO */
-      background: var(--secondary-bg);
+      background: var(--purple-dark);
       transition-duration: 0.3s;
     }    
 
@@ -55,10 +58,10 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--toast-bg);
-  color: var(--toast-text);
+  background-color: var(--purple);
+  color: var(--beige-dark);
   border-radius: 10px;
-  border: 2px solid var(--primary-border);
+  border: 2px solid var(--border-primary);
   z-index: 1000;
   animation: fadeInOut 2.5s ease;
   display: flex;

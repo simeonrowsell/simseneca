@@ -6,52 +6,22 @@
   src: url('/RocaRegular.woff') format("woff");
 }
 
-[data-theme="light"] {
-  /* Light colors */
-  --primary-bg: #FCEDEB;
-  --secondary-bg: #F6D3CE;
-  --third-bg: white;
-
-  --primary-text: #252238;
-  --secondary-text: #393557;
-  --muted-text: #c6b9bd;
-  
-  --accent-1-primary: #eb4c3d;
-  --accent-2-primary: #6d4eb1;
-  
-  --primary-border: #252238;
-  --secondary-border: white;
-  --focus-border: #252238;
-
-  --toast-bg: #6d4eb1;
-  --toast-text: #FCEDEB; 
-}
-
-[data-theme="dark"] {
-  /* Dark colors */
-  --primary-bg: #252238;
-  --secondary-bg: #393557;
-  --third-bg: #252238;
-
-  --primary-text: #F6D3CE;
-  --secondary-text: #7D6E82;
-  --muted-text: #7D6E82;
-  
-  --accent-1-primary: #e94a4a;
-  --accent-2-primary: #8961df;
-  
-  --primary-border: #7D6E82;
-  --secondary-border: #393557;
-  --focus-border: #7D6E82;
-
-  --toast-bg: #6d4eb1;
-  --toast-text: #FCEDEB;
-}
-
 :root {
 
   /* Brand colours */
+  --navy-lightest: #C6B9BD;
+  --navy-lighter: #7D6E82;
+  --navy-light: #393557;
   --navy: #252238;
+  --white: white;
+  --beige-light: #FEF6F5;
+  --beige: #FCEDEB;
+  --beige-dark: #F6D3CE;
+  --red: #EB4C3D;
+  --red-cool: #E94A4A;
+  --purple-dark: #5D4296;
+  --purple: #6D4EB1;
+  --purple-bright: #9A7ADE;
 
   /* Fluid typography */
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
@@ -148,7 +118,7 @@
   // Typography defaults
   */
   font-family: var(--font-body);
-  color: var(--primary-text);
+  color: var(--text-primary);
 
   h1, h2, h3, h4 {
     --font-family: var(--font-display);
@@ -164,7 +134,7 @@
   }
 
   a {
-    color: var(--primary-text);
+    color: var(--text-primary);
     text-decoration: none;
   }
   
@@ -183,16 +153,54 @@
   // Body
   */
   body {
-    background-color: var(--primary-bg);
+    background-color: var(--bg-primary);
   }
 
   /* Orb */
   .orb {
     height: 10px;
     width: 10px;
-    background-color: var(--accent-2-primary);
+    background-color: var(--accent-2);
     border-radius: 50%;
   }
+}
+
+[data-theme="light"] {
+  /* Light colors */
+  --bg-primary: var(--beige);
+  --bg-secondary: var(--white);
+  --bg-third: var(--beige-light);
+  --bg-fourth: var(--beige-dark);
+
+  --text-primary: var(--navy);
+  --text-secondary: var(--navy-light);
+  --text-muted: var(--navy-lightest);
+  
+  --accent-1: var(--red);
+  --accent-2: var(--purple);
+  
+  --border-primary: var(--navy);
+  --border-secondary: var(--white);
+  --border-third: var(--navy);
+}
+
+[data-theme="dark"] {
+  /* Dark colors */
+  --bg-primary: var(--navy);
+  --bg-secondary: var(--navy-light);
+  --bg-third: var(--navy-light);
+  --bg-fourth: var(--navy-light);
+
+  --text-primary: var(--beige-dark);
+  --text-secondary: var(--navy-lighter);
+  --text-muted: var(--navy-lighter);
+  
+  --accent-1: var(--red-cool);
+  --accent-2: var(--purple-bright);
+  
+  --border-primary: var(--navy-lighter);
+  --border-secondary: var(--navy-lighter);
+  --border-third: var(--beige-dark);
 }
 
 /* Light/dark theme fade */
@@ -204,18 +212,27 @@
 
 /* Menu item links */
 a[role="menuitem"] {
+  --color: var(--text-primary);
+  --hovered: var(--accent-2);
+
+  &.light {
+    --color: var(--beige);
+    --hovered: var(--beige-dark);
+  }
+
   display: inline-flex;
   position: relative;
   padding-inline: var(--space-xs);
   padding-block: var(--space-3xs);
   transition: all .1s ease;
+  color: var(--color);
   
   & > span {
     transition: all .1s ease;
   }
 
   &:hover > span {
-    color: var(--accent-2-primary);
+    color: var(--hovered);
     transform: translateY(-3px);
   }
 
@@ -224,7 +241,7 @@ a[role="menuitem"] {
     left: var(--space-xs);
     bottom: 0;
     height: 2px;
-    background-color: var(--accent-2-primary);
+    background-color: var(--hovered);
     position: absolute;          
     width: 0%;
     transition: width .2s ease;

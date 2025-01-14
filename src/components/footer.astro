@@ -3,15 +3,20 @@ import { LargeEmail } from "./large-email.tsx";
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile_square.png';
+import figmaIcon from '../assets/icons/figma_icon.svg';
+import astroIcon from '../assets/icons/astro_icon.svg';
+import heartIcon from '../assets/icons/heart_icon.svg';
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="main-footer">
+<footer class="main-footer u-pad-be-l">
   <div class="footer-background"></div>
   <div class="u-container main-footer--inner">
-    <div class="footer-contact u-flex">
+    <div class="footer-contact u-flex u-mrg-be-xl">
       <div class="footer-contact--blurb">
         <p class="u-subtitle u-mrg-be-l">I love a chat</p>
-        <p class="u-fontsize-1 u-font-display u-mrg-be-3xl">Welcome to the footer where my contact details are, as you'd expect. Wouldn't want to let you down.</p>
+        <p class="u-fontsize-1 u-font-display u-mrg-be-2xl">Welcome to the footer where my contact details are, as you'd expect.</p>
         <div class="footer-profile">
           <Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />
           <h3 class="u-fontsize-1 u-font-display">It's me, Sim</h3>
@@ -22,17 +27,17 @@ import simProfileImage from '../assets/images/sim_profile_square.png';
         <nav class="footer-links u-mrg-bs-l" role="menu">
           <ul>
             <li role="none">
-              <a href="/blog" role="menuitem" class="u-subtitle">
+              <a href="/blog" role="menuitem" class="u-subtitle light">
                 <span>linkedin</span>
               </a>
             </li>
             <li role="none">
-              <a href="/blog" role="menuitem" class="u-subtitle">
+              <a href="/blog" role="menuitem" class="u-subtitle light">
                 <span>Instagram</span>
               </a>
             </li>
             <li role="none">
-              <a href="/blog" role="menuitem" class="u-subtitle">
+              <a href="/blog" role="menuitem" class="u-subtitle light">
                 <span>read.cv</span>
               </a>
             </li>
@@ -40,8 +45,38 @@ import simProfileImage from '../assets/images/sim_profile_square.png';
         </nav>
       </div>
     </div>
-    <div class="footer-signoff u-pad-b-l">
-        copyright stuff
+    <nav class="footer-nav u-mrg-be-m" role="menu">
+      <p class="u-subtitle u-mrg-be-s">More things</p>
+      <ul class="u-flex">
+        <li role="none">
+          <a href="/about" role="menuitem" class="u-font-body u-fontsize-1 light">
+            <span>/about</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/now" role="menuitem" class="u-font-body u-fontsize-1 light">
+            <span>/now</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/rss" role="menuitem" class="u-font-body u-fontsize-1 light">
+            <span>/rss</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <hr class="u-mrg-be-m" />
+    <div class="footer-signoff u-flex">
+        <div class="footer-signoff__love u-flex">
+          <p class="u-subtitle">Made with</p>
+          <Image src={figmaIcon} alt="Figma icon" />
+          <Image src={astroIcon} alt="Astro icon" />
+          <p class="u-subtitle">and</p>
+          <Image src={heartIcon} alt="Heart icon" />
+        </div>
+        <div class="footer-signoff__bits">
+          <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
+        </div>
     </div>
   </div>
 </footer>
@@ -63,15 +98,14 @@ import simProfileImage from '../assets/images/sim_profile_square.png';
     .main-footer--inner {
       position: relative;
       z-index: 10;
-      /* transform: translateY(calc(-1 * var(--space-3xl)));       */
     }
   }
 
   .footer-contact {
-    background-color: var(--accent-2-primary);
-    color: var(--primary-text);
+    background-color: var(--purple);
+    color: var(--beige);
     border-radius: 10px;
-    border: 2px solid var(--primary-border);
+    border: 2px solid var(--border-primary);
     gap: var(--space-2xl);
     justify-content: space-between;
     align-items: end;
@@ -85,13 +119,12 @@ import simProfileImage from '../assets/images/sim_profile_square.png';
         align-items: center;
         flex-direction: row;
         gap: var(--space-s);
-        color: var(--primary-text);
 
         img {
           width: 80px;
           border-radius: 50%;
           height: auto;
-          border: 1px solid var(--primary-border);
+          border: 1px solid var(--navy);
         }
       }            
     }
@@ -111,7 +144,58 @@ import simProfileImage from '../assets/images/sim_profile_square.png';
     }
   }
 
-  .footer-signoff {
+  .footer-nav {
+    color: var(--beige-dark);
+    
+    p {
+      color: var(--navy-lighter);
+    }
+    
+    ul {
+      list-style: none;
 
+      li:first-of-type a {
+        padding-left: 0;
+
+        &::after {
+          left: 0;
+        }
+
+        &:hover::after {
+          width: calc(100% - var(--space-xs));
+        }
+      }
+    }
+  }
+
+  hr {
+    border-top: solid 2px var(--navy-lighter);
+  }
+
+  .footer-signoff {
+    color: var(--beige);
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .footer-signoff__love {
+      align-items: center;
+      gap: var(--space-xs);
+
+      img {
+        height: 22px;
+        width: auto;
+      }
+    }
+
+    .footer-signoff__bits {
+      display: flex;
+      gap: var(--space-s);
+      align-items: center;
+      
+      p {
+        color: var(--navy-lighter);
+      }
+    }
   }
 </style>

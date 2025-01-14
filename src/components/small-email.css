@@ -15,25 +15,24 @@
     border: none;
     transition: 2s ease background-color;
     border-radius: 5px;
-    color: var(--primary-text);
+    color: var(--text-primary);
 
     svg path {
-      fill: var(--primary-text);
+      fill: var(--text-primary);
     }
 
     &.hovered {
       cursor: pointer;
-      color: var(--accent-2-primary);
+      color: var(--accent-2);
 
       svg path {
-        fill: var(--accent-2-primary);
+        fill: var(--accent-2);
       }
     }
 
     &.copied {
       cursor: pointer;
-      /* TODO */
-      background: var(--secondary-bg);
+      background: var(--bg-fourth);
       transition-duration: 0.3s;
     }    
 
@@ -54,10 +53,10 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--toast-bg);
-  color: var(--toast-text);
+  background-color: var(--purple);
+  color: var(--beige-dark);
   border-radius: 10px;
-  border: 2px solid var(--primary-border);
+  border: 2px solid var(--border-primary);
   z-index: 1000;
   animation: fadeInOut 2.5s ease;
   display: flex;

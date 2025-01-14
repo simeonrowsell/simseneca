@@ -96,3 +96,8 @@ button {
   outline: none;
   border: none;
 }
+
+/* Added by @sim */
+hr {
+  border: none;
+}

@@ -1,27 +1,19 @@
 ---
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+layout: ../../layouts/post-layout.astro
+title: 'A New Hope'
+pubDate: 2025-01-15
+edition: '01'
+description: "You're my only hope."
+author: 'Sim Seneca'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+    url: ''
+    alt: ''
 tags: ["astro", "blogging", "learning in public"]
+draft: true
 ---
-# My First Blog Post
 
-Published on: 2022-07-01
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur scelerisque feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porta velit nec eleifend luctus. Curabitur volutpat felis at auctor iaculis. Phasellus congue laoreet placerat. Duis vel fermentum nulla, ut aliquam diam. Suspendisse tempus scelerisque ligula at tempus. Sed eleifend mi molestie, vulputate neque fringilla, venenatis nunc.
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+Suspendisse metus ligula, egestas quis consequat a, maximus nec sem. Fusce quis mollis dui, sit amet dignissim nibh. Phasellus ullamcorper lectus dolor, quis venenatis libero pellentesque nec. Mauris quam odio, facilisis fermentum lobortis non, molestie non tortor. Donec pellentesque ultricies nibh sit amet suscipit. Duis rhoncus, sapien quis vestibulum placerat, arcu ipsum imperdiet elit, non volutpat nibh lorem ac eros. Cras facilisis et libero nec ultrices. Pellentesque ultrices tempus pellentesque. Vivamus vehicula magna et libero dignissim facilisis. Aliquam erat volutpat.
 
-## What I've accomplished
-
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+Vivamus nunc dolor, blandit vitae commodo vitae, aliquam ac mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu orci nunc. In blandit tortor ac lorem laoreet, vel pretium sem luctus. Pellentesque mollis blandit erat a finibus. Pellentesque sed ex lorem. Nunc aliquet vulputate ullamcorper. Nam ipsum mi, viverra vitae ante ac, commodo dictum nulla. Nam fermentum eget eros ut faucibus. Quisque ornare interdum faucibus. Vivamus vel metus suscipit, convallis enim sit amet, consequat augue. Integer metus tellus, ullamcorper a sem a, cursus vulputate sapien. Donec tellus sapien, tristique id tincidunt at, vulputate aliquet mi. Cras ipsum nisl, mattis in tempus vitae, eleifend ac ante.

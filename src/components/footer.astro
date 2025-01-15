@@ -76,6 +76,7 @@ const currentYear = new Date().getFullYear();
         </div>
         <div class="footer-signoff__bits">
           <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
+          <a href="/changelog" class="u-subtitle">Changelog</a>
         </div>
     </div>
   </div>
@@ -195,6 +196,15 @@ const currentYear = new Date().getFullYear();
       
       p {
         color: var(--navy-lighter);
+      }
+
+      a {
+        color: var(--navy-lightest);
+        transition: all 0.1s ease;
+
+        &:hover {
+          color: var(--beige-light);
+        }
       }
     }
   }

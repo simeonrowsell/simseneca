@@ -142,10 +142,13 @@
   // Blocks of content
   */
   .u-wysiwyg {
+    line-height: 1.5;
+    font-size: var(--fontsize-1);
 
     p {
       margin-block-end: var(--space-s);      
       text-wrap: wrap;
+      font-size: var(--fontsize-1);
     }
   }  
 
@@ -173,7 +176,7 @@
   --bg-fourth: var(--beige-dark);
 
   --text-primary: var(--navy);
-  --text-secondary: var(--navy-light);
+  --text-secondary: var(--navy-lighter);
   --text-muted: var(--navy-lightest);
   
   --accent-1: var(--red);

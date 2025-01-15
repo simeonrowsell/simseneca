@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro"
+import PostThumb from "../components/post-thumb.astro"
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile.png';
+
+// Get all the blog posts
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
 <BaseLayout>
@@ -28,6 +32,18 @@ import simProfileImage from '../assets/images/sim_profile.png';
 				</div>				
 			</div>
 		</div>
+	</section>
+
+	<section>
+		{allPosts.map((post: any) => 
+			<PostThumb 
+				title={post.frontmatter.title} 
+				url={post.url}
+				description={post.frontmatter.description}
+				edition={post.frontmatter.edition}
+				pubDate={post.frontmatter.pubDate}
+			/>
+		)}
 	</section>
 </BaseLayout>
 

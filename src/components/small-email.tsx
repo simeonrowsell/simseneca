@@ -5,16 +5,18 @@ import './small-email.css';
 
 /** If people want to email us they can click this button and their dreams will come true. */
 export const SmallEmail = ({
+  label,
   ...props
-}) => {
+}: { label?: string }) => {
   // States for copying feedback
   const [isCopied, setIsCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const email = "sim@simseneca.design";
+  const emailLabel = label ?? "Email";
 
   // Handle the copy to clipboard
-  const  handleCopyEmail = async () => {
+  const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email)
       setIsCopied(true);
@@ -48,7 +50,7 @@ export const SmallEmail = ({
               {"hovered": isHovered} // Add hovered class
             )}
           >
-            <p className={classNames("label", "u-subtitle")}>Email</p>
+            <p className={classNames("label", "u-subtitle")}>{emailLabel}</p>
           </address>
         
           {isCopied ? (

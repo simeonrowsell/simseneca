@@ -1,0 +1,106 @@
+---
+import BaseLayout from './base-layout.astro';
+const {frontmatter} = Astro.props;
+
+import { Image } from 'astro:assets';
+import simProfileImage from '../assets/images/sim_profile_square.png';
+import { SmallEmail } from "../components/small-email.tsx"
+
+---
+
+<BaseLayout 
+	title={frontmatter.title}
+	description={frontmatter.description}
+>
+	<article class="post-wrapper">
+		<div class="u-container">
+			<header class="post-header u-pad-l">
+				<p class="edition u-font-display u-fontsize-3">{frontmatter.edition}</p>
+				<h1 class="u-font-display u-fontsize-6 u-mrg-be-s">{frontmatter.title}</h1>				
+				<p class="description u-fontsize-2 u-mrg-be-xl">{frontmatter.description}</p>
+				<time datetime="{frontmatter.pubDate}" class="u-subtitle u-fontsize--1">
+					{(() => {
+						const date = new Date(frontmatter.pubDate);
+						const day = date.getDate();
+						const ordinal = day + (["th", "st", "nd", "rd"][(day % 10 > 3 || [11, 12, 13].includes(day % 100)) ? 0 : day % 10]);
+						const month = date.toLocaleDateString('en-UK', { month: 'long' });
+						const year = date.getFullYear();
+						return `${month} ${ordinal}, ${year}`;
+					})()}
+				</time>				
+			</header>
+			<div class="post-body u-mrg-be-3xl">
+				<div class="post-body__content u-wysiwyg u-pad-l">					
+					<slot />
+				</div>
+				<div class="post-body__bio u-pad-b-l u-pad-is-l">
+					<div class="profile u-flex">
+						<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />
+						<h3 class="u-font-display">It's me, Sim</h3>
+						<p class="bio">
+							I design human-centred, purpose-lead digital experiences with curious, can-do people.
+						</p>
+						<SmallEmail label="sim@simseneca.design" client:load />
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</BaseLayout>
+
+<style>
+
+	.post-header {
+		background-color: var(--bg-fourth);
+		border: 2px solid var(--border-primary);
+		border-top: 0;
+
+		.edition {
+			color: var(--accent-1);
+		}
+
+		time {
+			color: var(--text-secondary);
+		}
+	}
+
+	.post-body {
+		display: flex;
+		flex-direction: row;
+		gap: var(--space-xl);
+		justify-content: space-between;
+
+		.post-body__content {
+			/* TODO */
+			max-width: min(700px, 100%);
+		}
+
+		.post-body__bio {
+			border-inline-start: 2px solid var(--border-primary);
+			flex-direction: column;
+			gap: var(--space-m);
+			height: fit-content;
+			/* TODO */
+			max-width: max(350px, 18vw);
+			
+			p {
+				text-wrap: pretty;
+			}
+
+			.profile {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: var(--space-s);
+
+        img {
+          width: 50px;
+          border-radius: 50%;
+          height: auto;
+          border: 2px solid var(--border-primary);
+        }
+      }
+		}
+	}
+
+</style>

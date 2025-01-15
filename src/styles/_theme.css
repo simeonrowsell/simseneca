@@ -6,6 +6,10 @@
   src: url('/RocaRegular.woff') format("woff");
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 :root {
 
   /* Brand colours */

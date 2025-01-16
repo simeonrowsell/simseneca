@@ -14,7 +14,7 @@
 
   /* Brand colours */
   --navy-lightest: #C6B9BD;
-  --navy-lighter: #7D6E82;
+  --navy-lighter: #8A7BA9;
   --navy-light: #393557;
   --navy: #252238;
   --white: white;
@@ -52,7 +52,7 @@
   // Typography variables
   */
   --font-body: 'EB Garamond', serif;
-  --font-display: 'roca', sans-serif;
+  --font-display: 'roca', serif;
   --font-caps: 'lato', sans-serif;
 
   /* 
@@ -180,7 +180,7 @@
   --bg-fourth: var(--beige-dark);
 
   --text-primary: var(--navy);
-  --text-secondary: var(--navy-lighter);
+  --text-secondary: var(--navy-light);
   --text-muted: var(--navy-lightest);
   
   --accent-1: var(--red);

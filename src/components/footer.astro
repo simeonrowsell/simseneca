@@ -1,5 +1,6 @@
 ---
 import { LargeEmail } from "./large-email.tsx";
+import { Songs } from "./songs.tsx";
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile_square.png';
@@ -28,17 +29,17 @@ const currentYear = new Date().getFullYear();
           <ul>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>linkedin</span>
+                <span>linkedin 🡕</span>
               </a>
             </li>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>Instagram</span>
+                <span>Instagram 🡕</span>
               </a>
             </li>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>read.cv</span>
+                <span>read.cv 🡕</span>
               </a>
             </li>
           </ul>
@@ -75,6 +76,7 @@ const currentYear = new Date().getFullYear();
           <Image src={heartIcon} alt="Heart icon" />
         </div>
         <div class="footer-signoff__bits">
+          <Songs client:load />
           <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
           <a href="/changelog" class="u-subtitle">Changelog</a>
         </div>
@@ -94,6 +96,7 @@ const currentYear = new Date().getFullYear();
       z-index: 0;
       height: calc(100% - var(--space-3xl));
       background-color: var(--navy);
+      border-block-start: 2px solid var(--border-primary);
     }
 
     .main-footer--inner {

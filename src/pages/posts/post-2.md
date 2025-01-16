@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/post-layout.astro
-title: 'A New Hope'
+title: 'The longest design everrr'
 pubDate: 2025-01-15
-edition: 01
-description: "You're my only hope."
+edition: 02
+description: "Man this took a long time. Hands down the hardest site to design is your own. Man this took a long time. Hands down the hardest site to design is your own."
 author: 'Sim Seneca'
 image:
     url: ''

@@ -1,4 +1,6 @@
 ---
+import { formatEdition, formatPostDate } from "../scripts/theme-general.js";
+
 interface Props {
 	title?: string | undefined;
   url?: string | undefined;
@@ -8,9 +10,103 @@ interface Props {
 }
 
 const { title, url, description, edition, pubDate } = Astro.props;
+
+const editionFormatted = formatEdition(edition);
+const postDateFormatted = formatPostDate(pubDate);
 ---
 
-<a href={url}>{title}</a>
-{description}
-{edition}
-{pubDate}
+<li class="post-thumb">
+  <a href={url}>
+    <div class="post-thumb__meta">
+      <h3 class="edition u-font-display u-fontsize-2 u-mrg-be-xs">
+        {editionFormatted}
+      </h3>
+      <time datetime={pubDate} class="u-subtitle u-fontsize--1">
+        {postDateFormatted}
+      </time>
+    </div>
+    <div class="post-thumb__content">
+      <h2 class="u-font-display u-fontsize-2 u-mrg-be-xs">{title}</h2>
+      <p class="description u-fontsize-1">{description}</p>
+    </div>
+  </a>
+</li>
+
+<style>
+  .post-thumb {
+    list-style-type: none;
+
+    a {
+      display: flex;
+      border-radius: 10px;
+
+      &:hover {
+
+        .post-thumb__content h2,
+        .post-thumb__meta .edition {
+          color: var(--accent-2);
+        }
+        
+        .post-thumb__content .description {
+          color: var(--text-primary);
+        }
+
+        .post-thumb__meta::after {
+          height: 100%;
+      }
+    }
+
+    .post-thumb__meta,
+    .post-thumb__content {
+      padding-block: var(--space-m);
+    }
+
+    .post-thumb__meta {
+      padding-inline-end: var(--space-xl);
+      text-align: right;
+      min-width: 250px;
+      position: relative;
+
+      .edition {
+        color: var(--accent-1);
+        transition: color .2s ease;
+      }
+
+      a,
+      time {
+        display: block;
+        text-wrap: nowrap;
+      }
+
+      time {
+        color: var(--text-secondary);
+      }
+
+      &::after {
+        content: '';
+        right: -3px;
+        top: 0;
+        width: 4px;
+        height: 0%;
+        background-color: var(--accent-2);
+        position: absolute;
+        transition: height .2s ease;
+      }
+    }
+
+    .post-thumb__content {
+      flex: 1;
+      padding-inline-start: var(--space-xl);
+      border-inline-start: 2px solid var(--border-primary);
+
+      h2,
+      .description {
+        transition: color .2s ease;
+      }
+
+      .description {
+        color: var(--text-secondary);
+      }
+    }
+  }
+</style>

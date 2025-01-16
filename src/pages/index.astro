@@ -4,9 +4,14 @@ import PostThumb from "../components/post-thumb.astro"
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile.png';
+import { GLOBAL_STRINGS } from '../constants/strings';
+
+const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 
 // Get all the blog posts
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const allPosts = await Promise.all(Object.values(import.meta.glob('./posts/*.md')).map(fn => fn()));
+allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 ---
 
 <BaseLayout>
@@ -23,10 +28,10 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, I'm Sim</p>
 						<h1 class="u-fontsize-6 u-font-display u-mrg-be-xs">A full-stack<br /> Product Designer</h1>
 						<h2 class="u-fontsize-3 u-font-display u-mrg-be-l">who also codes and does creative generalist stuff and whatever</h2>
-						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">I design human-centred, purpose-lead digital experiences with curious, can-do people. Seeking something real in the digital world. Nice to have you along.</h3>
+						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">{bio_blurb} Seeking something real in the digital world. Nice to have you along.</h3>
 						<div class="current-status u-flex">
 							<div class="orb"></div>
-							<p>Freelancing and up for working with you!</p>
+							<p class="u-fontsize-0 u-font-display">Independent and up for working with you!</p>
 						</div>
 					</div>
 				</div>				
@@ -34,16 +39,22 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 		</div>
 	</section>
 
-	<section>
-		{allPosts.map((post: any) => 
-			<PostThumb 
-				title={post.frontmatter.title} 
-				url={post.url}
-				description={post.frontmatter.description}
-				edition={post.frontmatter.edition}
-				pubDate={post.frontmatter.pubDate}
-			/>
-		)}
+	<section class="u-container post-list-wrapper">
+		<div class="post-list-intro">
+			<p class="u-subtitle intro">Fresh posts</p>
+			<a href="/blog" class="u-subtitle underlined-link no-inline-padding"><span>All posts →</span></a>
+		</div>
+		<ul class="post-list">
+			{sortedPosts.map((post: any) => 
+				<PostThumb 
+					title={post.frontmatter.title} 
+					url={post.url}
+					description={post.frontmatter.description}
+					edition={post.frontmatter.edition}
+					pubDate={post.frontmatter.pubDate}
+				/>
+			)}
+		</ul>
 	</section>
 </BaseLayout>
 
@@ -82,6 +93,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 			.current-status {
 				gap: var(--space-2xs);
 				align-items: center;
+				color: var(--accent-2);
 			}
 		}		
 
@@ -102,6 +114,39 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 			}
 		}
 	}
+
+	.post-list-intro {
+		/* .post-list padding + post-thumb__meta width */
+		margin-inline-start: calc(var(--space-xl) + 250px);
+		padding-inline-start: var(--space-xl);
+		padding-block: var(--space-m);
+		border-inline-start: 2px solid var(--border-primary);
+		display: flex;
+		justify-content: space-between;
+
+		.intro {
+			color: var(--text-secondary);
+		}
+	}
+
+	.post-list {
+		padding-inline-start: var(--space-xl);
+		max-width: max(900px, 70%);
+
+		.post-thumb:last-of-type {
+			margin-bottom: ;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			height: var(--space-2xl);
+			border-inline-end: 2px solid var(--border-primary);
+			/* post-thumb__meta width + 2 to make up for border */
+			width: calc(250px + 2px);
+		}
+	}
+
 	@media (min-width: 800px) {
 
 		.home-hero {

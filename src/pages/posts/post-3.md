@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/post-layout.astro
-title: 'A New Hope'
-pubDate: 2025-01-15
-edition: 01
-description: "You're my only hope."
+title: "What's in a name"
+pubDate: 2025-08-15
+edition: 03
+description: "Those keen eyed amongst you might have noticed I changed my name! Those keen eyed amongst you might have noticed I changed my name!"
 author: 'Sim Seneca'
 image:
     url: ''

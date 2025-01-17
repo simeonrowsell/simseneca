@@ -78,7 +78,7 @@ const currentYear = new Date().getFullYear();
         <div class="footer-signoff__bits">
           <Songs client:load />
           <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
-          <a href="/changelog" class="u-subtitle">Changelog</a>
+          <a href="/changelog" class="u-subtitle signoff-link">Changelog</a>
         </div>
     </div>
   </div>
@@ -201,7 +201,7 @@ const currentYear = new Date().getFullYear();
         color: var(--navy-lighter);
       }
 
-      a {
+      .signoff-link {
         color: var(--navy-lightest);
         transition: all 0.1s ease;
 

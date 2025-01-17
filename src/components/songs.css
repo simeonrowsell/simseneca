@@ -2,25 +2,48 @@
   display: flex;    
 
   a {
-    border: 1px solid var(--navy-lighter);
+    border: 2px solid var(--navy-lighter);
     border-right: 0;
     border-radius: 10px 0px 0px 10px;
     font-style: italic;
+    color: var(--navy-lightest);
+    transition: all 0.2s ease;
 
     &:hover {
       color: var(--navy-lightest);
       border-color: var(--navy-lightest);
       text-decoration: underline;
     }
-  }
+  }  
 
   button {
     background-color: var(--navy-lighter);
     border-radius: 0px 10px 10px 0px;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
 
     &:hover {
-      background-color: var(--navy-lightest);  
+      background-color: var(--navy-lightest);
+      cursor: pointer;
+    }
+
+    svg {
+      transition: all 0.2s ease;
+    }          
+  }
+
+  &.clicked {
+
+    a {
+      color: var(--beige);
+      border-color: var(--navy-lightest);
+    }
+
+    button {
+      
+      svg {
+        rotate: 90deg;
+        translate: 2px 2px;
+      }
     }
   }
 }

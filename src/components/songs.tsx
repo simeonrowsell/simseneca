@@ -63,8 +63,10 @@ export const Songs = ({
     setCurrentIndex((prevIndex) => (prevIndex + 1) % shuffledSongs.length);
     // add a clicked class
     const songWidget = document.querySelector('.songs-for-fun');
-    if (songWidget) {
+    const songButton = document.querySelector('#song-button');
+    if (songWidget) {      
       songWidget.classList.add('clicked');
+      songButton.classList.toggle('clicked');
       setTimeout(() => {
         songWidget.classList.remove('clicked');
       }, 200);
@@ -77,9 +79,10 @@ export const Songs = ({
     <>
       <div className={classNames("songs-for-fun")} >
         <a href={currentSong.url} class="u-font-body u-fontsize-0 u-pad-b-3xs u-pad-i-xs" target="_blank">{currentSong.title} 🡕</a>
-        <button class="u-pad-i-xs" onClick={handleNewSong} aria-label="Get another song">
-          <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.4777 4.87103L7.50017 8.84851V5.87468C5.99802 5.87468 4.58535 6.46003 3.5227 7.52268C2.46005 8.58533 1.87536 9.99733 1.8747 11.5002C1.8747 13.0023 2.46005 14.415 3.5227 15.4776C4.58535 16.5403 5.99735 17.125 7.50018 17.1256C9.00234 17.1256 10.415 16.5403 11.4777 15.4776C12.5403 14.415 13.125 13.003 13.1257 11.5002C13.1257 11.3742 13.121 11.2502 13.1131 11.1256L14.9838 11.001C15.1217 13.0825 14.3951 15.2118 12.8041 16.8028C9.87539 19.7315 5.12629 19.7315 2.19754 16.8028C-0.73121 13.874 -0.73121 9.12494 2.19754 6.19619C3.66191 4.73182 5.58171 3.99996 7.50084 4.00063L7.50017 0.893555L11.4777 4.87103Z" fill="white"/>
+        <button id="song-button" class="u-pad-i-xs" onClick={handleNewSong} aria-label="Get another song">
+          <svg class="" width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="test1" d="M0 15.9268C6.80488 15.9268 7.95195 14.1933 9.48359 10.3951C11.3981 5.64742 12.7317 4.5967 20.1951 4.5967M20.1951 4.5967L15.6737 8.11545M20.1951 4.5967L15.6737 0.999929" stroke="white" stroke-width="2"/>
+            <path id="test2" d="M0 3.63428C5.70732 3.63428 7.95195 5.36771 9.48359 9.16589C11.3981 13.9136 12.7317 15.8424 20.1951 15.8424M20.1951 15.8424L15.6737 12.3236M20.1951 15.8424L15.6737 19.0001" stroke="white" stroke-width="2"/>
           </svg>
         </button>
       </div>    

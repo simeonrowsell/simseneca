@@ -28,7 +28,14 @@
 
     svg {
       transition: all 0.2s ease;
-    }          
+      translate: 0 2px;
+    }
+
+    &.clicked {
+      svg {
+        scale: 1 -1;
+      }
+    }
   }
 
   &.clicked {
@@ -36,14 +43,6 @@
     a {
       color: var(--beige);
       border-color: var(--navy-lightest);
-    }
-
-    button {
-      
-      svg {
-        rotate: 90deg;
-        translate: 2px 2px;
-      }
     }
   }
 }

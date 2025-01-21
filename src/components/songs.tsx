@@ -38,7 +38,7 @@ export const Songs = ({
       url: 'https://www.youtube.com/watch?v=T1g5tVGZhfk'
     },
     {
-      title: 'Your hair is beautiful',
+      title: 'Oh your hair is beautiful',
       url: 'https://www.youtube.com/watch?v=O_WLw_0DFQQ'
     }
   ];

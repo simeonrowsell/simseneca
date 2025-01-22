@@ -12,7 +12,7 @@ tags: ["blogging"]
 draft: false
 ---
 
-A friend once suggested that before you get your first tattoo you should wait a year and if you're still thinking about it, you know it's something worth doing. That was over a year ago and I still haven't built up the courage to get the tattoo. 
+A friend once suggested that before you get your first tattoo you should wait a year and if you're still thinking about it, you know it's something worth doing. That was over a year ago and I still haven't built up the courage to get the tattoo (pathetic right). 
 
 BUT the thought of blogging has sat in the back of my head for years and I'm trying to listen to those things more and act on them with less judgement and more creativity. So in that spirit, welcome along.
 

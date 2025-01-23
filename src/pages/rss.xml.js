@@ -13,15 +13,14 @@ export async function GET(context) {
     const htmlContent = marked.parse(post.rawContent());
 
     return {      
-      ...post.frontmatter,
-      author: `Sim Seneca (sim@simseneca.design)`,
+      ...post.frontmatter,      
       content: `<![CDATA[${sanitizeHtml(htmlContent, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'a', 'b', 'u', 'i']),
         allowedAttributes: {
           a: ['href', 'title'],
           img: ['src', 'alt'],
         },
-      })}]]]]><![CDATA[>`,
+      })}<![CDATA[>`,
     };
   });
 

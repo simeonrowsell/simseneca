@@ -14,20 +14,14 @@ export async function GET(context) {
 
     return {      
       ...post.frontmatter,
-      // 'content:encoded': `<![CDATA[${sanitizeHtml(htmlContent, {
-      //   allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'a', 'b', 'u', 'i']),
-      //   allowedAttributes: {
-      //     a: ['href', 'title'],
-      //     img: ['src', 'alt'],
-      //   },
-      // })}]]>`,
+      author: `Sim Seneca (sim@simseneca.design)`,
       content: `<![CDATA[${sanitizeHtml(htmlContent, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'a', 'b', 'u', 'i']),
         allowedAttributes: {
           a: ['href', 'title'],
           img: ['src', 'alt'],
         },
-      })}]]>`,
+      })}]]]]><![CDATA[>`,
     };
   });
 

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post-layout.astro
 title: 'Starting a blog in 2025'
-pubDate: 2025-01-20
+pubDate: 2025-01-20T20:02Z
 edition: 01
 description: "I guess now is as good a time as any."
 author: 'Sim Seneca'

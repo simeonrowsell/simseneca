@@ -16,12 +16,12 @@ const currentYear = new Date().getFullYear();
   <div class="u-container main-footer--inner">
     <div class="footer-contact u-flex u-mrg-be-xl">
       <div class="footer-contact--blurb">
-        <p class="u-subtitle u-mrg-be-l">I love a chat</p>
-        <p class="u-fontsize-1 u-font-display u-mrg-be-2xl">Welcome to the footer where my contact details are, as you'd expect.</p>
         <div class="footer-profile">
           <Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />
           <h3 class="u-fontsize-1 u-font-display">It's me, Sim</h3>
         </div>
+        <p class="u-subtitle u-mrg-be-l footer-subtitle">I love a chat</p>
+        <p class="u-fontsize-1 u-font-display u-mrg-be-2xl footer-blurb">Welcome to the footer where my contact details are, as you'd expect...</p>        
       </div>
       <div class="footer-contact--details">
         <LargeEmail client:load />
@@ -29,17 +29,17 @@ const currentYear = new Date().getFullYear();
           <ul>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>linkedin 🡕</span>
+                <span>linkedin ↗</span>
               </a>
             </li>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>Instagram 🡕</span>
+                <span>Instagram ↗</span>
               </a>
             </li>
             <li role="none">
               <a href="/blog" role="menuitem" class="u-subtitle light">
-                <span>read.cv 🡕</span>
+                <span>read cv ↗</span>
               </a>
             </li>
           </ul>
@@ -96,7 +96,6 @@ const currentYear = new Date().getFullYear();
       z-index: 0;
       height: calc(100% - var(--space-3xl));
       background-color: var(--navy);
-      border-block-start: 2px solid var(--border-primary);
     }
 
     .main-footer--inner {
@@ -113,24 +112,44 @@ const currentYear = new Date().getFullYear();
     gap: var(--space-2xl);
     justify-content: space-between;
     align-items: end;
-    padding: var(--space-2xl);
+    padding: var(--space-xl) var(--space-m);
 
     .footer-contact--blurb {
-      flex-basis: 40%;
+      flex-basis: 100%;
+      max-width: 500px;
+      display: grid;
+      grid-template-areas:
+        "profile"
+        "subtitle"
+        "blurb"
+      ;
 
       .footer-profile {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
+        display: flex;        
+        flex-direction: column;
         gap: var(--space-s);
+        margin-block-end: var(--space-s);
+        grid-area: profile;
 
         img {
-          width: 80px;
+          width: 60px;
           border-radius: 50%;
           height: auto;
           border: 1px solid var(--navy);
         }
-      }            
+
+        h3 {
+          display: none;
+        }
+      }  
+      
+      .footer-subtitle {
+        grid-area: subtitle;
+      }
+
+      .footer-blurb {
+        grid-area: blurb;
+      }
     }
 
     .footer-contact--details {
@@ -138,6 +157,7 @@ const currentYear = new Date().getFullYear();
       ul {
         list-style: none;
         display: flex;
+        flex-direction: column;
         gap: var(--space-s);
         justify-content: end;
 
@@ -196,6 +216,7 @@ const currentYear = new Date().getFullYear();
       display: flex;
       gap: var(--space-s);
       align-items: center;
+      flex-wrap: wrap;
       
       p {
         color: var(--navy-lighter);
@@ -208,6 +229,68 @@ const currentYear = new Date().getFullYear();
         &:hover {
           color: var(--beige-light);
         }
+      }
+    }
+  }
+
+  @media (min-width: 550px) {
+
+    .footer-contact {
+      padding: var(--space-l);      
+
+      .footer-contact--details {
+
+        ul {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 900px) {  
+
+    .footer-contact {        
+      flex-wrap: nowrap;
+
+      .footer-contact--blurb {
+        flex-basis: 60%;
+        grid-template-areas:          
+          "subtitle"
+          "blurb"
+          "profile"
+        ;
+
+        .footer-profile {
+          align-items: center;
+          flex-direction: row;
+          margin-block-end: 0;
+
+          img {
+            width: 80px;
+          }
+
+          h3 {
+            display: block;
+          }
+        }
+      }
+
+      .footer-contact--details {
+
+        ul li a {
+          padding-inline-start: var(--space-2xs);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    
+    .footer-contact {
+      padding: var(--space-2xl);
+
+      .footer-contact--blurb {
+        flex-basis: 40%;
       }
     }
   }

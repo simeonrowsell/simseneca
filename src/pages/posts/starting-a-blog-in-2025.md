@@ -16,7 +16,7 @@ A friend once suggested that before you get your first tattoo you should wait a 
 
 BUT the thought of blogging has sat in the back of my head for years and I'm trying to listen to those things more and act on them with less judgement and more creativity. So in that spirit, welcome along.
 
-One the one hand, I have this feeling that by starting a blog in 2025 I've kind of missed the boat. It seems a bit 2010. I'm decades 'behind' people who have long archive pages. And do we need any more content? Are we short of opinion pieces? Obviously no.
+One the one hand, I have this feeling that by starting a blog in 2025 I've kind of missed the boat. It seems a bit 2010. I've well missed Twitter's golden years of ideas exchange. I'm decades behind people who have long archive pages. It's fairly clear at this point that online consuption habits don't particularly favour the silence of the written word. Do we need any more content? Are we short of opinion pieces? Obviously no.
 
 But it depends why you're writing.
 

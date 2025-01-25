@@ -18,11 +18,9 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
 				</figure>
 				<div class="home-hero__intro">
-					<img src="/sim_intro.svg" class="u-mrg-bs-s" alt="" role="presentation">
 					<div>
-						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, I'm Sim</p>
-						<h1 class="u-fontsize-6 u-font-display u-mrg-be-xs">A full-stack<br /> Product Designer</h1>
-						<h2 class="u-fontsize-3 u-font-display u-mrg-be-l">who also codes and does creative generalist stuff and whatever</h2>
+						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, my name's Sim</p>
+						<h1 class="u-fontsize-6 u-font-display u-mrg-be-m">I'm a full-stack<br /> Product Designer</h1>
 						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">{bio_blurb} Seeking something real in the digital world. Nice to have you along.</h3>
 						<div class="current-status u-flex">
 							<div class="orb"></div>
@@ -62,7 +60,7 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 
 			h1,
 			h2 {
-				color: var(--accent-1);
+				color: var(--accent-2);
 			}
 
 			h3 {
@@ -73,7 +71,7 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 			.current-status {
 				gap: var(--space-2xs);
 				align-items: center;
-				color: var(--accent-2);
+				color: var(--accent-1);
 			}
 		}		
 
@@ -125,14 +123,10 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 					display: block;
 					opacity: .4;
 				}
-
-				.mobile-intro {
-					display: none;
-				}
 			}
 
 			.home-hero__image {
-				max-width: 400px;
+				max-width: 320px;
 
 				img {
 					border-radius: 10px 10px 0px 10px;
@@ -140,9 +134,9 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 
 				figcaption {
 					display: inline-flex;
-					background: var(--bg-third);
+					background: var(--bg-fourth);
 					border-radius: 0px 0px 10px 10px;
-					border: 2px solid var(--border-secondary);
+					border: 2px solid var(--border-third);
 					border-top: none;
 				}
 			}

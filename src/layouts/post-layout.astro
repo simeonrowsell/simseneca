@@ -31,7 +31,7 @@ const postDateFormatted = formatPostDate(frontmatter.pubDate);
 				</time>				
 			</header>
 			<div class="post-body u-mrg-be-3xl">
-				<div class="post-body__content u-wysiwyg u-pad-l">					
+				<div class="post-body__content u-wysiwyg">					
 					<slot />
 				</div>
 				<div class="post-body__bio u-pad-b-l u-pad-is-l">
@@ -74,12 +74,12 @@ const postDateFormatted = formatPostDate(frontmatter.pubDate);
 	.post-body {
 		display: flex;
 		flex-direction: row;
-		gap: var(--space-xl);
 		justify-content: space-between;
-		flex-wrap: wrap;
+		flex-wrap: wrap;		
 
 		.post-body__content {
-			max-width: min(760px, 100%);
+			max-width: min(700px, 100%);
+			padding: var(--space-l) 0;			
 		}
 
 		.post-body__bio {
@@ -88,7 +88,8 @@ const postDateFormatted = formatPostDate(frontmatter.pubDate);
 			gap: var(--space-m);
 			height: fit-content;
 			/* TODO */
-			max-width: max(350px, 18vw);
+			max-width: max(350px, 18vw);			
+			display: none;
 			
 			p {
 				text-wrap: pretty;
@@ -107,6 +108,20 @@ const postDateFormatted = formatPostDate(frontmatter.pubDate);
           border: 2px solid var(--border-primary);
         }
       }
+
+			@media (min-width: 1206px) {
+				display: flex;
+			}
+		}
+	}
+
+	@media (min-width: 700px) {
+
+		.post-body {
+
+			.post-body__content {
+				padding: var(--space-l);
+			}
 		}
 	}
 

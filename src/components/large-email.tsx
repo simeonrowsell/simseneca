@@ -34,7 +34,7 @@ export const LargeEmail = ({
         onClick={handleCopyEmail}
       >
         <button
-          className={classNames("large-email__button", "u-pad-xs",
+          className={classNames("large-email__button",
             {
               "copied": isCopied, // Add copied class
               "hovered": isHovered // Add hovered class
@@ -47,7 +47,7 @@ export const LargeEmail = ({
               {"hovered": isHovered} // Add hovered class
             )}
           >
-            <p className={classNames("label", "u-font-display", "u-fontsize-2")}>{email}</p>
+            <p className={classNames("label", "u-font-display")}>{email}</p>
           </address>
         
           {isCopied ? (

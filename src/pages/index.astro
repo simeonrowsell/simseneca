@@ -9,6 +9,22 @@ import { GLOBAL_STRINGS } from '../constants/strings';
 const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 ---
 
+<script>
+	// import { gsap } from "gsap";
+
+	// gsap.fromTo(
+	// 	'.home-hero__image, .home-hero__intro',
+	// 	{ 
+	// 		opacity: 0,
+	// 		// y: 20,
+	// 	},
+	// 	{
+	// 		opacity: 1,
+	// 		// y: 0,
+	// 	}
+	// );
+</script>
+
 <BaseLayout>
 	<section class="home-hero-wrapper">
 		<div class="u-container">
@@ -49,7 +65,7 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 			gap: var(--space-xs);
 			max-width: 800px;
 			flex-basis: 100%;
-			opacity: 0;
+			/* opacity: 0; */
 
 			img {
 				display: none;
@@ -80,7 +96,7 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 			flex: 1;
 			max-width: 120px;
 			text-align: right;
-			opacity: 0;
+			/* opacity: 0; */
 
 			img {
 				width: 100%;
@@ -145,19 +161,3 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 		}
 	}
 </style>
-
-<script>
-	import { gsap } from "gsap";
-
-	gsap.fromTo(
-		'.home-hero__image, .home-hero__intro',
-		{ 
-			opacity: 0,
-			y: 20,
-		},
-		{
-			opacity: 1,
-			y: 0,
-		}
-	);
-</script>

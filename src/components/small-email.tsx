@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './small-email.css';
 
-/** If people want to email us they can click this button and their dreams will come true. */
+/** If people want to email me they can click this button and their dreams will come true. */
 export const SmallEmail = ({
   label,
   ...props
@@ -13,7 +13,7 @@ export const SmallEmail = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const email = "sim@simseneca.design";
-  const emailLabel = label ?? "Email";
+  const emailLabel = label ?? "Get email";
 
   // Handle the copy to clipboard
   const handleCopyEmail = async () => {

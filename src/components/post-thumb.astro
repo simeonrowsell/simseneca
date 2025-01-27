@@ -33,12 +33,33 @@ const postDateFormatted = formatPostDate(pubDate);
 </li>
 
 <style>
+
   .post-thumb {
+    --desktop-block-padding: var(--space-l);
+
     list-style-type: none;
+    padding-block: var(--space-l);
+
+    @media (min-width: 600px) {
+      padding-inline-start: var(--space-m);
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    @media (min-width: 1000px) {
+      padding-inline-start: 0;
+      border-inline-start: 0;
+      padding-block: 0;
+    }
 
     a {
       display: flex;
       border-radius: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @media (min-width: 1000px) {
+        flex-direction: row;
+      }
 
       &:hover {
 
@@ -48,21 +69,23 @@ const postDateFormatted = formatPostDate(pubDate);
           color: var(--accent-2);
         }
 
-        .post-thumb__meta::after {
+        .post-thumb__content::before {
           height: 100%;
       }
     }
 
-    .post-thumb__meta,
-    .post-thumb__content {
-      padding-block: var(--space-m);
-    }
-
     .post-thumb__meta {
-      padding-inline-end: var(--space-xl);
-      text-align: right;
-      min-width: 250px;
-      position: relative;
+      min-width: 250px;      
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-s);
+
+      @media (min-width: 1000px) {
+        display: block;
+        padding-inline-end: var(--space-xl);
+        text-align: right;
+        padding-block: var(--desktop-block-padding);
+      }
 
       .edition {
         color: var(--accent-1);
@@ -77,24 +100,19 @@ const postDateFormatted = formatPostDate(pubDate);
 
       time {
         color: var(--text-secondary);
-      }
-
-      &::after {
-        content: '';
-        right: -3px;
-        top: 0;
-        width: 4px;
-        height: 0%;
-        background-color: var(--accent-2);
-        position: absolute;
-        transition: height .2s ease;
-      }
+      }      
     }
 
     .post-thumb__content {
       flex: 1;
-      padding-inline-start: var(--space-xl);
-      border-inline-start: 2px solid var(--border-primary);
+      position: relative;
+      padding-block-start: var(--space-xs);      
+
+      @media (min-width: 1000px) {
+        border-inline-start: 2px solid var(--border-primary);
+        padding-inline-start: var(--space-xl);
+        padding-block: var(--desktop-block-padding);
+      }
 
       h2,
       .description {
@@ -103,6 +121,17 @@ const postDateFormatted = formatPostDate(pubDate);
 
       .description {
         color: var(--text-secondary);
+      }
+
+      &::before {
+        content: '';
+        left: -3px;
+        top: 0;
+        width: 4px;
+        height: 0%;
+        background-color: var(--accent-2);
+        position: absolute;
+        transition: height .2s ease;
       }
     }
   }

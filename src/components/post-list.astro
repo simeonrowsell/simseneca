@@ -49,15 +49,24 @@ const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - 
 </section>
 
 <style>
-  .post-list-intro {
-		/* .post-list padding + post-thumb__meta width */
-		margin-inline-start: calc(var(--space-xl) + 250px);
-		padding-inline-start: var(--space-xl);
-		padding-block: var(--space-m);
-		border-inline-start: 2px solid var(--border-primary);
+  .post-list-intro {		
+		padding-block: var(--space-m);		
 		display: flex;
 		justify-content: space-between;
+    align-items: center;
     flex-direction: row-reverse;
+
+    @media (min-width: 600px) {
+      border-inline-start: 2px solid var(--border-primary);
+      margin-inline-start: var(--space-xl);    
+      padding-inline-start: var(--space-m);
+    }
+
+    @media (min-width: 1000px) {
+      /* .post-list padding + post-thumb__meta width */
+		  margin-inline-start: calc(var(--space-xl) + 250px);
+      padding-inline-start: var(--space-xl);
+    }
 
 		.intro {
 			color: var(--text-secondary);
@@ -71,20 +80,35 @@ const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - 
 	}
 
 	.post-list {
-		padding-inline-start: var(--space-xl);
 		max-width: max(900px, 70%);
 
+    @media (min-width: 600px) {
+      padding-inline-start: var(--space-xl);
+    }
+
 		.post-thumb:last-of-type {
-			margin-bottom: ;
+
+      .post-thumb__meta,
+      .post-thumb__content {
+        /* padding-block-end: 0; */
+      }
 		}
 
 		&::after {
 			content: '';
 			display: block;
 			height: var(--space-2xl);
-			border-inline-end: 2px solid var(--border-primary);
-			/* post-thumb__meta width + 2 to make up for border */
-			width: calc(250px + 2px);
+      margin-inline-start: 0;
+			width: 2px;      
+
+      @media (min-width: 600px) {
+        border-inline-end: 2px solid var(--border-primary);
+      }
+
+      @media (min-width: 1000px) {
+        /* post-thumb__meta width */
+        margin-inline-start: 250px;
+      }
 		}
 	}
 </style>

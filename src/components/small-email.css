@@ -1,5 +1,4 @@
 .small-email {
-  height: 34px;
 
   &.hovered {
     cursor: pointer;
@@ -59,12 +58,16 @@
   border: 2px solid var(--border-primary);
   z-index: 1000;
   animation: fadeInOut 2.5s ease;
-  display: flex;
+  display: inline-flex;  
   gap: var(--space-2xs);
   align-items: baseline;
 
-  .copied-email-toast__email {    
+  .copied-email-toast__email {
     color: var(--white);
+  }
+
+  .copied-email-toast__message {
+    white-space: nowrap;
   }
 }
 

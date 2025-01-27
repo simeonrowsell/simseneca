@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import './small-email.css';
 
-/** If people want to email me they can click this button and their dreams will come true. */
+/** If people want to email us they can click this button and their dreams will come true. */
 export const SmallEmail = ({
   label,
   ...props
@@ -67,7 +67,7 @@ export const SmallEmail = ({
       {isCopied && (
         <div className={classNames("copied-email-toast", "u-pad-i-l u-pad-b-m", "u-fontsize-1")}>
           <span className={classNames("copied-email-toast__email", "u-font-display")}>sim@simseneca.co.uk</span> 
-          <span>copied ✌️</span>
+          <span className={classNames("copied-email-toast__message")}>copied ✌️</span>
         </div>
       )}      
     </>

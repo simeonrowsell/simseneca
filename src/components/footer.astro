@@ -1,6 +1,7 @@
 ---
 import { LargeEmail } from "./large-email.tsx";
 import { Songs } from "./songs.tsx";
+import ThemeToggle from "./theme-toggle.astro";
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile_square.png';
@@ -52,19 +53,20 @@ const currentYear = new Date().getFullYear();
       </ul>
     </nav>
     <hr class="u-mrg-be-m" />
-    <div class="footer-signoff u-flex">
-        <div class="footer-signoff__love u-flex">
-          <p class="u-subtitle">Made with</p>
-          <Image src={figmaIcon} alt="Figma icon" />
-          <Image src={astroIcon} alt="Astro icon" />
-          <p class="u-subtitle">and</p>
-          <Image src={heartIcon} alt="Heart icon" />
-        </div>
-        <div class="footer-signoff__bits">
-          <Songs client:load />
-          <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
-          <a href="/changelog" class="u-subtitle signoff-link">Changelog</a>
-        </div>
+    <div class="footer-signoff u-flex">      
+      <div class="footer-signoff__love u-flex">
+        <p class="u-subtitle">Made with</p>
+        <Image src={figmaIcon} alt="Figma icon" />
+        <Image src={astroIcon} alt="Astro icon" />
+        <p class="u-subtitle">and</p>
+        <Image src={heartIcon} alt="Heart icon" />
+      </div>
+      <div class="footer-signoff__bits">
+        <ThemeToggle />
+        <Songs client:load />
+        <p class="u-subtitle">© {currentYear}, Simeon Seneca</p>
+        <a href="/changelog" class="u-subtitle signoff-link">Changelog</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -144,7 +146,11 @@ const currentYear = new Date().getFullYear();
         display: flex;
         flex-direction: column;
         gap: var(--space-s);
-        justify-content: end;
+        justify-content: start;
+
+        @media (min-width: 900px) {
+          justify-content: end;
+        }
 
         li a {
           --inline-padding: var(--space-2xs);
@@ -202,6 +208,14 @@ const currentYear = new Date().getFullYear();
       gap: var(--space-s);
       align-items: center;
       flex-wrap: wrap;
+
+      button[data-theme-toggle] {
+        display: block;
+
+        @media (min-width: 920px) {
+          display: none;
+        }
+      }
       
       p {
         color: var(--navy-lighter);

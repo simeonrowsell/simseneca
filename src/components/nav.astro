@@ -7,44 +7,40 @@ import ThemeToggle from "./theme-toggle.astro"
 <div class="u-container">
   <header class="main-header">  
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="main-nav" aria-label="Main navigation" role="navigation">
       <ul class="main-nav__menu" role="menu">
-        <li class="logo">
+        <li class="logo menu-item is-mobile is-desktop">
           <a href="/" class="u-font-display" aria-label="Sim Seneca Home">Sim Seneca</a>
         </li>
-        <li role="none">
+        <li class="menu-item" role="none">
           <a href="/blog" role="menuitem" class="u-subtitle">
             <span>Blog</span>
           </a>
         </li>
-        <li role="none">
+        <li class="menu-item" role="none">
           <button role="menuitem" aria-disabled="true" tabindex="-1" class="u-subtitle disabled-link" disabled>Work</button>
         </li>
-        <li role="none">
+        <li class="menu-item" role="none">
           <button role="menuitem" aria-disabled="true" tabindex="-1" class="u-subtitle disabled-link" disabled>About</button>
         </li>
       </ul>
     </nav>  
 
-    <nav class="secondary-nav" aria-label="Contact navigation">
+    <nav class="secondary-nav" aria-label="Contact navigation" role="navigation">
       <ul class="secondary-nav__menu" role="menu">
-        <li class="secondary-nav__menuitem">
+        <li class="menu-item email-widget is-mobile is-desktop">
           <SmallEmail client:load />
         </li>
-        <!-- <li>
+        <!-- <li class="menu-item">
           <a href="https://read.cv/simseneca" class="u-subtitle" role="menuitem">
             <span>read cv ↗</span>
           </a>
         </li> -->
-        <li class="secondary-nav__menuitem">
+        <li class="menu-item">
           <ThemeToggle />
         </li>
-        <li class="secondary-nav__hamburger" >
-          <button
-            aria-label="Toggle mobile navigation"
-            class="hamburger-button"
-
-          >
+        <li class="menu-item is-mobile" >
+          <button aria-label="Toggle mobile navigation" class="hamburger-button">
             <span class="u-subtitle">Menu</span>
             <svg width="25" height="10" viewBox="0 0 25 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1H24" stroke="black" stroke-width="2" stroke-linecap="round"/>
@@ -55,38 +51,32 @@ import ThemeToggle from "./theme-toggle.astro"
       </ul>
     </nav>
 
-    <nav 
-      id="mobile-nav" 
-      class="mobile-nav  {isMobileNavVisible ? 'mobile-nav__visible' : ''}"
-      role="navigation"
-    >
-      <div class="mobile-nav__header">
-        <button
-          aria-label="Close mobile navigation"
-          class="close-button"
-          
-        >
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" role="navigation">
+      <div class="mobile-nav__header">        
+        <button class="close-button" aria-label="Close mobile navigation" >
           <span class="u-subtitle">Close</span>
           <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.36816 18L17.6316 1.73651" stroke="black" stroke-width="2" stroke-linecap="round"/>
             <path d="M1.36816 1.99994L17.6316 18.2634" stroke="black" stroke-width="2" stroke-linecap="round"/>
           </svg>
-        </button>
+        </button>        
       </div>
       <ul class="mobile-nav__menu" role="menu">
-        <li role="none">
-          <a href="/blog" role="menuitem">
+        <li class="menu-item" role="none">
+          <a href="/blog">
             <span>Blog</span>
           </a>
         </li>
-        <li role="none">
+        <li class="menu-item" role="none">
           <button role="menuitem" aria-disabled="true" tabindex="-1" class="disabled-link" disabled>Work</button>
         </li>
-        <li role="none">
+        <li class="menu-item" role="none">
           <button role="menuitem" aria-disabled="true" tabindex="-1" class="disabled-link" disabled>About</button>
         </li>          
-      </ul>
-      <LargeEmail client:load />
+      </ul>      
+      <div class="mobile-nav__footer">
+        <LargeEmail client:load />        
+      </div>
     </nav>
 
   </header>
@@ -106,7 +96,7 @@ import ThemeToggle from "./theme-toggle.astro"
   .secondary-nav {
     display: flex;
     flex-direction: row;
-    padding: var(--space-m) 0;
+    padding: var(--space-s) 0;
   }
 
   .main-nav__menu,
@@ -116,11 +106,37 @@ import ThemeToggle from "./theme-toggle.astro"
     align-items: baseline;
     flex-wrap: wrap;
 
-    li {
+    .menu-item {
       margin-right: var(--space-s);
 
       &:last-of-type {
         margin-right: 0;        
+      }
+
+      &:not(.is-mobile) {
+        margin-right: var(--space-2xs);
+        display: none;
+
+        @media (min-width: 920px) {
+          display: block;
+        }
+
+        button[data-theme-toggle] {    
+          transform: translateY(12px);
+        }
+      }
+
+      &.is-mobile {
+        display: block;
+
+        @media (min-width: 920px) {
+          display: none;
+        }
+      }
+
+      /* override for Logo menu-item */
+      &.is-desktop {
+        display: block;
       }
 
       &.logo a {
@@ -164,34 +180,31 @@ import ThemeToggle from "./theme-toggle.astro"
     padding-left: var(--space-s);
     border-left: none;
 
-    @media (min-width: 900px) {
+    @media (min-width: 920px) {
       border-left: 2px solid var(--border-primary);
     }
 
-    .secondary-nav__menuitem {
-      margin-right: var(--space-2xs);
-      display: none;
+    .secondary-nav__menu {
 
-      @media (min-width: 900px) {
-        display: block;
-      }
+      .email-widget {
+        display: none;
 
-      button[data-theme-toggle] {    
-        transform: translateY(12px);
+        @media (min-width: 600px) {
+          display: block;
+        }
       }
     }
 
-    .secondary-nav__hamburger button {
+    .hamburger-button {
       color: var(--text-primary);
       padding: var(--space-xs) var(--space-s);
-      border-radius: 10px;
+      border-radius: 5px;
       border: 2px solid var(--border-primary);
-      display: flex;
-      gap: var(--space-xs);
+      gap: var(--space-2xs);
       align-items: center;
 
-      @media (min-width: 900px) {
-        display: none;
+      &:hover {
+        cursor: pointer;
       }
 
       svg path {
@@ -204,26 +217,41 @@ import ThemeToggle from "./theme-toggle.astro"
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 500;
-    display: none;
+    z-index: 500;    
     background-color: var(--purple);
-    padding: var(--space-m) var(--space-s-2xl);
+    padding: var(--space-s) var(--space-s-2xl);
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    height: 100vh;
-    width: 100vw;
-
-    .close-button {
-      padding: var(--space-xs);
-      background-color: transparent;
-      border: none;
-    }
+    height: 100lvh;
+    width: 100lvw;
+    display: none;
 
     &.mobile-nav__visible {
       display: flex;
+    }
+
+    .mobile-nav__header {
+
+      .close-button {
+        width: 121px;
+        background-color: transparent;
+        color: var(--text-primary);
+        padding: var(--space-xs) var(--space-s);
+        border-radius: 5px;
+        border: 2px solid var(--border-primary);
+        display: flex;
+        gap: var(--space-2xs);
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        svg path {
+          stroke: var(--text-primary);
+        }
+      }
     }
 
     .mobile-nav__menu {
@@ -243,6 +271,16 @@ import ThemeToggle from "./theme-toggle.astro"
           padding: 0;
           font-family: var(--font-display);
           font-size: var(--fontsize-5);
+          color: var(--beige-dark);
+
+          &:hover {
+            color: var(--white);
+            text-decoration: none;
+          }
+        }
+
+        button:disabled {
+          opacity: .5;
         }
 
         button:after {
@@ -256,44 +294,60 @@ import ThemeToggle from "./theme-toggle.astro"
 </style>
 
 <script>
+  
   let isMobileNavVisible = false; // Track the visibility state
 
-const toggleMobileNav = () => {
-  const mobileNav = document.querySelector('.mobile-nav');
+  const toggleMobileNav = () => {
+    const mobileNav = document.querySelector('.mobile-nav');
+    const siteBody = document.querySelector('body');
 
-  if (!isMobileNavVisible) {
-    // Show the mobile nav
-    if (mobileNav) {
-      mobileNav.classList.add('mobile-nav__visible');
-    }
-  } else {
-    // Hide the mobile nav
-    if (mobileNav) {
-      mobileNav.classList.remove('mobile-nav__visible');
-    }
-      // Wait for the opacity transition before setting display: none
-    setTimeout(() => {
-      if (!isMobileNavVisible) {
-        if (mobileNav) {
-          mobileNav.style.display = 'none';
-        }
+    if (!isMobileNavVisible) {
+      // Show the mobile nav
+      if (mobileNav) {
+        mobileNav.classList.add('mobile-nav__visible');
+        siteBody.style.overflow = "hidden";
       }
-    }, 300); // Match the CSS transition duration (0.3s)
+    } else {
+      // Hide the mobile nav
+      if (mobileNav) {
+        mobileNav.classList.remove('mobile-nav__visible');
+        siteBody.style.overflow = "auto";
+      }
+        // Wait for the opacity transition before setting display: none
+      setTimeout(() => {
+        if (!isMobileNavVisible) {
+          if (mobileNav) {
+            mobileNav.style.display = 'none';
+          }
+        }
+      }, 300); // Match the CSS transition duration (0.3s)
+    }
+
+    isMobileNavVisible = !isMobileNavVisible; // Toggle the state
+  };
+
+  // Event listener for the toggle button
+  const hamburger = document.querySelector('.hamburger-button');
+  const closeButton = document.querySelector('.close-button');
+
+  const handleToggle = () => {
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    // When showing, ensure display is set immediately
+    if (!isMobileNavVisible) {
+      if(mobileNav) {
+        mobileNav.style.display = 'flex';
+      }      
+    }
+
+    toggleMobileNav();
+  };
+
+  if(hamburger) {
+    hamburger.addEventListener('click', handleToggle);
+  }
+  if(closeButton) {
+    closeButton.addEventListener('click', handleToggle);
   }
 
-  isMobileNavVisible = !isMobileNavVisible; // Toggle the state
-};
-
-// Event listener for the toggle button
-const hamburger = document.querySelector('.hamburger-button');
-hamburger.addEventListener('click', () => {  
-  const mobileNav = document.querySelector('.mobile-nav');
-
-  // When showing, ensure display is set immediately
-  if (!isMobileNavVisible) {
-    mobileNav.style.display = 'flex';
-  }
-
-  toggleMobileNav();
-});
 </script>

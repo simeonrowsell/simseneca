@@ -37,24 +37,26 @@ let currentTheme = getCurrentTheme();
 // 2. Update the <html> element
 updateThemeOnHtml(currentTheme);
 
-// 3. Update the <button>
-const themeButton = document.querySelector("[data-theme-toggle]");
-updateThemeOnButton(themeButton, currentTheme);
+// 3. Update all buttons
+const themeButtons = document.querySelectorAll("[data-theme-toggle]");
+themeButtons.forEach(button => updateThemeOnButton(button, currentTheme));
 
-// 4. Add event listener to the button
-themeButton.addEventListener("click", () => {
-  // check the current theme and set the opposite
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  
-  // update theme attribute on HTML to switch theme in CSS
-  updateThemeOnHtml(newTheme);
+// 4. Add event listeners to all buttons
+themeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // check the current theme and set the opposite
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    
+    // update theme attribute on HTML to switch theme in CSS
+    updateThemeOnHtml(newTheme);
 
-  // update the button text
-  updateThemeOnButton(themeButton, newTheme);
+    // update all buttons text
+    themeButtons.forEach(btn => updateThemeOnButton(btn, newTheme));
 
-  // update in local storage
-  localStorage.setItem("theme", newTheme);
+    // update in local storage
+    localStorage.setItem("theme", newTheme);
 
-  // update the currentThemeSetting in memory
-  currentTheme = newTheme;
+    // update the currentThemeSetting in memory
+    currentTheme = newTheme;
+  });
 });

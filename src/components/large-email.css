@@ -70,11 +70,22 @@
   z-index: 1000;
   animation: fadeInOut 2.5s ease;
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2xs);
   align-items: baseline;
+  padding: var(--space-s) var(--space-m);
+
+  @media (min-width: 500px) {
+    flex-wrap: nowrap;
+    padding: var(--space-m) var(--space-l);    
+  }
 
   .copied-email-toast__email {    
     color: var(--white);
+  }
+
+  .copied-email-toast__message {
+    white-space: nowrap;
   }
 }
 

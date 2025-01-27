@@ -78,7 +78,7 @@ export const Songs = ({
   return (
     <>
       <div className={classNames("songs-for-fun")} >
-        <a href={currentSong.url} class="u-font-body u-fontsize-0 u-pad-b-3xs u-pad-i-xs" target="_blank">{currentSong.title} 🡕</a>
+        <a href={currentSong.url} class="u-font-body u-fontsize-0 u-pad-b-3xs u-pad-i-xs" target="_blank">{currentSong.title} ↗</a>
         <button id="song-button" class="u-pad-i-xs" onClick={handleNewSong} aria-label="Get another song">
           <svg class="" width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="test1" d="M0 15.9268C6.80488 15.9268 7.95195 14.1933 9.48359 10.3951C11.3981 5.64742 12.7317 4.5967 20.1951 4.5967M20.1951 4.5967L15.6737 8.11545M20.1951 4.5967L15.6737 0.999929" stroke="white" stroke-width="2"/>

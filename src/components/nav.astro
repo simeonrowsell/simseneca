@@ -40,7 +40,7 @@ import ThemeToggle from "./theme-toggle.astro"
           <ThemeToggle />
         </li>
         <li class="menu-item is-mobile" >
-          <button aria-label="Toggle mobile navigation" class="hamburger-button">
+          <button aria-label="Toggle mobile navigation" class="hamburger-button" data-testid="open-mobile-nav">
             <span class="u-subtitle">Menu</span>
             <svg width="25" height="10" viewBox="0 0 25 10" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1H24" stroke="black" stroke-width="2" stroke-linecap="round"/>
@@ -51,9 +51,9 @@ import ThemeToggle from "./theme-toggle.astro"
       </ul>
     </nav>
 
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" role="navigation">
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" role="navigation" data-testid="mobile-nav">
       <div class="mobile-nav__header">        
-        <button class="close-button" aria-label="Close mobile navigation" >
+        <button class="close-button" aria-label="Close mobile navigation" data-testid="close-mobile-nav">
           <span class="u-subtitle">Close</span>
           <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.36816 18L17.6316 1.73651" stroke="black" stroke-width="2" stroke-linecap="round"/>
@@ -313,14 +313,6 @@ import ThemeToggle from "./theme-toggle.astro"
         mobileNav.classList.remove('mobile-nav__visible');
         siteBody.style.overflow = "auto";
       }
-        // Wait for the opacity transition before setting display: none
-      setTimeout(() => {
-        if (!isMobileNavVisible) {
-          if (mobileNav) {
-            mobileNav.style.display = 'none';
-          }
-        }
-      }, 300); // Match the CSS transition duration (0.3s)
     }
 
     isMobileNavVisible = !isMobileNavVisible; // Toggle the state
@@ -330,24 +322,11 @@ import ThemeToggle from "./theme-toggle.astro"
   const hamburger = document.querySelector('.hamburger-button');
   const closeButton = document.querySelector('.close-button');
 
-  const handleToggle = () => {
-    const mobileNav = document.querySelector('.mobile-nav');
-
-    // When showing, ensure display is set immediately
-    if (!isMobileNavVisible) {
-      if(mobileNav) {
-        mobileNav.style.display = 'flex';
-      }      
-    }
-
-    toggleMobileNav();
-  };
-
   if(hamburger) {
-    hamburger.addEventListener('click', handleToggle);
+    hamburger.addEventListener('click', toggleMobileNav);
   }
   if(closeButton) {
-    closeButton.addEventListener('click', handleToggle);
+    closeButton.addEventListener('click', toggleMobileNav);
   }
 
 </script>

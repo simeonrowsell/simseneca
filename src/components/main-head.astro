@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+
+import { GLOBAL_STRINGS } from '../constants/strings';
+const site_title = GLOBAL_STRINGS.SITE_TITLE;
+const site_desc = GLOBAL_STRINGS.SITE_DESC;
+
+// Props for the page title and description
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+// set some defaults
+const {
+	title = site_title ? site_title : 'Sim Seneca | Product designer, human being',
+	description = site_desc ? site_desc : 'Sim Seneca\'s space on the web',
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<!-- Enabling RSS feed auto-discovery -->
+<!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Sim Seneca | Product designer, human being"
+    href={new URL("rss.xml", Astro.site)}
+/>
+
+<!-- Theme scripts -->
+<!-- Inline script to set theme before render -->
+<script is:inline>
+	(function () {
+		const localStorageTheme = localStorage.getItem("theme");
+  	const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+		const theme = localStorageTheme || (systemSettingDark ? "dark" : "light");
+		document.documentElement.setAttribute("data-theme", theme);
+		const themeButton = document.querySelector("[data-theme-toggle]");
+		themeButton.setAttribute("data-theme-value", currentTheme);
+	})();
+</script>
+<!-- Then bring in the script to watch for button clicks -->
+<script>
+	import "../scripts/theme-toggle.js";
+	import "../scripts/theme-general.js";
+</script>

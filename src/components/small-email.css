@@ -1,0 +1,83 @@
+.small-email {
+
+  &.hovered {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .small-email__button {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2xs);
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    transition: 2s ease background-color;
+    border-radius: 5px;
+    color: var(--text-primary);
+
+    svg path {
+      fill: var(--text-primary);
+    }
+
+    &.hovered {
+      cursor: pointer;
+      color: var(--accent-2);
+
+      svg path {
+        fill: var(--accent-2);
+      }
+    }
+
+    &.copied {
+      cursor: pointer;
+      background: var(--bg-fourth);
+      transition-duration: 0.3s;
+    }    
+
+    address {
+      /* Override italic browser default */
+      font-style: normal;
+      font-size: var(--fontsize-1);
+    }
+
+    svg { 
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.copied-email-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--purple);
+  color: var(--beige-dark);
+  border-radius: 10px;
+  border: 2px solid var(--border-primary);
+  z-index: 1000;
+  animation: fadeInOut 2.5s ease;
+  display: inline-flex;  
+  gap: var(--space-2xs);
+  align-items: baseline;
+
+  .copied-email-toast__email {
+    color: var(--white);
+  }
+
+  .copied-email-toast__message {
+    white-space: nowrap;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { 
+    opacity: 0;
+    bottom: 0px;
+  }
+  30%, 70% { 
+    opacity: 1; 
+    bottom: 20px;
+  }
+}

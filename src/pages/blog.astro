@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+import PostList from "../components/post-list.astro"
+---
+
+<BaseLayout>
+	
+  <section class="blog-intro-wrapper">
+    <div class="u-container">
+      <div class="blog-intro u-mrg-bs-4xl u-pad-be-l u-flex">
+        <h1 class="u-font-display u-fontsize-3">
+          Wittering about design, the internet, building responsible products, being alive, that sort of thing. Reclaiming a space for myself on the indie web.
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <PostList label="All posts" link="rss" />
+	
+</BaseLayout>
+
+<style>
+  .blog-intro {
+    gap: var(--space-l);
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--border-primary);
+
+    h1 {
+      color: var(--accent-1);
+      max-width: 1000px;
+    }
+  }
+</style>

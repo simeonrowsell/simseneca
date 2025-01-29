@@ -1,0 +1,131 @@
+.large-email {
+  display: inline-flex;
+
+  &.hovered {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .large-email__button {
+    --colour: var(--beige);
+    --hovered: var(--beige-dark);
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-s);
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    transition: 2s ease background-color, .1s ease color;
+    border-radius: 5px;
+    color: var(--colour);
+    padding: 0;
+
+    svg path {
+      fill: var(--colour);
+      transition: .1s ease fill;
+    }
+
+    &.hovered {
+      cursor: pointer;
+      color: var(--hovered);
+
+      svg path {
+        fill: var(--hovered);
+      }
+    }
+
+    &.copied {
+      cursor: pointer;
+      background: transparent;
+      transition-duration: 0.3s;
+    }    
+
+    address {
+      /* Override italic browser default */
+      font-style: normal;
+      font-size: var(--fontsize-1);
+      transform: translateY(-1px);
+
+      .label {
+        font-size: var(--fontsize-0);
+      }
+    }
+
+    svg { 
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.copied-email-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--purple);
+  color: var(--beige-dark);
+  border-radius: 10px;
+  border: 2px solid var(--border-primary);
+  z-index: 1000;
+  animation: fadeInOut 2.5s ease;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  align-items: baseline;
+  justify-content: center;
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--fontsize-0);
+
+  @media (min-width: 500px) {
+    flex-wrap: nowrap;
+    padding: var(--space-m) var(--space-l);    
+    font-size: var(--fontsize-1);
+  }
+
+  .copied-email-toast__email {    
+    color: var(--white);
+  }
+
+  .copied-email-toast__message {
+    white-space: nowrap;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { 
+    opacity: 0;
+    bottom: 0px;
+  }
+  30%, 70% { 
+    opacity: 1; 
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 470px) {
+
+  .large-email {
+
+    .large-email__button {
+      padding: var(--space-xs);
+
+      &.copied {
+        background: var(--purple-dark);
+      }
+
+      address {
+        transform: translateY(-4px);
+
+        .label {
+          font-size: var(--fontsize-2);
+        }
+      }
+      
+      svg { 
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

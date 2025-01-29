@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+import PostList from "../components/post-list.astro"
+
+import { Image } from 'astro:assets';
+import simProfileImage from '../assets/images/sim_profile.png';
+
+import { GLOBAL_STRINGS } from '../constants/strings';
+const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
+---
+
+<script>
+	// import { gsap } from "gsap";
+
+	// gsap.fromTo(
+	// 	'.home-hero__image, .home-hero__intro',
+	// 	{ 
+	// 		opacity: 0,
+	// 		// y: 20,
+	// 	},
+	// 	{
+	// 		opacity: 1,
+	// 		// y: 0,
+	// 	}
+	// );
+</script>
+
+<BaseLayout>
+	<section class="home-hero-wrapper">
+		<div class="u-container">
+			<div class="home-hero u-flex u-pad-b-2xl">
+				<figure class="home-hero__image">	
+					<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />				
+					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
+				</figure>
+				<div class="home-hero__intro">
+					<div>
+						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, my name's Sim</p>
+						<h1 class="u-fontsize-6 u-font-display u-mrg-be-m">I'm a full-stack<br /> Product Designer</h1>
+						<h3 class="u-fontsize-1 u-font-body u-mrg-be-2xl">{bio_blurb} Seeking something human in the digital. Nice to have you along.</h3>
+						<div class="current-status u-flex">
+							<div class="orb"></div>
+							<p class="u-fontsize-0 u-font-display">Independent and up for working with you!</p>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+
+	<PostList label="Fresh posts" link="blog" />
+	
+</BaseLayout>
+
+<style>	
+
+	.home-hero {		
+		justify-content: space-between;
+		border-block-end: 2px solid var(--border-primary);
+		flex-direction: column;
+
+		.home-hero__intro {
+			display: flex;
+			align-items: start;
+			gap: var(--space-xs);
+			max-width: 800px;
+			flex-basis: 100%;
+			/* opacity: 0; */
+
+			img {
+				display: none;
+			}
+
+			.mobile-intro {
+				color: var(--text-secondary);
+			}
+
+			h1,
+			h2 {
+				color: var(--accent-2);
+			}
+
+			h3 {
+				width: 100%;
+				text-wrap: pretty;
+			}
+
+			.current-status {
+				gap: var(--space-2xs);
+				align-items: center;
+				color: var(--accent-1);
+				flex-wrap: nowrap;
+
+				p {
+					flex: 1;
+					text-wrap: pretty;
+				}
+			}
+		}		
+
+		.home-hero__image {
+			flex: 1;
+			max-width: 120px;
+			text-align: right;
+			/* opacity: 0; */
+
+			img {
+				width: 100%;
+				height: auto;
+				border-radius: 10px;
+				border: 2px solid var(--border-third);
+			}
+
+			figcaption {
+				display: none;
+			}
+		}
+	}	
+
+	@media (min-width: 800px) {
+
+		.home-hero {
+
+			.home-hero__intro {
+				flex-basis: 70%;				
+
+				h3 {
+					width: 65%;
+				}
+			}
+
+			.home-hero__image {
+				max-width: 200px;
+			}
+		}
+
+	}
+
+	@media (min-width: 1200px) {
+		.home-hero {
+			flex-direction: row-reverse;		
+			align-items: end;
+
+			.home-hero__intro {
+				
+				img {
+					display: block;
+					opacity: .4;
+				}
+			}
+
+			.home-hero__image {
+				max-width: 320px;
+
+				img {
+					border-radius: 10px 10px 0px 10px;
+				}
+
+				figcaption {
+					display: inline-flex;
+					background: var(--bg-fourth);
+					border-radius: 0px 0px 10px 10px;
+					border: 2px solid var(--border-third);
+					border-top: none;
+				}
+			}
+		}
+	}
+</style>

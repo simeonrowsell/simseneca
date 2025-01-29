@@ -73,11 +73,14 @@
   flex-wrap: wrap;
   gap: var(--space-2xs);
   align-items: baseline;
+  justify-content: center;
   padding: var(--space-s) var(--space-m);
+  font-size: var(--fontsize-0);
 
   @media (min-width: 500px) {
     flex-wrap: nowrap;
     padding: var(--space-m) var(--space-l);    
+    font-size: var(--fontsize-1);
   }
 
   .copied-email-toast__email {    

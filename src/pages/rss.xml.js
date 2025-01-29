@@ -2,12 +2,15 @@ import rss from '@astrojs/rss';
 import sanitizeHtml from 'sanitize-html';
 import { marked } from 'marked';
 
+import { GLOBAL_STRINGS } from '../constants/strings';
+const site_title = GLOBAL_STRINGS.SITE_TITLE;
+const site_desc = GLOBAL_STRINGS.SITE_DESC;
+
 export async function GET(context) {
   const allPosts = import.meta.glob('../pages/posts/**/*.md', { eager: true });  
   const posts = Object.values(allPosts);
 
   const items = posts.map((post) => {
-    // console.log("Post raw content:", post.rawContent()); // Debug log
 
     // Convert markdown to HTML first, then sanitize
     const htmlContent = marked.parse(post.rawContent());
@@ -25,8 +28,8 @@ export async function GET(context) {
   });
 
   return rss({
-    title: 'Sim Seneca | Product designer, human being',
-    description: 'The personal site of Sim Seneca',
+    title: site_title ? site_title : 'Sim Seneca | Product designer, human being',
+    description: site_desc ? site_desc : 'Sim Seneca\'s space on the web',
     site: context.site,
     xmlns: {
       content: "http://purl.org/rss/1.0/modules/content/",

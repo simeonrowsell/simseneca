@@ -1,6 +1,10 @@
 ---
 import '../styles/global.css';
 
+import { GLOBAL_STRINGS } from '../constants/strings';
+const site_title = GLOBAL_STRINGS.SITE_TITLE;
+const site_desc = GLOBAL_STRINGS.SITE_DESC;
+
 // Props for the page title and description
 interface Props {
 	title?: string | undefined;
@@ -9,8 +13,8 @@ interface Props {
 
 // set some defaults
 const {
-	title = 'Sim Seneca | Product designer, human being',
-	description = 'The personal site of Sim Seneca',
+	title = site_title ? site_title : 'Sim Seneca | Product designer, human being',
+	description = site_desc ? site_desc : 'Sim Seneca\'s space on the web',
 } = Astro.props;
 ---
 

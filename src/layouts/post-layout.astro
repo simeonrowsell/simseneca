@@ -12,10 +12,11 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 
 const editionFormatted = formatEdition(frontmatter.edition);
 const postDateFormatted = formatPostDate(frontmatter.pubDate);
+const pageTitleFormatted = frontmatter.title + " | Sim Seneca";
 ---
 
 <BaseLayout 
-	title={frontmatter.title}
+	title={pageTitleFormatted}
 	description={frontmatter.description}
 >
 	<article class="post-wrapper">

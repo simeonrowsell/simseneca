@@ -69,8 +69,12 @@ const postDateFormatted = formatPostDate(pubDate);
           color: var(--accent-2);
         }
 
-        .post-thumb__content::before {
-          height: 100%;
+        @media (min-width: 1000px) {
+
+          .post-thumb__content::before {
+            height: 100%;
+          }
+        }
       }
     }
 

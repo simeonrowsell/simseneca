@@ -7,4 +7,9 @@
 - Combine the copy email components and use props to better toggle between styles
     - Particularly to neaten up the email button in the post sidebar
 - Move posts into Collections (https://docs.astro.build/en/guides/content-collections/)
-- Add in gsap animation?
+- Add in gsap animations
+- Custom 404
+- Add a /now
+    - Can also include 'Previous' H2
+- Add an /about or /story
+- Move this changelog to /changelog

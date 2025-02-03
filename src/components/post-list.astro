@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 
 // Get all the blog posts
-const allPosts = await Promise.all(Object.values(import.meta.glob('../pages/posts/*.md')).map(fn => fn()));
+const allPosts = await Promise.all(Object.values(import.meta.glob('../pages/blog/*.md')).map(fn => fn()));
 allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 ---

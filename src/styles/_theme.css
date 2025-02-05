@@ -159,6 +159,18 @@
       margin-block-end: var(--space-s);
     }
 
+    h3 {
+      font-size: var(--fontsize-2);
+      margin-block-start: var(--space-m);
+      margin-block-end: var(--space-xs);
+    }
+
+    h4 {
+      font-size: var(--fontsize-1);
+      margin-block-start: var(--space-m);
+      margin-block-end: var(--space-xs);
+    }
+
     /* for the sub-heading # linking */
     h2,
     h3 {
@@ -188,7 +200,7 @@
     p {
       margin-block-end: var(--space-l);
       text-wrap: wrap;
-      font-size: var(--fontsize-2);
+      font-size: var(--fontsize-1);
     }
 
     ul,
@@ -197,7 +209,7 @@
       padding-inline-start: var(--space-m);
       
       li {
-        font-size: var(--fontsize-2);
+        font-size: var(--fontsize-1);
         margin-block-end: var(--space-s);
         text-wrap: wrap;
 

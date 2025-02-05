@@ -15,6 +15,7 @@ export const SmallEmail = ({
 
   const email = "sim@simseneca.design";
   const emailLabel = label ?? "Get email";
+  // Simple Analytics event meta
   const saLocationLabel = saLocation ?? "";
 
   // Define sa_event function or variable
@@ -28,12 +29,7 @@ export const SmallEmail = ({
       await navigator.clipboard.writeText(email)
       setIsCopied(true);
 
-      // trigger Simple Analytics event
-      // if (sa_event) {
-      //   sa_event("email_copied", { location: saLocationLabel });
-      // }
       if (typeof window !== "undefined" && "sa_event" in window) {
-        console.log("CLICKED");
         (window as any).sa_event("email_copied", { location: saLocationLabel });
       }
       

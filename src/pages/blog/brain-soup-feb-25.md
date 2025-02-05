@@ -35,7 +35,8 @@ Think a cross between Stardew Valley and Pokémon Red (or Blue or Yellow if that
 
 I'll write more about Gather soon because I actually think it's a really smart and joyful solution to some of the challenges of remote working and the loss of physicality and office culture that brings, but for now check out my new desk. I've got my own vending machine.
 
-![My new digital desk](../../assets/images/new-gather-desk.png)
+![My new digital desk in Gather](../../assets/images/new-gather-desk.png)
+*My new digital desk in Gather*
 
 ## <a href="#absolutely-hanging">#</a>Absolutely hanging
 In January I joined a gym! What a cliché. My health hasn't been so great the last couple of years. Too much sitting at a laptop, arthritis and yeh if anyone knows where my super-duper 20's metabolism went I'd love to get that back. It's refreshing to have a space to go where I have literally no other reason for being there other than getting fitter. Aiming for twice a week. So far, not bad.

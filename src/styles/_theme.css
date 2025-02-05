@@ -280,9 +280,15 @@
 
     img {
       max-width: 100%;
+      height: auto;
       margin-inline: auto;
       border-radius: 10px;
       border: 2px solid var(--border-primary);
+
+      & + em {
+        display: block;
+        text-align: center;
+      }
     }
 
     /* for just single inline pieces of `code` */

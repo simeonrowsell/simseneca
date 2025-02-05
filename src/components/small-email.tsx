@@ -6,20 +6,38 @@ import './small-email.css';
 /** If people want to email us they can click this button and their dreams will come true. */
 export const SmallEmail = ({
   label,
+  saLocation,
   ...props
-}: { label?: string }) => {
+}: { label?: string, saLocation? : string }) => {
   // States for copying feedback
   const [isCopied, setIsCopied] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const email = "sim@simseneca.design";
   const emailLabel = label ?? "Get email";
+  const saLocationLabel = saLocation ?? "";
+
+  // Define sa_event function or variable
+  const sa_event = (event: string, data: object) => {
+    console.log(`Event: ${event}`, data);
+  };
 
   // Handle the copy to clipboard
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email)
       setIsCopied(true);
+
+      // trigger Simple Analytics event
+      // if (sa_event) {
+      //   sa_event("email_copied", { location: saLocationLabel });
+      // }
+      if (typeof window !== "undefined" && "sa_event" in window) {
+        console.log("CLICKED");
+        (window as any).sa_event("email_copied", { location: saLocationLabel });
+      }
+      
+
       // Reset after a short delay
       setTimeout(() => setIsCopied(false), 2500);
     } catch (err) {

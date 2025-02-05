@@ -7,7 +7,7 @@ const site_title = GLOBAL_STRINGS.SITE_TITLE;
 const site_desc = GLOBAL_STRINGS.SITE_DESC;
 
 export async function GET(context) {
-  const allPosts = import.meta.glob('../pages/posts/**/*.md', { eager: true });  
+  const allPosts = import.meta.glob('../pages/blog/**/*.md', { eager: true });  
   const posts = Object.values(allPosts);
 
   const items = posts.map((post) => {

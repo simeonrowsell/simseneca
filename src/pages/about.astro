@@ -23,13 +23,13 @@ import simJoyImage from '../assets/images/sim_joy.jpg';
         </figure>
         <div class="about-content-block">
           <p class="u-fontsize-2">
-            Over 10+ years I've designed, built and shipped digital experience for over fifteen small-medium sized organisations, including series-B tech start-ups, educational institutions and national charities.
+            I've been making things on the web since I was a teenager adding custom code to my MySpace. In the following decades I've designed, built and shipped digital experience for over fifteen small-medium sized organisations, including series-B tech start-ups, educational institutions and national charities.
           </p>
         </div>
         <div class="about-content-block">
           <h2 class="u-subtitle">Approach</h2>
           <p class="u-fontsize-2">
-            My approach to design is human-first. I love listening to and empathising with customers to get to the root of their problems so we can build holistic, impactful solutions that address the cause, not just the symptom.
+            My approach to design is human-first. I love listening to and empathising with customers to get to the root of their problems so we can build holistic, impactful solutions that address the cause, not just the symptom. It's so satisfying.
           </p>
           <p class="u-fontsize-2">
             Beyond ensuring high levels of usability, technical feasibility and business viability, I design for the human emotions we feel when using digital products. If we design purely for utility we miss the wonderful opportunity to add joy into our products and our customers' days.
@@ -42,28 +42,43 @@ import simJoyImage from '../assets/images/sim_joy.jpg';
           </p>
           <ul class="about-content-block__skills" aria-label="Skills I can bring to your team">
             <li class="skill-item">UX/UI design</li>
-            <li class="skill-item">User research</li>
+            <li class="skill-item">Continuous discovery</li>
+            <li class="skill-item">Design systems</li>
+            <li class="skill-item">Design thinking & facilitation</li>
+            <li class="skill-item">Wireframing and prototyping</li>            
+            <li class="skill-item">Product strategy</li>
+            <li class="skill-item">Accessibility best practices</li>            
+            <li class="skill-item">DesignOps</li>
+            <li class="skill-item">User testing</li>
+            <li class="skill-item">Quantitative experimentation</li>
+            <li class="skill-item">Frontend development</li>            
           </ul>
           <p class="u-fontsize-2">
-            Succeeding in product requires collaboration with teams across the business, and I've found my experience in technical development, brand marketing and client relationship-building allows me to speak a common language across disciplines, create alignment and contribute beyond just design.
+            Succeeding in product requires close collaboration with teams across the business, and my experience in technical development, brand marketing and client relationship-building allows me to speak a common language across disciplines, create alignment and contribute beyond just design.
           </p>
         </div>
         <div class="about-content-block">
           <h2 class="u-subtitle">Culture</h2>
           <p class="u-fontsize-2">
-            I thrive most when I believe in the work I'm doing, so strong vision-led companies are my bag. I work best in curious, growth-mindset, empowered teams where comradery, humour and collective energy spur each other on and everyone pitches in. A lot of my friends were my colleagues first.
+            I thrive most when I believe in the work I'm doing, so strong vision-led companies are my bag. I work best in curious, growth-mindset, empowered teams where everyone pitches in and comradery, humour and collective energy spur each other on. A lot of my friends were my colleagues first.
           </p>
           <p class="u-fontsize-2">
             My goals are to have fun whilst crafting high quality digital products, to nurture meaningful relationships with nice people and to take pride in our collective work.
           </p>
         </div>
-        <div class="about-content-block u-pad-be-0">
+        <div class="about-content-block">
           <h2 class="u-subtitle about-content-block__subtitle">In real life</h2>
           <p class="u-fontsize-2 about-content-block__content">
             The fastest way to my heart is through music, the second fastest is spicy food. I stay in the cinema until the lights come up and I secretly like it when England lose football matches because I find the collective feeling of disenchantment comforting and funny.
           </p>
           <p class="u-fontsize-2">
             I live with my partner Helena who's <a href="https://helenamiddleton.co.uk">a wonderful theatre director</a> and our small son who, at the time of writing, hasn't yet said his first word, so jury's out on what he'll become.
+          </p>
+        </div>
+        <div class="about-content-block u-pad-be-0">
+          <h2 class="u-subtitle about-content-block__subtitle">Doing art</h2>
+          <p class="u-fontsize-2 about-content-block__content">
+            In my spare time I also paint and illustrate. I'm mainly <a href="https://www.instagram.com/simeon.seneca">painting oil portraits</a> right now and am working on a children's picturebook about an existential flamingo.
           </p>
         </div>
 
@@ -105,6 +120,16 @@ import simJoyImage from '../assets/images/sim_joy.jpg';
     }
   }
 
+  .about-intro {
+    color: var(--accent-2);    
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+  }
+
   .about-image {    
     text-align: right;
 
@@ -131,17 +156,7 @@ import simJoyImage from '../assets/images/sim_joy.jpg';
       border: 2px solid var(--border-primary);
       border-top: none;
     }
-  }
-
-  .about-intro {
-    color: var(--accent-2);    
-    padding-inline-start: var(--content-left-padding);
-    max-width: var(--max-content-width);
-
-    @media (min-width: 400px) {
-      border-inline-start: 2px solid var(--border-primary);
-    }
-  }
+  }  
 
   .about-content-block {
     position: relative;
@@ -194,7 +209,34 @@ import simJoyImage from '../assets/images/sim_joy.jpg';
         text-underline-offset: 4px;
         text-decoration-thickness: 3px;
       }
-    }    
+    }
+
+    .about-content-block__skills {
+      display: flex;
+      gap: var(--space-xs);
+      flex-wrap: wrap;
+      list-style: none;
+      padding-inline-start: 0;
+
+      .skill-item {
+        background: var(--bg-fourth);
+        border: 2px solid var(--border-primary);
+        border-radius: 10px;
+        padding: var(--space-2xs) var(--space-xs);
+        font-size: var(--font-size-2);
+        transition: all .05s ease;
+
+        &:before {
+          content: url('../assets/icons/purple_check.svg');
+          margin-inline-end: var(--space-2xs);
+        }
+
+        &:hover {
+          cursor: default;
+          transform: scale(1.04);
+        }
+      }
+    }
   }
 
   .about-photos {

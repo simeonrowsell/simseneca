@@ -1,0 +1,231 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+
+import { Image } from 'astro:assets';
+import simSofaImage from '../assets/images/sim_sofa.jpg';
+import simPoopImage from '../assets/images/sim_poop.jpg';
+import simJoyImage from '../assets/images/sim_joy.jpg';
+---
+
+<BaseLayout>
+	
+  <section class="about-wrapper u-mrg-be-3xl">
+    <div class="u-container">
+      <div class="about-inner">
+        <div class="about-intro u-pad-bs-3xl u-pad-be-2xl">
+          <h1 class="u-font-display u-fontsize-3">
+            I'm a Product Designer who loves solving customer problems, thinking in systems and sometimes committing code. Living life here in Bristol, UK.
+          </h1>
+        </div>
+        <figure class="about-image u-pad-be-2xl">	
+          <Image src={simSofaImage} alt="Sim on his orange sofa smiling. He could do with brushing his hair more to be honest, but otherwise he looks great." />
+          <figcaption class="u-pad-2xs u-subtitle smaller">Posing on my sofa</figcaption>
+        </figure>
+        <div class="about-content-block">
+          <p class="u-fontsize-2">
+            Over 10+ years I've designed, built and shipped digital experience for over fifteen small-medium sized organisations, including series-B tech start-ups, educational institutions and national charities.
+          </p>
+        </div>
+        <div class="about-content-block">
+          <h2 class="u-subtitle">Approach</h2>
+          <p class="u-fontsize-2">
+            My approach to design is human-first. I love listening to and empathising with customers to get to the root of their problems so we can build holistic, impactful solutions that address the cause, not just the symptom.
+          </p>
+          <p class="u-fontsize-2">
+            Beyond ensuring high levels of usability, technical feasibility and business viability, I design for the human emotions we feel when using digital products. If we design purely for utility we miss the wonderful opportunity to add joy into our products and our customers' days.
+          </p>
+        </div>
+        <div class="about-content-block">
+          <h2 class="u-subtitle">I can help you with</h2>
+          <p class="u-fontsize-2">
+            My career so far has been defined by my broad skill set and versatility. I enjoy working all the way across the product process, from strategy and customer research through prototyping, UI/UX design, testing and finally to launching, learning and iterating.
+          </p>
+          <ul class="about-content-block__skills" aria-label="Skills I can bring to your team">
+            <li class="skill-item">UX/UI design</li>
+            <li class="skill-item">User research</li>
+          </ul>
+          <p class="u-fontsize-2">
+            Succeeding in product requires collaboration with teams across the business, and I've found my experience in technical development, brand marketing and client relationship-building allows me to speak a common language across disciplines, create alignment and contribute beyond just design.
+          </p>
+        </div>
+        <div class="about-content-block">
+          <h2 class="u-subtitle">Culture</h2>
+          <p class="u-fontsize-2">
+            I thrive most when I believe in the work I'm doing, so strong vision-led companies are my bag. I work best in curious, growth-mindset, empowered teams where comradery, humour and collective energy spur each other on and everyone pitches in. A lot of my friends were my colleagues first.
+          </p>
+          <p class="u-fontsize-2">
+            My goals are to have fun whilst crafting high quality digital products, to nurture meaningful relationships with nice people and to take pride in our collective work.
+          </p>
+        </div>
+        <div class="about-content-block u-pad-be-0">
+          <h2 class="u-subtitle about-content-block__subtitle">In real life</h2>
+          <p class="u-fontsize-2 about-content-block__content">
+            The fastest way to my heart is through music, the second fastest is spicy food. I stay in the cinema until the lights come up and I secretly like it when England lose football matches because I find the collective feeling of disenchantment comforting and funny.
+          </p>
+          <p class="u-fontsize-2">
+            I live with my partner Helena who's <a href="https://helenamiddleton.co.uk">a wonderful theatre director</a> and our small son who, at the time of writing, hasn't yet said his first word, so jury's out on what he'll become.
+          </p>
+        </div>
+
+        <div class="about-photos u-mrg-bs-2xl">
+          <div class="about-photos__photo">
+            <Image src={simPoopImage} alt="Sim smiling with his eyes closed whilst hugging a massive poop emoji plushie. He clealy loves South Korea." />          
+          </div>
+          <figure class="about-photos__photo">
+            <Image src={simJoyImage} class="joy-image" alt="The back of Sim as he looks over a beautiful green South Korean lake and garden. His t-shirt reads 'You can\'t steal my joy'" />
+            <figcaption class="u-pad-2xs u-subtitle smaller">Me loving South Korea</figcaption>
+          </figure>
+        </div>
+      </div>
+      </div>      
+  </section>
+	
+</BaseLayout>
+
+<style>
+
+  .about-inner {
+    --content-left-padding: 0;
+    --max-content-width: min(800px, 100%);    
+
+    @media (min-width: 400px) {
+      --content-left-padding: var(--space-m);
+    }
+
+    @media (min-width: 700px) {
+      --content-left-padding: var(--space-xl);
+      padding-inline-start: var(--space-xl);
+      padding-inline-end: var(--space-m);
+    }
+
+    @media (min-width: 1000px) {
+      --content-left-padding: var(--space-2xl);
+      padding-inline-start: var(--space-4xl);
+      padding-inline-end: var(--space-2xl);
+    }
+  }
+
+  .about-image {    
+    text-align: right;
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    img {
+      border: 2px solid var(--border-primary);
+      border-left: 0;
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+
+      @media (min-width: 400px) {
+        border-radius: 0 10px 0 0;
+      }
+    }
+
+    figcaption {
+      display: inline-flex;
+      background: var(--bg-fourth);
+      border-radius: 0px 0px 10px 10px;
+      border: 2px solid var(--border-primary);
+      border-top: none;
+    }
+  }
+
+  .about-intro {
+    color: var(--accent-2);    
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+  }
+
+  .about-content-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);    
+    padding-block-end: var(--space-2xl);
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+    
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    h2.u-subtitle {
+      color: var(--text-secondary);
+    
+      &:before {
+        content: '';
+        display: inline-block;        
+        width: 30px;
+        height: 2px;
+        background-color: var(--border-primary);
+        margin-inline-end: var(--space-2xs);
+
+        @media (min-width: 400px) {
+          width: 15px;
+          margin-inline-end: 0;
+          position: absolute;
+          left: 0;
+          top: 4px;
+        }
+
+        @media (min-width: 700px) {
+          width: 30px;
+        }
+      }
+    }
+
+    a {
+      font-weight: 500;
+      position: relative;
+      transition: all .1s ease;
+      color: var(--accent-2);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+    
+      &:hover {
+        text-underline-offset: 4px;
+        text-decoration-thickness: 3px;
+      }
+    }    
+  }
+
+  .about-photos {
+    display: flex;
+    gap: var(--space-m);
+    flex-direction: column-reverse;
+
+    @media (min-width: 500px) {
+      flex-direction: row;
+    }
+
+    .about-photos__photo {
+      text-align: right;
+
+      img {
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid var(--border-primary);
+
+        &.joy-image {
+          border-radius: 10px 10px 0 10px;
+        }
+      }
+
+      figcaption {
+        display: inline-flex;
+        background: var(--bg-fourth);
+        border-radius: 0px 0px 10px 10px;
+        border: 2px solid var(--border-primary);
+        border-top: none;
+      }
+    }
+  }
+</style>

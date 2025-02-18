@@ -88,6 +88,10 @@
     padding: var(--space-4xl);
   }
 
+  .u-pad-0 {
+    padding: 0 !important;
+  }
+
   /* Padding Inline (Both Sides) */
   .u-pad-i-3xs {
     padding-inline: var(--space-3xs);
@@ -127,6 +131,10 @@
 
   .u-pad-i-4xl {
     padding-inline: var(--space-4xl);
+  }
+
+  .u-pad-i-0 {
+    padding-inline: 0 !important;
   }
 
   /* Padding Inline Start */
@@ -170,6 +178,10 @@
     padding-inline-start: var(--space-4xl);
   }
 
+  .u-pad-is-0 {
+    padding-inline-start: 0 !important;
+  }
+
   /* Padding Inline End */
   .u-pad-ie-3xs {
     padding-inline-end: var(--space-3xs);
@@ -209,6 +221,10 @@
 
   .u-pad-ie-4xl {
     padding-inline-end: var(--space-4xl);
+  }
+
+  .u-pad-ie-0 {
+    padding-inline-end: 0 !important;
   }
 
   /* Padding Block (Both Sides) */
@@ -252,6 +268,10 @@
     padding-block: var(--space-4xl);
   }
 
+  .u-pad-b-0 {
+    padding-block: 0 !important;
+  }
+
   /* Padding Block Start */
   .u-pad-bs-3xs {
     padding-block-start: var(--space-3xs);
@@ -293,6 +313,10 @@
     padding-block-start: var(--space-4xl);
   }
 
+  .u-pad-bs-0 {
+    padding-block-start: 0 !important;
+  }
+
   /* Padding Block End */
   .u-pad-be-3xs {
     padding-block-end: var(--space-3xs);
@@ -332,6 +356,10 @@
 
   .u-pad-be-4xl {
     padding-block-end: var(--space-4xl);
+  }
+
+  .u-pad-be-0 {
+    padding-block-end: 0 !important;
   }
 
   /* 

@@ -278,6 +278,15 @@
       }
     }
 
+    mark {
+      color: var(--text-primary);
+      margin: 0 -0.4em;
+      padding: 0.1em 0.4em;
+      background: var(--bg-fourth);
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
     img {
       max-width: 100%;
       height: auto;
@@ -334,6 +343,11 @@
   --border-primary: var(--navy);
   --border-secondary: var(--white);
   --border-third: var(--navy);
+
+  /* Exceptions to the rule */
+  [data-collection="work"] {
+    --bg-primary: var(--white);
+  }
 }
 
 [data-theme="dark"] {

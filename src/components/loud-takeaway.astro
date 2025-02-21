@@ -1,0 +1,86 @@
+---
+interface Props {
+	title: string | undefined;
+  number: number | undefined;
+  moreLink?: string | undefined;
+}
+
+const { title, moreLink, number } = Astro.props;
+---
+
+<li class="loud-takeaway u-pad-m">
+  <p class="loud-takeaway__pre-heading u-subtitle u-mrg-be-2xs">#{number}</p>
+  <h3 class="u-fontsize-2">{title}</h3>  
+  {moreLink ? (
+      // Render button and link only if moreLink is provided
+      (() => {
+        const sectionLink = '#' + moreLink;
+        return (
+          <>
+            <button class="loud-takeaway__button u-mrg-bs-l">
+              <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.70469 9.35391L0.329686 2.97891C-0.110939 2.53828 -0.110939 1.82578 0.329686 1.38984L1.38906 0.330469C1.82969 -0.110156 2.54219 -0.110156 2.97812 0.330469L7.49687 4.84922L12.0156 0.330469C12.4562 -0.110156 13.1687 -0.110156 13.6047 0.330469L14.6734 1.38516C15.1141 1.82578 15.1141 2.53828 14.6734 2.97422L8.29844 9.34922C7.85781 9.79453 7.14531 9.79453 6.70469 9.35391Z" fill="#252238"/>
+              </svg>
+            </button>
+            <a href={sectionLink} class="loud-takeaway__link"></a>
+          </>
+        );
+      })
+    ) : null}
+</li>
+
+<style>
+
+  .loud-takeaway {
+    background-color: var(--purple);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    color: var(--white);
+    position: relative;
+    transition: all .1s ease;
+    overflow: visible;
+
+    &:hover {
+      cursor: pointer;
+      scale: 1.01;
+
+      h3 {
+        color: var(--beige-dark);
+      }
+
+      .loud-takeaway__button {
+        translate: 0 10px;
+      
+        svg path {
+          fill: var(--beige-dark);          
+        }
+      }
+    }
+
+    .loud-takeaway__pre-heading {
+      color: var(--beige-dark);
+    }
+
+    h3 {
+      transition: all .3s ease;
+    }
+
+    .loud-takeaway__button {
+      transition: all .3s ease;
+
+      path {
+        transition: all .1s ease;
+      }
+    }
+
+    .loud-takeaway__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+    }
+  }
+
+</style>

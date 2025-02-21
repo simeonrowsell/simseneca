@@ -6,9 +6,10 @@ import Footer from '../components/footer.astro';
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	collection?: string | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, collection } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +17,8 @@ const { title, description } = Astro.props;
 	<head>
 		<MainHead title={title} description={description} />
 	</head>
-	<body data-theme-fade>
+	<!-- data-collection allows us to target specific collection types in CSS -->
+	<body data-theme-fade data-collection={collection}>
 		<Nav />
 		<slot />
 		<Footer />

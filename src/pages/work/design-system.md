@@ -12,7 +12,7 @@ skills: [
   'DesignOps',
   'Collaboration'
 ]
-takeawaysPreheading: 'Key takeaways'
+takeawaysPreheading: 'Process & outcomes'
 takeaways: [
   {
     title: "Created the design system and established atomic design principles",
@@ -39,7 +39,9 @@ takeaways: [
 ---
 
 ## Creating the design system and establishing atomic design principles
-<img src="design-system-bla.jpg" class="wide" />
+
+![The anatomy of a component](../../assets/images/work/design-system-anatomy-of-a-component.png)
+*The anatomy of a component*
 
 Little brings me more satisfaction than atomic design. It just makes sense to the technical side of my brain to modularise, standardise and reuse design elements in the same way we have been doing with code for years. All hail [Brad Frost](https://atomicdesign.bradfrost.com/) 🙌
 

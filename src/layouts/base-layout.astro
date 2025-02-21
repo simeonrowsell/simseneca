@@ -4,18 +4,24 @@ import Nav from '../components/nav.astro';
 import Footer from '../components/footer.astro';
 
 interface Props {
+	metaTitle?: string | undefined;
 	title?: string | undefined;
 	description?: string | undefined;
 	collection?: string | undefined;
 }
 
-const { title, description, collection } = Astro.props;
+const { metaTitle, title, description, collection } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" data-theme="light">
 	<head>
-		<MainHead title={title} description={description} />
+		<MainHead 
+			title={
+				metaTitle ? metaTitle : title
+			} 
+			description={description} 
+		/>
 	</head>
 	<!-- data-collection allows us to target specific collection types in CSS -->
 	<body data-theme-fade data-collection={collection}>

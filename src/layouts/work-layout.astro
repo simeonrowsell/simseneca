@@ -3,9 +3,13 @@ import BaseLayout from './base-layout.astro';
 const {frontmatter} = Astro.props;
 
 import LoudTakeaway from '../components/loud-takeaway.astro';
+
+const pageTiteUnformatted = frontmatter.title ? frontmatter.metaTitle : frontmatter.title;
+const pageTitleFormatted = pageTiteUnformatted + " | Sim Seneca";
 ---
 
-<BaseLayout 
+<BaseLayout
+  metaTitle={pageTitleFormatted}
 	title={frontmatter.title}
 	description={frontmatter.description}
   collection='work'
@@ -54,6 +58,7 @@ import LoudTakeaway from '../components/loud-takeaway.astro';
   --max-content-width: min(800px, 100%);
   max-width: var(--max-content-width);
   margin: 0 auto;
+  position: relative;
 
   @media (min-width: 1200px) {
     --max-content-width: min(1000px, 100%);
@@ -96,6 +101,7 @@ import LoudTakeaway from '../components/loud-takeaway.astro';
 
         &:before {
           display: flex;
+          font-size: var(--fontsize-3);
           height: 40px;
           width: 43px;
           content: url('../assets/icons/purple_check.svg');
@@ -106,6 +112,7 @@ import LoudTakeaway from '../components/loud-takeaway.astro';
           justify-content: center;
           background: var(--bg-fourth);
           flex-shrink: 0;
+          font-size: 30px;
         }
       }
     }
@@ -158,6 +165,7 @@ import LoudTakeaway from '../components/loud-takeaway.astro';
 }
 
 .work-content {
+  position: relative;
 
   @media (min-width: 1200px) {
     max-width: min(720px, 100%);
@@ -167,6 +175,13 @@ import LoudTakeaway from '../components/loud-takeaway.astro';
     border-top: 2px solid var(--border-primary);
     margin-block-start: var(--space-2xl);
     padding-block-start: var(--space-m);
+  }
+
+  img.wide {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: none;
   }
 }
 

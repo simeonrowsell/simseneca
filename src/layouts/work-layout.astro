@@ -167,8 +167,11 @@ const pageTitleFormatted = pageTiteUnformatted + " | Sim Seneca";
 .work-content {
   position: relative;
 
-  @media (min-width: 1200px) {
-    max-width: min(720px, 100%);
+  /* all children other than the children which have <img> in them */
+  >:not(:has(img)) {
+    @media (min-width: 1200px) {
+      max-width: min(720px, 100%);
+    }
   }
 
   h2 {
@@ -176,13 +179,6 @@ const pageTitleFormatted = pageTiteUnformatted + " | Sim Seneca";
     margin-block-start: var(--space-2xl);
     padding-block-start: var(--space-s);
     margin-block-end: var(--space-l);
-  }
-
-  img {
-    /* position: absolute;
-    left: 0;
-    width: 100%;
-    max-width: none; */
   }
 }
 

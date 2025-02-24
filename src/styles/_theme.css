@@ -302,7 +302,7 @@
 
     /* for just single inline pieces of `code` */
     code {
-      background-color: var(--bg-third);
+      background-color: var(--bg-fourth);
       font-size: var(--fontsize--1);
       padding: var(--space-3xs) var(--space-2xs);
       border-radius: 5px;

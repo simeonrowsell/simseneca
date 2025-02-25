@@ -280,11 +280,11 @@
 
     mark {
       color: var(--text-primary);
-      margin: 0 -0.4em;
-      padding: 0.1em 0.4em;
+      margin: 0;
+      padding: 0.1em 0.3em;
       background: var(--bg-fourth);
       -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
+      box-decoration-break: clone;      
     }
 
     img {

@@ -7,7 +7,7 @@ coverAlt: 'A selection of design system components'
 intro: |
   To help meet their ambitious goals, TravelLocal needed to ensure a seamless and consistent user experience across their customer journey, whilst allowing the team to prototype and build new experiences efficiently. Enter design systems! 
   
-  As the Product Design Lead this meant establishing a design system from scratch and owning that across multiple years as the company, product and team scaled.
+  As the Product Design Lead this meant creating a design system from scratch and owning that over multiple years as the company, product and team scaled.
 introPreheading: 'Challenge'
 skills: [
   'Design systems',
@@ -45,7 +45,7 @@ takeaways: [
 
 Little brings me more satisfaction than atomic design. It just makes sense to the technical side of my brain to modularise, standardise and reuse design elements in the same way we have been doing with code for years. All hail [Brad Frost](https://atomicdesign.bradfrost.com/) 🙌
 
-<mark>I created the company's design system and structured it around atomic design methodology.</mark>
+<mark>I created the company's design system, personally designing every element and structuring it around atomic design methodology.</mark>
 
 ![The anatomy of a TravelLocal organism](./design-system-anatomy-of-a-component.png)
 *The anatomy of a TravelLocal organism*

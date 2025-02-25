@@ -310,6 +310,17 @@
       letter-spacing: 1px;
       text-transform: lowercase;
     }    
+
+    iframe {
+      border: 2px solid var(--border-primary);
+      border-radius: 10px;
+      margin-inline: auto;
+      margin-block-end: var(--space-l);      
+      width: 1000px;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
   }  
 
   /*
@@ -348,7 +359,7 @@
 
   /* Exceptions to the rule */
   [data-collection="work"] {
-    --bg-primary: var(--white);
+    --bg-primary: var(--beige);
   }
 }
 

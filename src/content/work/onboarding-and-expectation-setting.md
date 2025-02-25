@@ -46,17 +46,18 @@ takeaways: [
 
 As TravelLocal’s acquisition model matured and more users were finding them, so did the amount of customers submitting their travel preferences and thus getting connected with a local expert. The expert then kicks off the conversation by messaging customers manually via the TravelLocal platform.
 
-<mark>I defined this customer <> local expert connection as the first major milestone in the customer journey and therefore of key importance.</mark>
+<mark>I defined this customer - local expert connection as the first major milestone in the high-level customer journey and therefore of key importance.</mark>
 
-**Miro board journey milestone**
+![The first major milestone in the high-level customer journey](./onboarding-milestone.png)
+*The first major milestone in the high-level customer journey*
 
-Early on we defined an important dynamic at the heart of TravelLocal’s customer experience. Because the local expert is a real person with limited time and energy, unlike traditional SasS products TravelLocal can’t onboard limitless customers if they’re inactive. Local experts would frankly waste their time and the partnerships would strain. <mark>Improving top-of-funnel acquisition rates alone would not be enough to scale the company sustainably - the customer engagement rate needed to increase.</mark>
+Working with the Head of Product we defined an important dynamic at the heart of TravelLocal’s customer experience. Because the local expert is a real person with limited time and energy, unlike traditional SasS products TravelLocal can’t onboard limitless customers if they’re inactive. Local experts would frankly waste their time and the partnerships would strain. <mark>Improving top-of-funnel acquisition rates alone would not be enough to scale the company sustainably - the customer engagement rate needed to increase.</mark>
 
 🌟 Our North Star objective was to increase the percentage of customers who sent three messages to their local expert
 
-We chose to measure engagement as the point where a customer sent three messages. By looking through customer message threads we determined that once a customer had sent three messages there’d generally been some meaningful engagement above just an exchanging of pleasantries.
+We chose to measure engagement as the point where a customer sent three messages. Analysing request data revealed a significant increase in the propensity to book when a customer had sent three customer messages. This represented some meaningful engagement above just an exchanging of pleasantries.
 
-We had two main guardrails…
+We defined two main guardrails…
 1. Increase the engagement rate without reducing the number of connected customers.
 2. Focus our work on product design more so than service design which, although impactful, was out of scope at the time.
 
@@ -69,32 +70,58 @@ Ideally I’d have been able to speak with inactive customers to ask why they ha
 
 <mark>I held qualitative user research sessions with 5 participants who were new to TravelLocal.</mark> I observed them moving through the current onboarding process asking questions as we went. My goal was to better understand their motivations, feelings and uncertainties.
 
-**Photos of user research sessions**
+![Holding a user research session with a customer](./onboarding-amanda.png)
+*Holding a user research session with a customer*
 
 Using the Atomic Research model for recording UX learnings I broke customer feedback down into its constituent parts; experiments, facts, insights and conclusions. These were recorded, tagged and organised in our research repository for future discoverability.
 
 ### Customer insights from the current experience
+
+<ul class="customer-insights">
+  <li class="customer-insight">
+    <p class="title">Uncertainty of what happened and next step</p>
+    <p class="quote">"Is that it? What do I do now?"</p>
+    <p class="summary">Customers didn’t understand what happened and what they needed to do next. They were left feeling underwhelmed and uncertain.</p>
+  </li>
+  <li class="customer-insight">
+    <p class="title">Identity of the person contacting them</p>
+    <p class="quote">“I presume the TravelLocal person in the photo will contact me”</p>
+    <p class="summary">Customers were uncertain who was going to contact them and why. They wrongly presumed it would be someone from TravelLocal and so missed the value proposition of the local experts.</p>
+  </li>
+  <li class="customer-insight">
+    <p class="title">Method of communication</p>
+    <p class="quote">“How will they contact me? Will they email or phone?”</p>
+    <p class="summary">Customers weren’t sure how they’d be contacted which added to the uncertainty of what to expect next and decreased trust in the process.</p>
+  </li>
+  <li class="customer-insight">
+    <p class="title">Timing of communication</p>
+    <p class="quote">“When will they call? Timing is everything”</p>
+    <p class="summary">Customers didn’t understand when they’d be contacted and had expectations of it being quick. Some were anxious if it would be a suitable time or not.</p>
+  </li>
+</ul>
 
 I shared these insights with the wider team and company, both in write-ups, Miro boards and video clips of the research sessions so team members could engage with the level of detail they needed to. Being able to show company leadership these customers actually reacting to the product played a huge role in aligning teams internally.
 
 ## Reviewing the current experience
 We’d inherited this user experience during the company’s merger a couple of years previous so I was keen to apply a critical eye using what I knew from previous customer research as well as the updated brand, market offering and product vision.
 
-<mark>I defined a few broad themes for improvement.</mark>
+Here's the old confirmation page, as it was before my work on the project...
+
+<iframe src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=1292-1120&viewport=-1953%2C138%2C0.29&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1292%3A1120&embed-host=share" allowfullscreen></iframe>
+
+There were many improvement opportunities just by applying good UX and design principles, but those aside <mark>I defined a few broad, key themes for improvement.</mark>
 
 1. **Buried progress confirmation and next steps:** The page was at the end of a stepped form flow but visually didn’t change much to communicate its completion. The next steps were unclear, with the customer having to infer and presume them rather than them being explicit.
 2. **Unclear hierarchy of information:** It was unclear what the customer should take most notice of. All information seemed equally important with a lack of signposting.
 3. **Lack of visibility of the local expert:** The inclusion of Hayley, a TravelLocal employee, meant that it’s TravelLocal who are the most visible, not the local expert who the customer will actually be speaking with.
-4. **Uninspiring success moment:** This is the first major milestone in the TravelLocal customer experience and should be the point at which customer enthusiasm is high. Other than one exclamation mark there’s nothing to celebrate this moment.
-
-**Customer emotion map**
+4. **Uninspiring success moment:** This is the first major milestone in the TravelLocal customer experience and should be the point at which customer enthusiasm is high. Other than one exclamation mark there’s nothing to celebrate this moment and it's generally visually uninspiring.
 
 ## Hitting a local maximum
 As the project progressed and internal conversations continued it became clear that there was an opportunity for bigger change. The company, its design maturity, brand and tech stack had taken huge steps forward in the years since the current experience had been built and it all needed realigning.
 
 Whilst often a riskier approach best avoided, <mark>the team decided that strategically now was the time to make some broader changes</mark>, allowing us to establish a better foundation from which to make future improvements.
 
-Leading product design through a company merger where we inherited legacy user experiences has often prompted the question “are we at a local maximum?” I’ve been heavily involved in balancing evolution and revolution and have helped guide that process through highlighting user insights, bringing a fresh perspective and applying the long view to the product vision.
+Leading product design through a company merger where we inherited legacy user experiences has often prompted the question “are we at a local maximum?” <mark>I’ve been heavily involved in balancing evolution and revolution</mark> and have helped guide that process through highlighting user insights, bringing a fresh perspective and applying the long view to the product vision.
 
 ### De-risking for launch
 <mark>With a larger change it was important to de-risk the launch.</mark> We would do this in a few ways.
@@ -125,13 +152,53 @@ It became clear pretty quickly that the place for us to concentrate our design e
 
 Moving through some of the bets we had most confidence in, I started wireframing before moving into mid-fidelity prototypes and landing on a testable MVP.
 
+![Early scribbles on a whiteboard](./onboarding-whiteboard.jpg)
+*Early scribbles on a whiteboard*
+
 ![Wireframing in my favourite hot pink colour](./onboarding-wireframes.png)
 *Wireframing in my favourite hot pink colour*
 
 ![Mid-fidelity rototyping various ideas](./onboarding-prototyping.png)
 *Mid-fidelity prototyping various ideas*
 
-**Design highlights**
+Ultimately this is where I landed...
+
+<iframe src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=1314-2416&viewport=-4027%2C229%2C0.38&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1314%3A2416&embed-host=share" allowfullscreen></iframe>
+
+<ul class="design-highlights">
+  <li class="design-highlight">
+    <img src="/src/content/work/onboarding-modal.png" alt="Confirmation modal" />
+    <div class="design-highlight__inner">
+      <p class="title">Celebratory confirmation modal</p>
+      <p class="summary">Separating the information out into two steps. First we confirm what's happened and what to expect next before setting the user up for the next phase of onboarding.</p>
+    </div>
+  </li>
+  <li class="design-highlight">
+    <img src="/src/content/work/onboarding-meet.png" alt="Meeting the local expert" />
+    <div class="design-highlight__inner">
+      <p class="title">Properly introducing the local expert</p>
+      <p class="summary">A really important addition to properly introduce the local expert. This also makes a neat place to confirm the user's email address, reinforcing the proposition and next step.</p>
+    </div>
+  </li>
+  <li class="design-highlight">
+    <img src="/src/content/work/onboarding-toasts.png" alt="Confirmation toasts" />
+    <div class="design-highlight__inner">
+      <p class="title">Confirmation toasts and clear next step</p>
+      <p class="summary">A dynamic timeline of events reasurring customers what has happened whilst clearly explaining the next step. "Open in Gmail" only appears for @gmail email addresses.</p>
+    </div>
+  </li>
+  <li class="design-highlight">
+    <img src="/src/content/work/onboarding-message.png" alt="Messaging functionality" />
+    <div class="design-highlight__inner">
+      <p class="title">Message the local expert right away</p>
+      <p class="summary">Having been introduced to the local expert this becomes a clearer prompt to message them right away and why. The messaging UI reinforces that this is a conversation.</p>
+    </div>
+  </li>  
+</ul>
+
+This was designed completely responsively of course. Here's the mobile version...
+
+RESPONSIVE VERSION
 
 ## Testing the prototype with users
 To increase our confidence levels I held another 5 qualitative research sessions with users, observing them as they used the new prototype and being curious as to their feelings.
@@ -156,15 +223,17 @@ Our frontend workflow is built on the design system so I modularised my Figma de
 
 <mark>I collaborated closely with engineering to communicate my design intentions and figure out the best way to translate this into the codebase.</mark> When it came to development myself and engineering were speaking daily and I chipped in and built a couple of components myself to help with velocity.
 
-**Componentising in Figma**
+![Splitting the design out into its various reusable, responsive components](./onboarding-components.png)
+*Splitting the design out into its various reusable, responsive components*
 
 Wearing a product manager hat I wrote these components up into engineering tickets, defining design intentions and acceptance criteria.
 
-## Implementation with content marketing
-I managed the sourcing of any copy we needed from content marketing and helped define how that would be served to the page; either via our CMS or our localisation and translation management platform.
+## Collaborating with content marketing
+I managed the sourcing of any copy we needed from content marketing and with engineers helped define how that would be served to the page; either via our CMS, backend database or our translation management platform Locize.
 
 <mark>Without the role in the team specifically I took on the role of Product Marketing, making sure that the UX copy aligned with and reinforced our brand proposition.</mark>
 
-**Labelling copy in Figma**
+![Defining how copy and content should be managed](./onboarding-copy.png)
+*Defining how copy and content should be managed*
 
 ## Launching and the outcome

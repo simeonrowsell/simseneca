@@ -137,7 +137,7 @@ Using the Atomic Research model for recording UX learnings I broke customer feed
   </li>
 </ul>
 
-I shared these insights with the wider team and company, both in write-ups, Miro boards and video clips so team members could engage with the level of detail they needed to. Showing leadership real customer reactions helped align teams internally.
+I shared these insights with the wider team and company, both in write-ups, Miro boards and video clips so team members could engage with the level of detail they needed to. Bringing real customer reactions to leadership helped align teams internally and ensured positive stakeholder management.
 
 ## Reviewing the current experience
 We’d inherited this user experience during the company’s merger a couple of years previous so I was keen to apply a critical eye using what I knew from previous customer research as well as the updated brand, market offering and product vision.

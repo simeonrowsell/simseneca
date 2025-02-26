@@ -1,7 +1,7 @@
 ---
 metaTitle: 'Design systems'
-metaDescription: 'Creating, maintaining and evolving a design system serving 40k+ visitors'
-title: 'Creating, maintaining and evolving a design system serving 3M+ users'
+metaDescription: 'Creating, maintaining and evolving a design system serving 5M+ users'
+title: 'Creating, maintaining and evolving a design system serving 5M+ users'
 cover: './design-system-hero.png'
 coverAlt: 'A selection of design system components'
 intro: |

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/base-layout.astro"
 import PostList from "../components/post-list.astro"
+import WorkList from "../components/work-list.astro"
 
 import { Image } from 'astro:assets';
 import simProfileImage from '../assets/images/sim_profile.png';
@@ -48,6 +49,13 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 		</div>
 	</section>
 
+	<section class="work-list-wrapper u-mrg-bs-2xl">
+		<div class="u-container">
+			<p class="work-list-wrapper__preheading u-subtitle u-mrg-b-m">Some things I've worked on</p>
+			<WorkList />
+		</div>
+	</section>
+
 	<PostList label="Fresh posts" link="blog" />
 	
 </BaseLayout>
@@ -90,6 +98,7 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 				align-items: center;
 				color: var(--accent-1);
 				flex-wrap: nowrap;
+				text-wrap: pretty;				
 
 				p {
 					flex: 1;
@@ -164,6 +173,13 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 					border-top: none;
 				}
 			}
+		}
+	}
+
+	.work-list-wrapper {
+		
+		.work-list-wrapper__preheading {
+			color: var(--text-secondary);
 		}
 	}
 </style>

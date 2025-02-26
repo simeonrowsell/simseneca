@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+const works = await getCollection('work');
+import { Image } from 'astro:assets';
+---
+
+<ul class="work-list u-pad-be-3xl">
+  {works.map(work => (
+    <li>
+      <div class="work-thumb">
+        <a href={`/work/${work.slug}`}>
+          <Image src={work.data.cover} alt={work.data.coverAlt} class="work-thumb__image u-mrg-be-l" />
+          <h2 class="work-thumb__title u-fontsize-3 u-mrg-be-s">{work.data.title}</h2>
+          <p class="work-thumb__description u-fontsize-1 u-mrg-be-m">{work.data.metaDescription}</p>
+          <p class="work-thumb__button u-subtitle">Read →</p>
+        </a>
+      </div>
+    </li>
+  ))}
+</ul>
+
+<style>
+
+  .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));   
+    gap: var(--space-l);
+    list-style: none;
+    border-block-end: 2px solid var(--border-primary);
+
+    @media (min-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .work-thumb {
+    transition: all .1s ease;
+
+    &:hover {
+      cursor: pointer;
+
+      .work-thumb__title {
+        color: var(--accent-2);
+      }
+
+      .work-thumb__image {
+        scale: 1.01;
+      }
+    }
+
+    .work-thumb__title {
+      transition: all .1s ease;
+    }
+    
+    .work-thumb__image {
+      width: 100%;
+      height: auto;
+      border-radius: 15px 15px 0 0;
+      transition: all .1s ease;
+      border: 2px solid var(--border-primary);
+    }
+
+    .work-thumb__description {
+      color: var(--text-secondary);
+    }
+
+    .work-thumb__button {
+      color: var(--accent-1);
+    }
+  }
+
+</style>

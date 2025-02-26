@@ -9,7 +9,7 @@ intro: |
   
   I lead product design in an ambitious project to help instigate engaging conversations between customers and local experts, getting them off to a positive start and setting the customer up for success.
   
-  Much of the work is in the process and reasoning but if you want you can <a href="#final-designs">jump straight to the final designs</a>.
+  Much of the work is in the process and reasoning but if you want you can <a href="#final-designs">jump straight to the prototype</a>.
 introPreheading: 'Challenge'
 skills: [
   'Product process',
@@ -21,7 +21,7 @@ skills: [
 takeawaysPreheading: 'Process & outcomes'
 takeaways: [
   {
-    title: "Defined a North Start metric",
+    title: "Defined a North Star metric",
     number: 1,
     moreLink: "understanding-the-business-challenge-and-defining-a-north-star"
   },
@@ -213,7 +213,7 @@ Moving through the bets we had both confidence in and knew to be reasonably feas
 ![Mid-fidelity prototyping various ideas](./onboarding-prototyping.png)
 *Mid-fidelity prototyping various ideas*
 
-<p id="final-designs">✨ Here are the final designs. They're Figma embeds, go ahead and interact..</p>
+<p id="final-designs">✨ Here are the final responsive prototypes. They're Figma embeds, go ahead and interact...</p>
 
 <div class="iframe-group">
   <iframe class="desktop" src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=1314-2416&viewport=-4027%2C229%2C0.38&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1314%3A2416&embed-host=share" allowfullscreen></iframe>

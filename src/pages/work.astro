@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+import WorkList from "../components/work-list.astro"
+---
+
+<BaseLayout
+  metaTitle="Product Designer in Bristol, UK | Sim Seneca"
+  description="I'm a Product Designer who loves solving customer problems, thinking in systems and sometimes committing code. Living life here in Bristol, UK."
+>
+
+  <section class="work-wrapper u-mrg-be-3xl">
+    <div class="u-container">
+      <div class="work-inner">
+        <div class="work-intro u-pad-bs-3xl u-pad-be-2xl">
+          <h1 class="u-font-display u-fontsize-3">            
+            A few things I've worked on. Obviously.
+          </h1>
+        </div>
+        <WorkList />
+        <p class="note u-pad-bs-xs">Feb '25: Man alive these take a long time to put together. I'll keep adding, check back soon...</p>
+      </div>
+    </div>
+  </section>
+	
+</BaseLayout>
+
+<style>
+
+  .work-wrapper {
+    
+    .work-intro {
+      color: var(--accent-2);
+    }
+
+    .note {
+      color: var(--text-secondary);
+    }
+  }
+ 
+</style>

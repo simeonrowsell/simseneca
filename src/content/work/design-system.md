@@ -1,6 +1,6 @@
 ---
-metaTitle: 'Design systems'
-metaDescription: 'Creating, maintaining and evolving a design system serving 5M+ users'
+metaTitle: 'Creating, maintaining and evolving a design system serving 5M+ users'
+metaDescription: 'Designing seamless and consistent user experiences across the entire customer journey, whilst allowing rapid prototyping and building of new ones.'
 title: 'Creating, maintaining and evolving a design system serving 5M+ users'
 cover: './design-system-hero.png'
 coverAlt: 'A selection of design system components'

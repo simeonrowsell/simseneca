@@ -8,6 +8,8 @@ intro: |
   Say you're planning a trip somewhere, Japan for example. TravelLocal would connect you with a local travel expert right there in Tokyo to plan your trip. At its best you make a personal connection with someone local and have a more authentic travel experience. However when that conversation doesn’t get off to a good start and customers go quiet, the local expert is left feeling disengaged and the customer underserved.
   
   I lead product design in an ambitious project to help instigate engaging conversations between customers and local experts, getting them off to a positive start and setting the customer up for success.
+  
+  Much of the work is in the process and reasoning but if you want you can <a href="#final-designs">jump straight to the final designs</a>.
 introPreheading: 'Challenge'
 skills: [
   'Product process',
@@ -19,30 +21,65 @@ skills: [
 takeawaysPreheading: 'Process & outcomes'
 takeaways: [
   {
-    title: "Created the design system and established atomic design principles",
+    title: "Defined a North Start metric",
     number: 1,
-    moreLink: "creating-the-design-system-and-establishing-atomic-design-principles"
+    moreLink: "understanding-the-business-challenge-and-defining-a-north-star"
   },
   {
-    title: "Closely aligned the Figma component library with the codebase",
+    title: "Held qualitative user research sessions to understand customer problems",
     number: 2,
-    moreLink: "close-alignment-with-the-codebase"
+    moreLink: "discovering-why-customers-go-quiet"
   },
   {
-    title: "Developed Storybook into the single source of truth",
+    title: "Defined key themes for improvement",
     number: 3,
-    moreLink: "storybook-becomes-the-single-source-of-truth"
+    moreLink: "reviewing-the-current-experience"
   },
   {
-    title: "Evolved the design system as the company scaled from 5 to 50+ people",
+    title: "Navigated a local maximum and derisked launch",
     number: 4,
-    moreLink: "maintaining-and-evolving-as-the-company-grows"
-  }
+    moreLink: "hitting-a-local-maximum"
+  },
+  {
+    title: "Created potential solutions from observed customer problems",
+    number: 5,
+    moreLink: "turning-observed-problems-into-potential-solutions"
+  },
+  {
+    title: "Prototyped and designed the new experience",
+    number: 6,
+    moreLink: "prototyping-and-designing-the-new-experience"
+  },
+  {
+    title: "Validated the prototype through user testing",
+    number: 7,
+    moreLink: "validating-the-prototype-with-users"
+  },
+  {
+    title: "Worked closely with engineering on implementation",
+    number: 8,
+    moreLink: "implementation-with-engineering"
+  }, 
+  {
+    title: "Collaborated with content marketing and took on Product Marketing role",
+    number: 9,
+    moreLink: "collaborating-with-content-marketing"
+  }, 
+  {
+    title: "Launched to customers and measured positive outcomes",
+    number: 10,
+    moreLink: "launching-and-outcomes"
+  },
+  {
+    title: "Took away various learnings to apply next time",
+    number: 11,
+    moreLink: "learnings-and-wrapping-up"
+  },
 ]
 
 ---
 
-## Business challenge and North Star
+## Understanding the business challenge and defining a North Star
 
 As TravelLocal’s acquisition model matured and more travellers were finding them, so did the amount of customers submitting their travel preferences and thus getting connected with a local expert. The expert then kicks off the conversation by messaging customers manually via the TravelLocal platform.
 
@@ -57,7 +94,7 @@ Working with the Head of Product we defined an important dynamic at the heart of
 
 We chose to measure engagement as the point where a customer sent three messages. Analysing request data revealed a significant increase in the propensity to book when a customer had sent three customer messages. This represented some meaningful engagement above just an exchanging of pleasantries.
 
-We defined two main guardrails…
+We also defined two main <mark>guardrails…</mark>
 1. Increase the engagement rate _without_ reducing the number of connected customers - the most sensitive of company metrics.
 2. Focus our work on product design more so than service design which, although impactful, was out of scope at the time.
 
@@ -100,7 +137,7 @@ Using the Atomic Research model for recording UX learnings I broke customer feed
   </li>
 </ul>
 
-I shared these insights with the wider team and company, both in write-ups, Miro boards and video clips so team members could engage with the level of detail they needed to. Being able to show company leadership these customers actually reacting to the product played a huge role in aligning teams internally.
+I shared these insights with the wider team and company, both in write-ups, Miro boards and video clips so team members could engage with the level of detail they needed to. Showing leadership real customer reactions helped align teams internally.
 
 ## Reviewing the current experience
 We’d inherited this user experience during the company’s merger a couple of years previous so I was keen to apply a critical eye using what I knew from previous customer research as well as the updated brand, market offering and product vision.
@@ -146,7 +183,7 @@ Leading product design through a company merger where we inherited legacy user e
 4. Only change the experience after the customer had been connected, avoiding negatively impacting the most business sensitive metric of 'connections'.
 5. Work fast to retain a positive impact/effort outcome
 
-## Turning problems into solutions
+## Turning observed problems into potential solutions
 <mark>Moving into the solution space meant turning customer insights into problem statements, then turning them on their head into open "how might we" questions.</mark> This revealed five design opportunities.
 
 1. __How might we__ help customers understand what just happened…
@@ -160,7 +197,7 @@ I then created "bets" from these, with the <mark>confidence that we were solving
 ![A high-level selection of the bets we mapped out](./onboarding-tree.png)
 *A high-level selection of the bets we mapped out*
 
-## Prototyping the new experience
+## Prototyping and designing the new experience
 It became clear pretty quickly that the place for us to concentrate our design efforts was in the immediate experience after a customer had submitted their trip preferences and been connected with a local expert.
 
 <mark>Getting that initial milestone and onboarding experience right was key to setting the customer up for success.</mark>
@@ -173,10 +210,10 @@ Moving through the bets we had both confidence in and knew to be reasonably feas
 ![Wireframing in my favourite hot pink colour](./onboarding-wireframes.png)
 *Wireframing in my favourite hot pink colour*
 
-![Mid-fidelity rototyping various ideas](./onboarding-prototyping.png)
+![Mid-fidelity prototyping various ideas](./onboarding-prototyping.png)
 *Mid-fidelity prototyping various ideas*
 
-✨ Ultimately these prototypes were where I landed...
+<p id="final-designs">✨ Here are the final designs. They're Figma embeds, go ahead and interact..</p>
 
 <div class="iframe-group">
   <iframe class="desktop" src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=1314-2416&viewport=-4027%2C229%2C0.38&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1314%3A2416&embed-host=share" allowfullscreen></iframe>
@@ -190,7 +227,7 @@ A few highlights...
     <img src="/src/content/work/onboarding-modal.png" alt="Confirmation modal" />
     <div class="design-highlight__inner">
       <p class="title">Celebratory pause and heirarchy of information</p>
-      <p class="summary">Separating the information out gave each phase space to breath and be understood. First we confirm what's just happened and then, via the proposition reiforcing "Meet your local expert" button, the customer moves into the next phase of onboarding.</p>
+      <p class="summary">Separating the information out gave each phase space to breathe and be understood. First we confirm what's just happened and then, via the proposition reinforcing "Meet your local expert" button, the customer moves into the next phase of onboarding.</p>
     </div>
   </li>  
   <li class="design-highlight">
@@ -216,7 +253,7 @@ A few highlights...
   </li>  
 </ul>
 
-## Testing the prototype with users
+## Validating the prototype with users
 <mark>To increase our confidence levels I held more qualitative research sessions with users</mark>, observing them as they used the new prototype and being curious as to their feelings.
 
 The feedback was generally really positive and I was particularly reassured that customers felt that the "how might we’s" we’d set out to solve were being addressed.
@@ -296,4 +333,32 @@ I managed the sourcing of any copy we needed from content marketing and with eng
 ![Defining how copy and content should be managed](./onboarding-copy.png)
 *Defining how copy and content should be managed*
 
-## Launching and the outcome
+## Launching and outcomes!
+Although team confidence was high off the back of our user testing, our initial plan was to release the change publicly via an A/B test. Through conversations with engineering this proved to be technically challenging so we instead launched it just for a small sample of the destinations that TravelLocal offer. Whilst unideal we were able to mitigate risk by proving that the changes didn't result in a negative impact at least before shipping it to all customers.
+
+<mark>The launch was very successful and the changes were really positively received by customers, TravelLocal’s local experts and the internal team.</mark>
+
+Some high level outcomes were…
+
+- ✨ We achieved a ~25% uplift in customer engagement.
+- We increased the number of messages sent to local experts immediately.
+- We increased the open rate of the welcome email.
+- We received positive qualitative feedback from local experts who noticed a change in customer engagement.
+- We set up a solid technical and product experience foundation, enabling continuous iteration in an improved local maximum.
+- We brought the experience up-to-date with the newest visual language and branding.
+
+## Learnings and wrapping up
+As ever there was plenty to learn from this project. Here are a few of mine...
+
+1. The focus was clear which allowed us to really go deep into this particular experience. I think there might have been big wins in the service design side had we had the scope to get into that more.
+2. Of course this immediate onboarding isn't an isolated experience, it's part of a whole user journey. There's a lot of potential to affect the engagement rate even higher up the funnel in the landing and sign-up experiences. If we didn't have that guardrail I'd have liked to explore that further. Watch this space 👀
+3. Sometimes you have to make larger jumps over smaller iterations. The company was in a phase where it needed that so I'm pleased we could really move it along. However these bigger jumps are harder to track the impact of. The new experience included loads of new GA tracking events which is great but we didn't have old data to compare it to. Next time I'd add that event tracking to the current experience early in the project so we would have more options for comparisson and learning after the change.
+4. As much as I really do believe in MVP's, as an excited designer _gahh_ it's so frustrating when you can can't build all the cool ideas right away!
+
+### A positive impact on the customer experience
+
+This project was just one piece of an entire user journey I owned as the Product Designer at TravelLocal, but being the first major milestone it was important to get it right. There are loads of improvements TravelLocal could make and bets to place (local expert welcome videos, functionality to book a video call, a more fleshed-out customer account area), but I'm proud of this work and its positive impact on that initial onboarding customer experience.
+
+___
+
+Thanks for taking the time to read this if you got all the way down here. If you ever did want to travel to Japan I can absolutely recommend it, it's beautiful.

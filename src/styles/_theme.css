@@ -321,6 +321,12 @@
       height: auto;
       aspect-ratio: 16 / 9;
     }
+
+    hr {
+      border-top: 2px solid var(--border-primary);
+      margin-inline-start: 0;
+      margin-block-end: var(--space-l);
+    }
   }  
 
   /*

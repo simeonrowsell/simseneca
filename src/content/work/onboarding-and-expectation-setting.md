@@ -224,28 +224,28 @@ A few highlights...
 
 <ul class="design-highlights">
   <li class="design-highlight">
-    <img src="/src/content/work/onboarding-modal.png" alt="Confirmation modal" />
+    <img src="https://simseneca.design/onboarding-modal.png" alt="Confirmation modal" />
     <div class="design-highlight__inner">
       <p class="title">Celebratory pause and heirarchy of information</p>
       <p class="summary">Separating the information out gave each phase space to breathe and be understood. First we confirm what's just happened and then, via the proposition reinforcing "Meet your local expert" button, the customer moves into the next phase of onboarding.</p>
     </div>
   </li>  
   <li class="design-highlight">
-    <img src="/src/content/work/onboarding-toasts.png" alt="Confirmation toasts" />
+    <img src="https://simseneca.design/onboarding-toasts.png" alt="Confirmation toasts" />
     <div class="design-highlight__inner">
       <p class="title">Confirmation notifications and clear next step</p>
       <p class="summary">A timeline of events reasurring customers what has happened whilst clearly explaining the next step. We also have what the time is in Japan to subtly reinforce the proposition that local experts are actually there.</p>
     </div>
   </li>
   <li class="design-highlight">
-    <img src="/src/content/work/onboarding-meet.png" alt="Meeting the local expert" />
+    <img src="https://simseneca.design/onboarding-meet.png" alt="Meeting the local expert" />
     <div class="design-highlight__inner">
       <p class="title">Properly introducing the local expert</p>
       <p class="summary">A really important addition is to properly introduce the local expert and build trust. This also makes a neat place to confirm the user's email address, reinforcing the proposition and next step.</p>
     </div>
   </li>
   <li class="design-highlight">
-    <img src="/src/content/work/onboarding-message.png" alt="Messaging functionality" />
+    <img src="https://simseneca.design/onboarding-message.png" alt="Messaging functionality" />
     <div class="design-highlight__inner">
       <p class="title">Message the local expert right away</p>
       <p class="summary">Having been introduced to the local expert this becomes a clearer prompt to message them right away and why. The messaging UI reinforces that this is a conversation.</p>

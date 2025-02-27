@@ -316,7 +316,7 @@ In line with our de-risking strategy, I worked with product managers, engineers 
 We agreed to hold back on a couple of the more complex functionality additions as well as some content that would require too much effort to pull together for launch. We would come back to them in future iterations and prove their value in more contained experiments.
 
 ## Implementation with engineering
-Our frontend workflow is built on [the design system](./design-system) so I modularised my Figma designs, defining any new components and states and evolving any that pre-existed.
+Our frontend workflow is built on [the design system](https://simseneca.design/work/design-system/) so I modularised my Figma designs, defining any new components and states and evolving any that pre-existed.
 
 <mark>I collaborated closely with engineering to communicate my design intentions and figure out the best way to translate this into the codebase.</mark> When it came to development myself and engineering were speaking daily and I chipped in and built a couple of components myself to help with velocity.
 

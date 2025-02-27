@@ -418,20 +418,32 @@ a.underlined-link {
     --hovered: var(--beige-dark);
   }
 
-  display: inline-flex;
   position: relative;
   padding-inline: var(--inline-padding);
   padding-block: var(--block-padding);
   transition: all .1s ease;
   color: var(--color);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+
+  svg path {
+    fill: var(--color)
+  }
   
-  & > span {
+  & > span,
+  & > svg {
     transition: all .1s ease;
   }
 
-  &:hover > span {
+  &:hover > span,
+  &:hover > svg {
     color: var(--hovered);
     transform: translateY(-3px);
+
+    path {
+      fill: var(--hovered);
+    }
   }
 
   &::after {

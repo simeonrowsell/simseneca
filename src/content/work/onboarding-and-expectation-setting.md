@@ -1,13 +1,14 @@
 ---
 metaTitle: 'Onboarding and expectation setting'
 metaDescription: 'An ambitious project to help instigate engaging conversations between customers and local experts, getting them off to a positive start and setting the customer up for success.'
+sortOrder: 1
 title: 'Increasing user engagement through clear onboarding and expectation setting'
 cover: './onboarding-hero.png'
 coverAlt: 'Mobile designs for a new onboarding experience'
 intro: |
   Say you're planning a trip somewhere, Japan for example. TravelLocal would connect you with a local travel expert right there in Tokyo to plan your trip. At its best you make a personal connection with someone local and have a more authentic travel experience. However when that conversation doesn’t get off to a good start and customers go quiet, the local expert is left feeling disengaged and the customer underserved.
   
-  I lead product design in an ambitious project to help instigate engaging conversations between customers and local experts, getting them off to a positive start and setting the customer up for success.
+  I led product design in an ambitious project to help instigate engaging conversations between customers and local experts, getting them off to a positive start and setting the customer up for success.
   
   Much of the work is in the process and reasoning but if you want you can <a href="#final-designs">jump straight to the prototype</a>.
 introPreheading: 'Challenge'

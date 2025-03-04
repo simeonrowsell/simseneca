@@ -13,3 +13,7 @@
     - Can also include 'Previous' H2
 - Add an /about or /story
 - Move this changelog to /changelog
+- Design system internal link - make relative not absolute
+- Design highlight images - make relative not absolute
+- ASCII offsite arrow on iPad rendering as emoji
+- Skills checkmarks offset on phone

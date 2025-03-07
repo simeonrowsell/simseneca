@@ -1,35 +1,34 @@
 ---
-metaTitle: 'Rapidly iterated on the landing page, driving a 200%+ increase in engagement.'
-metaDescription: 'Optimising the landing experience by efficiently communicating TravelLocal’s USP and accelerating the "ah-ha" moment, leading to a hugely impactful 200%+ increase in customer engagement.'
+metaTitle: 'Rapid prototype iteration to increase engagement by 160%'
+metaDescription: "Optimising the landing experience by efficiently communicating TravelLocal's proposition and accelerating the \"ah-ha\" moment, leading to an impactful 160% increase in customer engagement."
 sortOrder: 3
-title: 'Rapidly iterating the landing page to drive a 200%+ increase in engagement'
+title: 'Rapid prototype iteration to increase engagement by 160%'
 cover: './landing-page-hero.png'
 coverAlt: 'Desktop designs for the Egypt landing experience'
-intro: |  
-  TravelLocal connects travellers with local travel experts right there in their destination. If you want to go to Egypt, who better to plan your tailor-made trip for you than someone actually living and working in Cairo?
+intro: |
+  TravelLocal connects travellers with local travel experts right there in their destination. If you want to go to Egypt, who better to plan your trip for you than someone actually living and working in Cairo?
 
   This is a persuasive proposition, but not enough customers were understanding it.
 
-  I led product design on a key project to optimise the landing experience by efficiently communicating TravelLocal's USP and accelerating the "ah-ha" moment, leading to a hugely impactful 200%+ increase in customer engagement.
+  I led Product Design on a key project optimising the customer landing experience by better communicating TravelLocal\'s proposition and accelerating the \"ah-ha\" moment.
+
+  The outcome was an impactful 160% increase in customer engagement.
+
+  Much of the work is in the process and reasoning but if you want you can <a href="#final-designs">jump straight to the final designs</a>.
 introPreheading: 'Challenge'
 skills: [
-  'Product process',
   'UI/UX design',
-  'Customer research',
-  'Prototyping and validation',
+  'Rapid prototyping and iteration',
+  'Customer research',  
+  'Product strategy',
   'Cross-team collaboration'
 ]
 takeawaysPreheading: 'Process & outcomes'
 takeaways: [
   {
-    title: "Designed and A/B tested the new landing page",
+    title: "Defined a North Star metric",
     number: 1,
-    moreLink: "the-designs-for-the-ab-experiment"
-  },
-  {
-    title: "Resulted in impactful business outcomes",
-    number: 2,
-    moreLink: "outcomes"
+    moreLink: "understanding-the-business-challenge-and-defining-a-north-star"
   },
 ]
 
@@ -37,89 +36,92 @@ takeaways: [
 
 ## Understanding the business challenge and defining a North Star
 
-The core proposition of TravelLocal is that they connect you with local travel experts in the destination. So if you want to travel to Egypt, for example, you’d send your trip preferences (a _request_) and TravelLocal would connect you with a tour operator actually in Cairo to plan your trip.
+The core proposition of TravelLocal is that they connect you with local travel experts in the destination. If you wanted to travel to Egypt, you’d send your trip preferences (a request) and TravelLocal would connect you with a tour operator actually in Cairo. From there you would plan your trip together.
 
-<mark>Central to this model is the conversation between local experts and customers</mark>, and for the customer to continue to move through the planning journey towards booking, those conversations need to be super positive and engaging from the start.
+<mark>Central to this model is the conversation between local experts and customers.</mark> 
+
+For the customer to continue to move through the booking journey those conversations need to be positive and engaging from the start.
 
 _Diagram of the TravelLocal model compared to traditional competitors_
 
-As the company looked to scale, myself and the product team understood the key business challenge was to <mark>ensure that the customers we were onboarding were ready and enthusiastic about the key part of the proposition</mark>; the conversation. If not, local experts would get in touch with customers but receive no reply, leading to unsustainable, wasted effort and frustration.
+As the company looked to scale, myself and the product team deeply understood the key business challenge. We needed to <mark>ensure that the customers we were onboarding were ready and enthusiastic about the conversational part of the proposition</mark>. If not, local experts would get in touch with customers but receive no reply. This would lead to unsustainable, wasted effort and frustration.
 
-One way we quantitatively measured the quality of this early conversation was whether customers sent three messages to their local expert, which we identified as a significant tipping point reflecting meaningful engagement.
+One method of measuring the quality of this early conversation was whether customers sent three messages to their local expert. We identified this as a significant tipping point reflecting meaningful engagement.
 
-🌟 <mark>We set our North Star metric as improving this customer engagement.</mark>
+✨ <mark>We set our North Star metric as improving this customer engagement.</mark>
 
-Ultimately the more customers reach this early milestone, the more continue down the funnel and eventually convert into bookings.
+The more customers reach this early milestone, the more eventually convert into bookings. Importantly, this further decreases the Customer Acquisition Cost (CAC).
 
-So important to the company's growth was this North Star that it led us across multiple pieces of work, including [successfully improving the initial onboarding experience](./onboarding-and-expectation-setting).
+So critical to the company's growth was this North Star that it led us across multiple pieces of work, including [successfully improving the initial onboarding experience](./onboarding-and-expectation-setting).
 
 We set ourselves a couple of early guardrails…
 
-1. We were prepared for the potential reduction of overall trip requests so long as that was counterbalanced by higher engagement. Better proposition comprehension might lead to more visitors instead deciding it wasn't for them and bouncing; not neccessarily a bad result. <mark>However to mitigate risk, we set the amount of requests we’d be comfortable seeing a reduction by.</mark>
-2. We wanted to learn as quickly as possible, so we decided to hyper-focus on <mark>rapid iteration and shipping lightweight MVP’s</mark>; embracing a ‘good enough’ mentality.
+1. We prepared for the potential reduction of trip requests. This would be acceptable if it were counterbalanced with an increase in engagement of those requests. Better proposition comprehension might lead to more visitors deciding it wasn't for them and bouncing. <mark>To mitigate risk, we set the amount of requests we’d be comfortable seeing a reduction by.</mark>
+2. We wanted to learn as fast as possible. We decided to hyper-focus on <mark>rapid iteration and lightweight MVP’s</mark> over perfectionism; embracing a ‘good enough’ mentality.
 
-## Targeting the customer landing experience
+## Targeting the landing experience
 
-As a tech company in the travel space, a key pillar of the on-site browsing experience were country pages; one for each destination TravelLocal offered. At the time, PPC was the focus of TravelLocal’s acquisition strategy, landing visitors on these country pages.
+At the time, Pay-per-click (PPC) was the focus of TravelLocal’s acquisition strategy so the majority of customers would land straight on a country page from a search like "Holidays to Egypt".
 
-We could therefore be confident that for most visitors they’d already decided the destination they wanted to travel to, so working on any earlier destination browsing experience wasn’t going to be of high impact.
-
-Having previously made [successful improvements to the customer experience lower in the funnel](./onboarding-and-expectation-setting), <mark>we decided this time to improve the landing experience right at the top</mark>. The strategy was that we’d see a trickle down effect. If we nailed customer enthusiasm and proposition comprehension early, this would positively affect the rest of the customer experience.
+Having previously made [successful improvements to the customer experience lower in the funnel](./onboarding-and-expectation-setting), <mark>we decided to improve the landing experience right at the top of the funnel</mark>. The strategy was to boost customer enthusiasm early on, fostering positive intent that would carry through the rest of the experience.
 
 _Diagram of the funnel, pointing to the top as our next place to focus on_
 
-<mark>As a newer challenger in the travel space, TravelLocal’s country page was often customers’ first impression of the brand. Getting this right was critical for customer success and I was confident that improving it could drive high impact.</mark>
+<mark>As a challenger in the travel space, TravelLocal’s country page was often a customers’ first impression of the brand. Getting this right was critical for customer success and I was confident that improving it could drive high impact.</mark>
 
 ## Discovering why customers don’t engage
 
-## Growing confidence in the 'ah-ha' moment
+On this occasion I worked with customer researcher Ryan Garner to better understand what engagement challenges customers were facing. It can be extremely helpful to work with external colleagues from time-to-time. Ryan gave a fresh perspective and <mark>I had the chance to work more with the Jobs-to-be-Done framework that we implemented</mark>.
 
-I’d long considered the moment that customers understand the role of the local expert to be the 'ah-ha' moment and this round of research only bolstered my confidence in this.
+After holding broad customer research sessions, Ryan proposed five observed Jobs-to-be-Done. Customers wanted to...
+
+1. Develop a trusting relationship with a knowledgeable agent.
+2. Experience an authentic connection with the local culture.
+3. Feel well-looked-after with luxury service.
+4. Have the logistics for their trip seamlessly managed.
+5. Have the flexibility to adjust plans after booking.
+
+<mark>These reinforced insights I’d previously gathered from speaking with customers over the years. This increased confidence and helped with wider stakeholder buy-in.</mark>
+
+*Gleanly quotes about these 5 areas*
+- *"Above average (but not luxury) trips"*
+
+## Accelerating the “ah-ha” moment in the customer journey
+
+I’d long considered the "ah-ha" moment to be when customers comprehend the role of the local experts. This round of research only bolstered my confidence.
+
+Yet, <mark>that "ah-ha" moment was coming either too late or not at all</mark>. It often only happened once customers were actually contacted by the local expert. My work on the [initial onboarding experience](./onboarding-and-expectation-setting) improved this but there was more to do.
+
+_Ah-ha moment customer emotions diagram mapped on customer journey showing where we want to move it to?_
+
+When speaking with customers I heard revealing feedback such as...
 
 _Gleanly quotes about the ah-ha moment_
+- "I like the fact that you have a direct link with somebody in the country you are visiting"
 
-<mark>Identifying the 'ah-ha' moment sharpened our focus on optimising for that key emotional inflection point.</mark>
-
-## Critiquing the current experience
-
-## Bringing customer learnings together to set design directions
-
-From speaking with customers and working with analytics data over my time at TravelLocal there were <mark>a few related factors I knew also influenced a customer's perception of the landing experience</mark>.
-
-- Many customers were new to TravelLocal, with little or no prior brand exposure.
-- Customers weren’t only visiting TravelLocal when looking for a holiday, they were also browsing competitor sites.
-- Customers were looking for bespoke, tailor-made travel, not off-the-shelf packages.
-- The majority of visitors were coming to the site on mobile.
-
-By now we’d built up a really good picture of the customer and their needs at this early stage. <mark>Bringing all this knowledge together gave me three key design directions to take into prototyping.</mark> 
-
-Designs needed to...
-
-1. ...lead with differentiating brand proposition before delivering country content.
-2. ...clearly communicate the tailor-made nature of the trips.
-3. ...focus on mobile first.
+<mark>Identifying the "ah-ha" moment sharpened my focus on optimising for that key emotional inflection point.</mark>
 
 ## Leading with the proposition
 
-TravelLocal's proposition is strong, but was weakly communicated.
+<mark>TravelLocal's proposition is strong, but was weakly communicated.</mark>
 
-As well as customers receiving a more authentic travel experience, TravelLocal’s model also returns autonomy to those local tour operators who are often lost in a sea of middlemen in traditional models. With TravelLocal those local experts are front and centre, giving them more control over how tourism affects their community as well as ensuring more of customers' money goes straight into the local economy.
+Customers receive a more authentic travel experience with TravelLocal and their local experts. In addition, TravelLocal’s model returns autonomy to those local tour operators who are often lost in a sea of middlemen in traditional models. With TravelLocal those local experts are front and centre. They have more control over how tourism affects their community and more of the customers' money goes into their local economy.
 
-<mark>This approach to tailor-made travel challenges the established model, introducing a new concept that requires a shift in travellers' mental models.</mark>
+<mark>This approach to tailor-made travel challenges the established model. It introduces a new concept to customers which requires a shift in their mental models.</mark>
 
-As we’ve seen, the current landing experience was geared more towards country content than anything unique to TravelLocal itself. <mark>The proposition was missing, and with it any distinguishing selling points.</mark>
+The current landing experience focused more on country content than the unique value of TravelLocal. <mark>The proposition was missing, and with it, any distinguishing selling points.</mark>
 
-_Screenshot of the current experience with country content leading over propositional_
+_Embed of the current experience with country content leading over propositional_
 
-We knew we needed to flip this on its head; <mark>customers needed to understand _why_ TravelLocal and _how_ it worked.</mark>
+We knew we needed to flip this on its head. <mark>Customers needed to understand _why_ TravelLocal and _how_ it worked.</mark> Once they did, they'd be more ready and willing to engage.
 
 ### Evolving and deepening the brand proposition pillars
 
-I’d previously created a “How it works” page on the site which was the company’s first run at defining and communicating the pillars of the brand proposition. Bringing these onto the country page landing experience gave me the opportunity to evolve and deepen those value propositions.
+I’d previously established the language around the brand proposition pillars by creating a "How it works" page. Revisiting them for this landing page gave me the opportunity to evolve and deepen them.
 
-<mark>I stepped into a Product Marketing role, translating internal brand theory into practical, customer-facing propositional statements and copy.</mark>
+<mark>I stepped into a Product Marketing role, translating internal brand theory into practical, customer-facing propositional copy.</mark>
 
-I love writing product marketing copy and believe it to be an important part of design. A beautiful visual design can be completely let down by unclear or unimaginative copy.
+I love writing product copy and believe it to be an important part of design. A beautiful visual design can be completely let down by unclear or unimaginative writing.
 
 I wrote the three top-level propositional pillars, forming the structure of the proposition communication that I would flesh out in the prototype...
 
@@ -129,25 +131,118 @@ I wrote the three top-level propositional pillars, forming the structure of the 
 
 > "A fairer way to travel"
 
+## Setting customer-led design directions
+
+Over my time at TravelLocal I'd discovered some other customer behaviour insights that were helpful here. <mark>A few in-particular related to the customer's perception of the landing experience.</mark>
+
+- Many customers were new to TravelLocal, with little or no prior brand exposure.
+- Customers weren’t _only_ visiting TravelLocal, they were also browsing competitor sites.
+- Customers were looking for bespoke, tailor-made travel, not off-the-shelf packages.
+- The majority of visitors were coming to the site on mobile.
+
+By now we’d built up a solid picture of the customer and their needs at this early stage of the customer journey. <mark>Bringing all this knowledge together gave me three key design directions to take into prototyping.</mark>
+
+1. Lead with differentiating brand proposition before delivering country content.
+2. Effectively communicate the tailor-made nature of the trips.
+3. Focus on mobile first.
+
 ## The initial proposition-led prototype
+
+<mark>Leaning on <u>the design system I'd built</u>, I designed wireframes and mid-high fidelity prototypes for an improved landing experience.</mark>
+
+*Screenshots*
+
+*Embed the new one
+
+A few key decisions were...
+
+- Improving the H1. The page heading was purely functional and didn't communicate any value to customers. This could work much harder for us. When we lead with the proposition users start to understand the unique value proposition right away.
+- Better placement of call to actions. Having watched session recordings, I knew customers were clicking the "Plan your trip" button right away. Due to the human effort at the heart of TravelLocal's customer journey this was too early. Customers needed to process and proposition before choosing to get started. This breaks common SasS patterns, but was right given this particular business model.
+- Proposition before country content. All travel websites have generic information about a country. We're now leading with what's unique to TravelLocal, including bringing the local experts to the foreground.
+- Tailor-made by design. The trip ideas gave the impression that these were off-the-shelf and the user had to find the right one for them. These are design patterns more commonly found in ecommerce shops. Customers did want some idea of what to do in the country, but by designing that as more modular 'experiences' we better communicate the tailor-made aspect.
 
 ## Rapid, customer-validated iteration of the prototype
 
-## The designs for the A/B experiment
+Over the next few weeks we held three rounds of user testing, speaking with 10 customers. I iterated this prototype in-line with customer feedback, distilling insights into actionable revisions.
 
-After a few rounds of iterating and validating via qualitative customer interviews, here's are the designs that we tested quantitatively via the A/B test.
+<mark>Working in this way meant we were able to rapidly validate and improve design choices whilst building our confidence in the success of the solution.</mark>
 
-They're Figma prototypes so go ahead and scroll around!
+To highlight a few of the most significant changes the design went through...
 
-<div class="iframe-group">
+### Finding the most effective country content
+
+### The challenge of tailor-made pricing
+
+### Effectively communicating who the local experts were
+
+With all those iterations made, here are the final designs we launched with!
+
+<div class="iframe-group" id="final-designs">
   <iframe class="desktop" src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=2226-2213&viewport=-3824%2C196%2C0.33&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2226%3A2213&embed-host=share" allowfullscreen></iframe>
   <iframe class="mobile" src="https://embed.figma.com/proto/XnQlWbxcx4PVAVtMA74uIM/simseneca.design?page-id=0%3A1&node-id=2227-5078&viewport=-3824%2C196%2C0.33&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2227%3A5078&embed-host=share&hide-ui=1"></iframe>
 </div>
 
-## Building and launching the A/B experiment
+## Minimum viable product feasibility
 
-### Quant test strategy
+I'm a big fan of IDEO's 'desirability, viability, feasibility' framework. I was confident we had a desirable and viable solution. Customers responded positively to the prototype and we were solving for observed customer and businesses challenges. <mark>When it came to the build, our primary focus shifted to feasibility. How could we quickly and practically get this out to customers at scale?</mark>
 
-## Outcomes
+_IDEO diagram_
 
-We saw a <mark>200%+ increase in the engagement of customers</mark>, which was huge and proves that solid product design processes can lead to changes that have a substantial impact on key business metrics.
+### Marketing feasibility
+
+<mark>Being clear we were still in the learning phase, our aim was to get 'good enough' content together to test with.</mark> I was keen to avoid being hamstrung by future content challenges. Although important to bear in mind, we'd solve those challenges once the design impact was proven and it moved into production.
+
+<mark>I worked closely with marketing, as ever.</mark> We ensured we were able to pull together the content we required and aligned on tone of voice.
+
+### Engineering feasibility
+I held discussions with Engineering about how we could build this lightweight to learn quickly and efficiently. We decided to build static pages and hard-code copy rather than serve it from our CMS; all ways that helped us move fast.
+
+Pairing with Engineering, we went through the design system components required and solved any uncertainties or potential challenges. <mark>I built a couple of components myself to help with velocity.</mark>
+
+<p class="codepen" data-height="412" data-default-tab="result" data-slug-hash="GgKwjga" data-pen-title="TL Price Guide" data-user="SimeonRowsell" style="height: 412px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/SimeonRowsell/pen/GgKwjga">
+  TL Price Guide</a> by Simeon Rowsell (<a href="https://codepen.io/SimeonRowsell">@SimeonRowsell</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+## Launching the A/B experiment
+
+<mark>Obviously it was important to de-risk the launch of such a significant, top-of-funnel change. We did so by first launching a controlled A/B experiment.</mark>
+
+With the goal of quickly reaching statistical significance we made some strategic decisions when launching the A/B experiment.
+
+1. We tested it with the five most popular destinations
+2. We tested it during peak weeks of the year
+3. We worked with performance marketing to ensure PPC campaigns were directing enough traffic
+
+We ran the experiment through <u>Convert</u> with a little RegEx here and there to help with URL targeting. The Head of Product led on hooking this up with GA4 so we could properly track the results.
+
+✨ The goal was to improve our North Star metric of customer engagement.
+
+## Positive outcomes!
+
+We were very happy to see that the new landing experience was a huge success.
+
+- ✨ <mark>Customer engagement increased by 160%!</mark>
+- Site visits > Engagement increased by 60%
+- Customer request numbers (our guardrail) remained the same. This was positive and confirmed that the engagement increase reflected a genuine rise in activity, not just a percentage shift.
+- We were able to further demonstrate to those in the company who hadn't worked this way before the great value in following a customer-first product design process. Theory turned into measurable, quantifiable business impact.
+
+<mark>By improving the customer landing experience, TravelLocal was now better serving its customers and local experts, reducing Customer Acquisition Costs (CAC) and ultimately increasing bookings.</mark>
+
+With such positive and provable business impact we moved the designs into production as soon as we could.
+
+## Learnings and wrapping up
+
+As ever there was plenty to learn from this project!
+
+1. A key value of the Jobs-to-be-Done framework was how it helped us communicate our reasoning internally with other stakeholders. Many of the newer customer insights supported what we already knew but the framework helped us organise that and gain wider buy in.
+2. In product design you always want to remain humble and open-minded. Curiosity is so often the key. But at some stage you have to follow your educated gut and try something. We'd long had the product sense that this page had the opportunity for huge impact and perhaps we could have been more confident in advocating for that focus sooner.
+3. I've never been so sure as to the importance of UX copy and really enjoyed drilling deep into that to get it just right.
+
+### A measurable, quantifiable business impact
+As a customer's first experience of TravelLocal and their first step on the customer journey, having an effective landing page was critical. It was so satisfying seeing this work come to fruition and validating so many of our long-time held bets. <mark>Defining a measurable, movable metric and then discovering such an impactful solution through a customer-first approach - that's the good stuff!</mark>
+
+---
+Thanks for taking the time to read this if you got all the way down here 👋. If you did ever want to travel to Egypt, I know just the company for you - their proposition is super clear.

@@ -9,7 +9,7 @@ image:
     url: ''
     alt: ''
 tags: ["product", "silly"]
-draft: true
+draft: false
 ---
 
 Even the harsh realities of a Monday morning can provide product lessons if you look for them.

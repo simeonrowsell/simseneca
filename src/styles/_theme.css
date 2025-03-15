@@ -259,7 +259,7 @@
       padding-inline-start: var(--space-m);
       padding-block: var(--space-s);
       font-style: italic;            
-      background-color: var(--bg-secondary);
+      background-color: var(--bg-fourth);
       border-radius: 10px;
       position: relative;
       display: flex;
@@ -268,9 +268,9 @@
       &:before {
         content: '';
         display: block;
-        width: 2px;
         background-color: var(--accent-2);
         margin-inline-end: var(--space-s);
+        padding-inline-end: 2px;
       }
 
       *:last-of-type {

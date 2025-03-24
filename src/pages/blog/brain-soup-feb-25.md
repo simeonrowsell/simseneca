@@ -35,7 +35,7 @@ Think a cross between Stardew Valley and Pokémon Red (or Blue or Yellow if that
 
 I'll write more about Gather soon because I actually think it's a really smart and joyful solution to some of the challenges of remote working and the loss of physicality and office culture that brings, but for now check out my new desk. I've got my own vending machine.
 
-![My new digital desk in Gather](../../assets/images/new-gather-desk.png)
+![My new digital desk in Gather](../../assets/images/blog/bs-feb25-new-gather-desk.png)
 *My new digital desk in Gather*
 
 ## <a href="#absolutely-hanging">#</a>Absolutely hanging

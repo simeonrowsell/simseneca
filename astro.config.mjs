@@ -22,5 +22,6 @@ export default defineConfig({
     }),
     react()
   ],
-  site: "https://simseneca.design"
+  site: "https://simseneca.design",
+  output: 'static',
 });

@@ -4,10 +4,17 @@ import PostList from "../components/post-list.astro"
 import WorkList from "../components/work-list.astro"
 
 import { Image } from 'astro:assets';
-import simProfileImage from '../assets/images/sim_profile.png';
+import { sanityClient, urlFor } from '../lib/sanity/client';
 
-import { GLOBAL_STRINGS } from '../constants/strings';
-const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
+// Fetch the singleton "home" document by ID
+const home = await sanityClient.fetch(`*[_type == "home" && _id == "home"][0]`);
+
+const heroUrl = urlFor(home.heroImage).auto('format').url()
+// Get aspect ratio to calculate height
+// const { width, height } = home.heroImage.asset.metadata.dimensions
+// const aspectRatio = height / width
+// const heroHeight = Math.round(1200)
+
 ---
 
 <script>
@@ -30,18 +37,24 @@ const bio_blurb = GLOBAL_STRINGS.BIO_BLURB;
 	<section class="home-hero-wrapper">
 		<div class="u-container">
 			<div class="home-hero u-flex u-pad-b-2xl">
-				<figure class="home-hero__image">	
-					<Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />				
-					<figcaption class="u-pad-2xs u-subtitle smaller">Me but IRL I'm not a drawing</figcaption>
+				<figure class="home-hero__image">
+					<Image 
+						src={heroUrl}
+						width={728}
+						height={860}
+						alt={home.heroImage.alt}
+						loading="lazy"
+					/>				
+					<figcaption class="u-pad-2xs u-subtitle smaller">{home.heroImage.caption}</figcaption>
 				</figure>
 				<div class="home-hero__intro">
 					<div>
 						<p class="mobile-intro u-subtitle u-mrg-b-2xs">Hi, my name's Sim</p>
-						<h1 class="u-fontsize-6 u-font-display u-mrg-be-m">I'm a full-stack<br /> Product Designer</h1>
-						<h3 class="u-fontsize-2 u-font-body u-mrg-be-2xl">{bio_blurb} Seeking something human in the digital. Nice to have you along!</h3>
+						<h1 class="u-fontsize-6 u-font-display u-mrg-be-m">{home.heading}</h1>
+						<h3 class="u-fontsize-2 u-font-body u-mrg-be-2xl">{home.intro}</h3>
 						<div class="current-status u-flex">
 							<div class="orb"></div>
-							<p class="u-fontsize-0 u-font-display">Independent and up for working with you</p>
+							<p class="u-fontsize-0 u-font-display">{home.workstatus}</p>
 						</div>
 					</div>
 				</div>				

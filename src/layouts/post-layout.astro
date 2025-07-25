@@ -75,38 +75,6 @@ const pageTitleFormatted = frontmatter.title + " | Sim Seneca";
 			max-width: min(720px, 100%);
 			padding: var(--space-l) 0;			
 		}
-
-		.post-body__bio {
-			border-inline-start: 2px solid var(--border-primary);
-			flex-direction: column;
-			gap: var(--space-m);
-			height: fit-content;
-			/* TODO */
-			max-width: max(350px, 18vw);			
-			display: none;
-			
-			p {
-				text-wrap: pretty;
-			}
-
-			.profile {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: var(--space-s);
-
-        img {
-          width: 50px;
-          border-radius: 50%;
-          height: auto;
-          border: 2px solid var(--border-primary);
-        }
-      }
-
-			@media (min-width: 1206px) {
-				display: flex;
-			}
-		}
 	}
 
 	@media (min-width: 700px) {

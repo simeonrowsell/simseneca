@@ -239,6 +239,39 @@
       }
     }
 
+    /* Checked list items */
+    ul.contains-task-list {
+      padding-inline-start: var(--space-s);
+    }
+
+    li.task-list-item {
+      list-style-type: none;
+
+      input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-4px);
+        border: 2px solid var(--accent-2);
+        border-radius: 3px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: var(--space-2xs);
+        cursor: default;
+
+        &:checked::before {
+          content: '✓';
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          transform: translateY(4px);
+        }
+      }
+    }
+
     a {
       font-weight: 500;
       position: relative;
@@ -256,7 +289,7 @@
 
     blockquote {
       margin-block: var(--space-l);
-      padding-inline-start: var(--space-m);
+      padding-inline: var(--space-m);
       padding-block: var(--space-s);
       font-style: italic;            
       background-color: var(--bg-fourth);

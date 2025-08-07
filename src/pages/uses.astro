@@ -1,0 +1,228 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+
+import { 
+  siGithub,
+  siFigma,
+  siFramework,
+  siNotion,
+} from 'simple-icons/icons'
+import SimpleIcon from '../components/simple-icon.astro';
+---
+
+<BaseLayout
+  metaTitle="Product Designer in Bristol, UK | Sim Seneca"
+  description="I'm a Product Designer who loves solving customer problems, thinking in systems and sometimes committing code. Living life here in Bristol, UK."
+>
+	
+  <section class="about-wrapper u-mrg-be-3xl">
+    <div class="u-container">
+      <div class="about-inner">
+        <div class="about-intro u-pad-bs-3xl u-pad-be-2xl">
+          <h1 class="u-font-display u-fontsize-3">
+            The ever-changing, carefully chosen technology I use daily.
+          </h1>
+        </div>
+        <div class="about-content-block">
+          <p class="u-fontsize-0">
+            Last updated on 8th Aug 2025. 
+          </p>
+          <p class="u-fontsize-2">
+            Technology continues to seep deeper into our collective and personal psyche, tech bros branding themselves on the backs of our retinas, influencing how we see and interact with the world. As in our food, our clothes, our everything, making intentional, healthy decisions about the software and hardware we live with is imperative - and, frankly, a continuous ball ache.
+          </p>
+          <p class="u-fontsize-2">
+            I'm trying to balance privacy-first software, ethical business practices and sustainable hardware with the need for reliable tools that help me produce quality work and follow the best industry practices. Also gotta leave room to play with fun new stuff.
+          </p>
+          <p class="u-fontsize-2">
+            Here's where I'm at currently...
+          </p>
+          <p class="u-fontsize-1">(You can see what other people are using over at <a href="https://uses.tech/">uses.tech</a>. This page is inspired by them.)</p>
+        </div>
+        <div class="about-content-block">
+          <h2 class="u-subtitle">Hardware</h2>
+          <ul class="">
+            <li class="u-fontsize-1"><SimpleIcon icon={siFramework} /> <a href="">Framework 13</a> - love this repairable, sustainable laptop; proof we can make tech last longer</li>
+            <li class="u-fontsize-1"><SimpleIcon icon={siFigma} /> <a href="">Figma</a> - no brainer for designing client work. I have <a href="/blog/config-2025">merch</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>      
+  </section>
+	
+</BaseLayout>
+
+<style>
+
+  .about-inner {
+    --content-left-padding: 0;
+    --max-content-width: min(800px, 100%);    
+
+    @media (min-width: 400px) {
+      --content-left-padding: var(--space-m);
+    }
+
+    @media (min-width: 700px) {
+      --content-left-padding: var(--space-xl);
+      padding-inline-start: var(--space-xl);
+      padding-inline-end: var(--space-m);
+    }
+
+    @media (min-width: 1000px) {
+      --content-left-padding: var(--space-2xl);
+      padding-inline-start: var(--space-4xl);
+      padding-inline-end: var(--space-2xl);
+    }
+  }
+
+  .about-intro {
+    color: var(--accent-2);    
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+  }
+
+  .about-image {    
+    text-align: right;
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    img {
+      border: 2px solid var(--border-primary);
+      border-left: 0;
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+
+      @media (min-width: 400px) {
+        border-radius: 0 10px 0 0;
+      }
+    }
+
+    figcaption {
+      display: inline-flex;
+      background: var(--bg-fourth);
+      border-radius: 0px 0px 10px 10px;
+      border: 2px solid var(--border-primary);
+      border-top: none;
+    }
+  }  
+
+  .about-content-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);    
+    padding-block-end: var(--space-2xl);
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+    
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    h2.u-subtitle {
+      color: var(--text-secondary);
+    
+      &:before {
+        content: '';
+        display: inline-block;        
+        width: 30px;
+        height: 2px;
+        background-color: var(--border-primary);
+        margin-inline-end: var(--space-2xs);
+
+        @media (min-width: 400px) {
+          width: 15px;
+          margin-inline-end: 0;
+          position: absolute;
+          left: 0;
+          top: 4px;
+        }
+
+        @media (min-width: 700px) {
+          width: 30px;
+        }
+      }
+    }
+
+    a {
+      font-weight: 500;
+      position: relative;
+      transition: all .1s ease;
+      color: var(--accent-2);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+    
+      &:hover {
+        text-underline-offset: 4px;
+        text-decoration-thickness: 3px;
+      }
+    }
+
+    .about-content-block__skills {
+      display: flex;
+      gap: var(--space-xs);
+      flex-wrap: wrap;
+      list-style: none;
+      padding-inline-start: 0;
+
+      .skill-item {
+        background: var(--bg-fourth);
+        border: 2px solid var(--border-primary);
+        border-radius: 10px;
+        padding: var(--space-2xs) var(--space-xs);
+        font-size: var(--font-size-2);
+        transition: all .05s ease;
+
+        &:before {
+          content: url('../assets/icons/purple_check.svg');
+          margin-inline-end: var(--space-2xs);
+        }
+
+        &:hover {
+          cursor: default;
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+
+  .about-photos {
+    display: flex;
+    gap: var(--space-m);
+    flex-direction: column-reverse;
+
+    @media (min-width: 500px) {
+      flex-direction: row;
+    }
+
+    .about-photos__photo {
+      text-align: right;
+
+      img {
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid var(--border-primary);
+
+        &.joy-image {
+          border-radius: 10px 10px 0 10px;
+        }
+      }
+
+      figcaption {
+        display: inline-flex;
+        background: var(--bg-fourth);
+        border-radius: 0px 0px 10px 10px;
+        border: 2px solid var(--border-primary);
+        border-top: none;
+      }
+    }
+  }
+</style>

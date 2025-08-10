@@ -35,11 +35,11 @@ const metaDescription = page.data.metaDescription ?? page.data.intro;
     <div class="u-container">
       <div class="standard-inner">
         <div class="standard-intro u-pad-bs-3xl u-pad-be-2xl">
-          <h1>/ {page.data.title}</h1>
-          <h2 class="u-font-display u-fontsize-3">
+          <h1 class="u-pad-be-2xs">/ {page.data.title}</h1>
+          <h2 class="u-fontsize-4 u-pad-be-m">
             {page.data.intro}
           </h2>
-          Updated: {page.data.updated}
+          <p class="updated u-subtitle">Updated: {page.data.updated}</p>
         </div>
         <div class="standard-content u-wysiwyg">
           <Content />
@@ -48,3 +48,42 @@ const metaDescription = page.data.metaDescription ?? page.data.intro;
     </div>      
   </section>
 </BaseLayout>
+
+<style>
+
+  .standard-inner {
+    --content-left-padding: 0;
+    --max-content-width: min(800px, 100%);    
+
+    @media (min-width: 400px) {
+      --content-left-padding: var(--space-m);
+    }
+
+    @media (min-width: 700px) {
+      --content-left-padding: var(--space-xl);
+    }
+
+    @media (min-width: 1000px) {
+      --content-left-padding: var(--space-2xl);
+    }
+  }
+
+  .standard-intro {
+    color: var(--accent-2);
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    h2 {
+      text-wrap: pretty;
+    }
+
+    .updated {
+      color: var(--text-secondary);
+    }
+  }
+
+</style>

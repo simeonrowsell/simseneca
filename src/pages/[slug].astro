@@ -31,17 +31,17 @@ const metaDescription = page.data.metaDescription ?? page.data.intro;
   description={metaDescription}
   collection='pages'
 >
-  <section class="standard-wrapper u-mrg-be-3xl">
+  <section class="standard-wrapper u-mrg-be-l">
     <div class="u-container">
       <div class="standard-inner">
         <div class="standard-intro u-pad-bs-3xl u-pad-be-2xl">
-          <h1 class="u-pad-be-2xs">/ {page.data.title}</h1>
+          <h1 class="u-pad-be-2xs title">/ {page.data.title}</h1>
           <h2 class="u-fontsize-4 u-pad-be-m">
             {page.data.intro}
           </h2>
-          <p class="updated u-subtitle">Updated: {page.data.updated}</p>
+          <p class="updated u-subtitle">Last updated: {page.data.updated}</p>
         </div>
-        <div class="standard-content u-wysiwyg">
+        <div class="standard-content u-pad-be-2xl u-wysiwyg">
           <Content />
         </div>        
       </div>
@@ -69,7 +69,6 @@ const metaDescription = page.data.metaDescription ?? page.data.intro;
   }
 
   .standard-intro {
-    color: var(--accent-2);
     padding-inline-start: var(--content-left-padding);
     max-width: var(--max-content-width);
 
@@ -79,11 +78,54 @@ const metaDescription = page.data.metaDescription ?? page.data.intro;
 
     h2 {
       text-wrap: pretty;
+      color: var(--accent-2);
     }
 
     .updated {
       color: var(--text-secondary);
     }
+  }
+
+  .standard-content {
+    padding-inline-start: var(--content-left-padding);
+    max-width: var(--max-content-width);
+
+    @media (min-width: 400px) {
+      border-inline-start: 2px solid var(--border-primary);
+    }
+
+    h1:before,
+    h2:before,
+    h3:before,
+    h4:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(var(--content-left-padding) * -1);
+      width: calc(var(--content-left-padding) / 2);
+      height: 2px;
+      background: var(--border-primary);
+      display: block;
+    }
+
+    .icon-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      padding-inline-start: 0;
+      margin-block-end: var(--space-m);
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-xs);
+
+        svg {
+          transform: translateY(10px);  
+        }
+      }
+    }
+
   }
 
 </style>

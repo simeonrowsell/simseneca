@@ -152,17 +152,24 @@
   .u-wysiwyg {
     line-height: 1.5;
     font-size: var(--fontsize-1);
+
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child {
+      margin-block-start: 0;
+    }
     
     h2 {
       font-size: var(--fontsize-3);
       margin-block-start: var(--space-l);
-      margin-block-end: var(--space-s);
+      margin-block-end: var(--space-m);
     }
 
     h3 {
       font-size: var(--fontsize-2);
       margin-block-start: var(--space-m);
-      margin-block-end: var(--space-xs);
+      margin-block-end: var(--space-s);
     }
 
     h4 {
@@ -173,7 +180,8 @@
 
     /* for the sub-heading # linking */
     h2,
-    h3 {
+    h3,
+    h4 {
       position: relative;
 
       a {
@@ -207,6 +215,10 @@
     ol {
       margin-block-end: var(--space-m);
       padding-inline-start: var(--space-m);
+
+      &.no-bullets li {
+        list-style: none;
+      }
       
       li {
         font-size: var(--fontsize-1);

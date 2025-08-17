@@ -5,26 +5,39 @@ updated: 'Jul 25th, 2025'
 ---
 
 import {
-  siGithub,
-  siFigma,
   siFramework,
-  siNotion,
+  siFairphone,
+  siProtonmail,
+  siDuckduckgo,
+  siAstro,
+  siNetlify,
 } from 'simple-icons/icons'
 import SimpleIcon from '../../components/simple-icon.astro';
 
+import UsesItem from '../../components/uses-item.astro';
+
 Here's a peek at the current setup...
 
-These are generally pretty considered, particularly in relation to supporting more sustainable and ethical tech products and business practises (commonly known as shunning big tech). I've [written more about that over here]().
+These are generally pretty considered, particularly as I enthusiastically find and support more sustainable and ethical tech products and business practises (ie, shun Big Tech). I've [written more about that over here]().
 
-See what other smart people are using over at [uses.tech](https://uses.tech/)!
+See what other smart people* are using over at [uses.tech](https://uses.tech/)!
 
 ### Hardware
 
-<ul class="icon-bullets">
-  <li><SimpleIcon icon={siFigma} /> [Framework](https://frame.work/gb/en?src=startmenu)I love this laptop. It's modular, repairable, and has a great keyboard.</li>
-  <li><SimpleIcon icon={siGithub} /> [GitHub](https://github.com/)My go-to platform for version control and collaboration.</li>
-  <li><SimpleIcon icon={siGithub} /> [GitHub](https://github.com/)My go-to platform for version control and collaboration.</li>
-  <li><SimpleIcon icon={siNotion} /> [Notion](https://www.notion.so/)For note-taking and project management.</li>
-  <li><SimpleIcon icon={siGithub} /> [GitHub](https://github.com/)My go-to platform for version control and collaboration.</li>
+<ul class="u-pad-is-0">
+  <UsesItem type="laptop" title="Framework 13" url="https://frame.work/gb" icon={siFramework}>I'm in love. It's modular, repairable and putting it together made me feel 16 again fiddling around with desktop PCs. Proof you can make tech to last.</UsesItem>
+  <UsesItem type="phone" title="Fairphone 15" url="https://fairphone.co.uk">Also modular, repairable and has the most ethically sourced supply chain around. They recently released the 16 and actively said *don't* upgrade if your current phone is ok. I find the specs more than good enough and price just reflects what tech should *actually* cost. Pairs nicely with a Framework.</UsesItem>
 </ul>
 ### Productivity
+<ul class="u-pad-is-0">
+  <UsesItem type="email" title="Proton Mail" url="" icon={siProtonmail}>Privacy by default from a Swiss provider with a nonprofit majority shareholder, and it still gives me the experience and features I rely on. Encryption does make it harder to integrate with other tools but not my priority. Happy to pay for such good services and avoid exploitative ad-based business models. Strong recommend.</UsesItem>
+  <UsesItem type="meetings" title="Whereby" url="https://whereby.com">A great EU based, end-to-end encrypted Meet alternative that does all the things and looks pretty. I have my eye on trying out <a href='https://www.meet.coop/'>meet.coop</a> in the future.</UsesItem>
+  <UsesItem type="search engine" title="Duck Duck Go" url="https://duckduckgo.com/" icon={siDuckduckgo}>With AI shaking it up, what even is a search engine anymore? This one's a good alternative to Google though and serves me well. I appreciate not *having* to see AI generated summaries when most of the time I don't need them; just wasted energy.</UsesItem>
+</ul>
+### This site
+<ul class="u-pad-is-0">
+  <UsesItem type="framework" title="Astro" url="" icon={siAstro}>I'm loving Astro. Really nice developer experience, lots of flexibility and super fast. It's refreshingly lightweight compared to heavier frameworks I've tried and for the kind of sites I build it's perfect. Big fan.</UsesItem>
+  <UsesItem type="hosting" title="Netlify" url="" icon={siNetlify}>Obviously very slick and an industry leader for a reason. I'd like to find an EU alternative in the future, maybe one running on renewable energy if possible, but there doesn't seem to be anything too practical out there yet. Netlify is my go to for client work so it's helpful to have experience with it.</UsesItem>
+</ul>
+
+\* Unverified. Some people may not be.

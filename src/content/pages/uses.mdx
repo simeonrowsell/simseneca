@@ -1,7 +1,7 @@
 ---
 title: 'Uses'
 intro: 'The technology I use day-to-day.'
-updated: 'Jul 25th, 2025'
+updated: 'September 20th, 2025'
 ---
 
 import {
@@ -9,9 +9,13 @@ import {
   siFairphone,
   siProtonmail,
   siDuckduckgo,
+  siArc,
   siAstro,
   siNetlify,
   siSimpleanalytics,
+  siProton,
+  siGithub,
+  siZenbrowser,
 } from 'simple-icons/icons'
 import SimpleIcon from '../../components/simple-icon.astro';
 
@@ -19,27 +23,34 @@ import UsesItem from '../../components/uses-item.astro';
 
 Here's a peek at the current setup...
 
-You'll notice a pattern of trying to find and support more sustainable and ethical tech products and business practises (ie, shun Big Tech). It's a fun challenge too. I've [written more about that over here]().
+You'll notice a pattern of trying to find and support more sustainable and ethical tech products and business practises (ie, shun Big Tech). You find there are lots of great alternatives out there (and some kooky ones).
 
-See what other smart people* are using over at [uses.tech](https://uses.tech/)!
+See what other nice people are using over at [uses.tech](https://uses.tech/)!
 
 ### Hardware
 
 <ul class="u-pad-is-0">
-  <UsesItem type="laptop" title="Framework 13" url="https://frame.work/gb" icon={siFramework}>I'm in love. It's modular, repairable and putting it together made me feel 16 again fiddling around with desktop PCs. Proof you can make tech to last.</UsesItem>
+  <UsesItem type="laptop" title="Framework 13" url="https://frame.work/gb" icon={siFramework}>I'm in love. It's modular, repairable, runs great and putting it together made me feel 16 again when I used to fiddle around with desktop PCs. Proof you can make tech to last.</UsesItem>
   <UsesItem type="phone" title="Fairphone 15" url="https://fairphone.co.uk">Also modular, repairable and has the most ethically sourced supply chain around. They recently released the 16 and actively said *don't* upgrade if your current phone is still working. Mine works great. Pairs nicely with a Framework.</UsesItem>
 </ul>
 ### Productivity
 <ul class="u-pad-is-0">
+  <UsesItem type="browser" title="Zen" url="https://zen-browser.app/" icon={siZenbrowser}>I loved Arc then they dropped it! So I'm trying out Zen which is the closest I've found and it's nearly as good. I love the vertical tabs, floating url input and mini-mode. I used to be a long-time Firefox user (still on my phone), but I do miss Chromium under-the-hood. The search for a long-term suitor continues.</UsesItem>
   <UsesItem type="email" title="Proton Mail" url="https://proton.me/mail" icon={siProtonmail}>Privacy by default, Swiss provider, nonprofit majority shareholder (check, check, check). Still gives me all the features I need. Encryption makes it harder to integrate with other tools but a workable trade-off. Happy to pay for such good services and avoid exploitative ad-based business models. Strong recommend.</UsesItem>
   <UsesItem type="meetings" title="Whereby" url="https://whereby.com">A nice EU-based, end-to-end encrypted Meet alternative that does all the things and looks pretty. I have my eye on trying out <a href='https://www.meet.coop/'>meet.coop</a> in the future.</UsesItem>
-  <UsesItem type="search engine" title="Duck Duck Go" url="https://duckduckgo.com/" icon={siDuckduckgo}>What even is a search engine anymore? This one's a good alternative to Google though and serves me well. I appreciate not *having* to see AI generated summaries when most of the time I don't need them; just wasted energy.</UsesItem>
+  <UsesItem type="search engine" title="Duck Duck Go" url="https://duckduckgo.com/" icon={siDuckduckgo}>What even is a search engine anymore? This one's a good alternative to Google though and serves me fine. I appreciate not *having* to see AI generated summaries when most of the time I don't need them; just wasted energy.</UsesItem>  
+  <UsesItem type="password manager" title="Proton Pass" url="https://proton.me/pass" icon={siProton}>Proton stepping up again. This works as well as LastPass or 1Password, both of which I've used, and is included in my Proton plan so just makes sense.</UsesItem>
 </ul>
 ### This site
 <ul class="u-pad-is-0">
   <UsesItem type="framework" title="Astro" url="https://astro.build/" icon={siAstro}>I'm loving Astro. Nice developer experience, flexible, super fast, suits most of my needs. It's refreshingly lightweight compared to heavier frameworks. Big fan.</UsesItem>
+  <UsesItem type="code repo" title="GitHub" url="https://github.com/simeonrowsell/simseneca" icon={siGithub}>I mean, it's GitHub, it's neat, it's where everyone is. I'll probably migrate to open source GitLab at some point but haven't yet gotten around to it.</UsesItem>
   <UsesItem type="hosting" title="Netlify" url="https://www.netlify.com/" icon={siNetlify}>Unicorn for a reason, very slick and all. I'd like to find a renewable energy alternative but there doesn't seem to be anything too practical out there yet. It's my go to for clients so it's helpful to use it myself.</UsesItem>
-  <UsesItem type="analytics" title="Simple Analytics" url="https://simpleanalytics.com" icon={siSimpleanalytics}> You guessed it, a privacy first, EU-based Google alternative. Nothing tracked, no cookie banners needed. Also GA4 UI sucks. My site stats are <a href="https://analytics.simseneca.design/">public for your pleasure</a>.</UsesItem>
+  <UsesItem type="analytics" title="Simple Analytics" url="https://simpleanalytics.com" icon={siSimpleanalytics}> You guessed it, a privacy first, EU-based Google alternative. Nothing tracked, no cookie banners needed. Also GA4 UX sucks. My site stats are <a href="https://analytics.simseneca.design/">public for your pleasure</a>.</UsesItem>
 </ul>
-
-\* Unverified. Some people may not be.
+### Life
+<ul class="u-pad-is-0">
+  <UsesItem type="music streaming" title="Deezer" url="https://deezer.com/">I switched from Spotify some years ago when I was looking for one that paid artists better. Deezer's not amazing either but an improvement, plus their design language is 100% more interesting than bland old Spotify. When I switched they were promoting the idea of an artist-centric model, where my subscription fee would be distributed between only the artists I listened to. I'm so behind that idea but it looks like they've dropped it - I guess it's not financially viable when you have to keep the big labels happy. Still, someone in their cares enough to have publicly floated the idea.</UsesItem>
+  <UsesItem type="record player" title="Rega RP1" url="https://www.whathifi.com/rega/rp1/review">The way to actually pay artists properly is to buy their records and merch, ideally directly from them, so I have a soon-to-be-slimmed-down-for-space-reasons record collection which gets played on my perfectly decent and much loved Rega RP1.</UsesItem>
+  <UsesItem type="watch" title="Casio F-91W" url="https://www.casio.com/uk/watches/casio/product.F-91WC-4A2/">An icon. I've had three in a row, currently on the orange version. Water resistant to like 5 metres, stopwatch and zero internet - pretty sweet.</UsesItem>
+</ul>

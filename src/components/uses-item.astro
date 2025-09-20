@@ -1,0 +1,45 @@
+---
+import SimpleIcon from './simple-icon.astro';
+
+interface Props {
+  type?: string | undefined;
+	icon: { title: string; path: string, hex?: string };
+  title?: string | undefined;
+  url?: string | undefined;
+}
+
+const { type, icon, title, url } = Astro.props;
+---
+
+<li class="uses-item">
+  <p class="uses-item__type u-subtitle">{type}</p>
+  <p class="uses-item__item">
+    {icon ? <SimpleIcon icon={icon} /> : ''}
+    <a href={url}>{title}</a> : <slot />
+  </p>
+</li>
+
+<style>
+  .uses-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-l);
+
+    .uses-item__type {
+      font-size: var(--fontsize--2);
+      color: var(--text-secondary);
+      transform: translateY(10px);
+      flex-basis: 120px;
+    }
+
+    .uses-item__item {
+      flex: 1;
+      margin-block-end: 0;
+
+      svg {
+        transform: translateY(5px);
+        margin-inline-end: var(--space-3xs);
+      }
+    }
+  }
+</style>

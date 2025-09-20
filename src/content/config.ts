@@ -23,6 +23,20 @@ const workCollection = defineCollection({
   }),
 });
 
+const pagesCollection = defineCollection({
+  type: 'content',
+  schema: ({image}) => z.object({
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
+    title: z.string(),
+    intro: z.string(),
+    updated: z.string(),
+    cover: image().optional(),
+    coverAlt: z.string().optional(),
+  }),
+});
+
 export const collections = {
   work: workCollection,
+  pages: pagesCollection,
 };

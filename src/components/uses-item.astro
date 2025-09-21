@@ -12,18 +12,26 @@ const { type, icon, title, url } = Astro.props;
 ---
 
 <li class="uses-item">
-  <p class="uses-item__type u-subtitle">{type}</p>
-  <p class="uses-item__item">
-    {icon ? <SimpleIcon icon={icon} /> : ''}
-    <a href={url}>{title}</a> : <slot />
-  </p>
+  <div class="uses-item__inner">
+    <p class="uses-item__type u-subtitle">{type}</p>
+    <p class="uses-item__item">
+      {icon ? <SimpleIcon icon={icon} /> : ''}
+      <a href={url}>{title}</a> : <slot />
+    </p>
+  </div>
 </li>
 
 <style>
   .uses-item {
+    container: uses-item / inline-size;
+    list-style: none;
+  }
+
+  .uses-item__inner {
     display: flex;
     align-items: flex-start;
     gap: var(--space-l);
+    margin-block: var(--space-s);
 
     .uses-item__type {
       font-size: var(--fontsize--2);
@@ -39,6 +47,21 @@ const { type, icon, title, url } = Astro.props;
       svg {
         transform: translateY(5px);
         margin-inline-end: var(--space-3xs);
+      }
+    }
+  }
+
+  @container uses-item (max-width: 600px) {
+    
+    .uses-item__inner {
+      flex-direction: column;
+      gap: var(--space-2xs);
+      margin-block: var(--space-m);
+
+      .uses-item__type {
+        flex-basis: auto;
+        transform: translateY(0);
+        margin-block-end: 0;
       }
     }
   }

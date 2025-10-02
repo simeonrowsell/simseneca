@@ -20,7 +20,7 @@ Life is chaos on the whole, as I find it. Like you, perhaps, I spend a lot of my
 
 But when I open that design system up 👌 Mmm, yeh. Order.
 
-For a brief period of my day, everything is mapped out, naming conventions aligned, all states accounted for. I have all the corner puzzle pieces grouped together, the straight edges in another, the rest by colour. I can design complex products in delicious, gut-biome-friendly, bite-sized components. The world of [Brad Frost](https://bradfrost.com/) and his atomic design modus operandi is blissful.
+For a brief period of my day, everything is mapped out, naming conventions aligned, all states accounted for. I have all the corner puzzle pieces grouped together, the straight edges in another, the rest by colour. I can design complex products in delicious, gut-biome-friendly, bite-sized components. The world of [Brad Frost](https://bradfrost.com/) and his atomic design modus operandi is blissful. Everything makes sense.
 
 Of course, in practise it's not quite that easy.
 

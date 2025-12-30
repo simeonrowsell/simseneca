@@ -20,7 +20,7 @@ I've hit 12 posts this year which I'm happy with. Once a month is something to b
 
 My highlights were...
 
-1. [I changed my name](https://www.qwertykeys.com/products/neo-ergo)
+1. [I changed my name](https://simseneca.design/blog/ive-changed-my-name/)
 2. [I got existential about design systems](https://simseneca.design/blog/design-systems-existential-angst/)
 3. [I had adventures at Figma Config](https://simseneca.design/blog/config-2025/)
 

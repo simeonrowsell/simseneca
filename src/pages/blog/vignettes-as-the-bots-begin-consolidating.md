@@ -23,7 +23,9 @@ With a dreariness to match the rain he tells me how he's fallen out of love with
 We suggest that maybe we should just pack it in and make art instead, although he confesses he can't remember how.
 
 # 3
-My partner and I watch [Nausicaä of the Valley of the Wind](https://www.imdb.com/title/tt0087544/) (1984) and I instantly fall in love with the artwork. I'm comforted that there is already so much human made art that perhaps I can just spend my future discovering films from the past. On seeing early AI animation, [Hayao Miyazaki said](https://www.indiewire.com/features/general/hayao-miyazaki-artificial-intelligence-animation-insult-to-life-studio-ghibli-1201757617/), "I feel like we are nearing to the end of times. We humans are losing faith in ourselves."
+My partner and I watch [Nausicaä of the Valley of the Wind](https://www.imdb.com/title/tt0087544/) (1984) and I instantly fall in love with the artwork. I'm comforted that there is already so much human made art that perhaps I can just spend my future discovering films from the past.
+
+On seeing early AI animation, [Hayao Miyazaki said](https://www.indiewire.com/features/general/hayao-miyazaki-artificial-intelligence-animation-insult-to-life-studio-ghibli-1201757617/), "I feel like we are nearing to the end of times. We humans are losing faith in ourselves."
 
 # 4
 My friend buys me a zine from [East Bristol Books](https://eastbristolbooks.co.uk/) called Looking for Luddites by John Hewitt, in which he sketches locations associated with the Luddite uprisings of 1812. Page 1; Enoch Taylor's grave. Enoch Taylor ran a forge producing textile finishing machines "each replacing the labours of ten time-served artisans with cheaper, inferior-quality goods."
@@ -47,7 +49,7 @@ This echoes true for the experiences I've already had coding with AI, both as a 
 I put a question mark next to 'outcomes over output' on my mental list of Product catchphrases.
 
 # 9
-My Grandpa was a fine furniture maker and committed craftsman. I once asked him if he ever wanted to sell his work and he had no urge. It's value was what he deemed it to be. He was utterly content working away in his workshop with ClassicFM on. His furniture is only found in the private collections of his friend's and family's homes. Dinners are eaten at them, treasured belongings are stored in them, blog posts are written whilst sat on them.
+My Grandpa was a fine furniture maker and committed craftsman. I once asked him if he ever wanted to sell his work and he had no urge. It's value was what he deemed it to be. He was utterly content working away in his workshop with ClassicFM on. His furniture is only found in the private collections of his friends' and family's homes. Dinners are eaten at them, treasured belongings are stored in them, blog posts are written whilst sat on them.
 
 # 10
 My partner Helena is a successful theatre director who, in an underfunded, underappreciated industry brings joy, drama and reflections on life to audiences. I remind her that it's a tragedy of free-market capitalism that economically my work is rewarded so much more than hers. As passionate as I am about my job, a full life depends on the richness of art much more than the quality of its digital products.

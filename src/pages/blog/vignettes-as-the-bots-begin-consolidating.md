@@ -106,4 +106,4 @@ My birthday passes and I'm grateful that I was born at a time when I had the spa
 I wonder what opportunity my son will have to discover that.
 
 # 20
-After reading some bedtime books we lie on the sofa bed, looking at the stars dancing across his ceiling. The bed is pulled out because he hasn't been sleeping so well lately. I'm exhausted but it's peaceful. He rests his head on my chest and we watch the colourful stars go round and round and round and round and round.
+After reading some bedtime books we lie on the sofa bed, looking at the colourful stars dancing across his ceiling. The bed is pulled out because he hasn't been sleeping so well lately. I'm exhausted but it's peaceful. He rests his head on my chest and together we watch the stars go round and round and round and round and round.

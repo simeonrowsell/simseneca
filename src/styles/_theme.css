@@ -303,7 +303,6 @@
       margin-block: var(--space-l);
       padding-inline: var(--space-m);
       padding-block: var(--space-s);
-      font-style: italic;            
       background-color: var(--bg-fourth);
       border-radius: 10px;
       position: relative;

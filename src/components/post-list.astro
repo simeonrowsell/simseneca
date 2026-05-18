@@ -82,6 +82,7 @@ const sortedPosts = allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - 
 
 	.post-list {
 		max-width: max(900px, 70%);
+    border-block-end: 2px solid var(--border-primary);
 
     @media (min-width: 600px) {
       padding-inline-start: var(--space-xl);

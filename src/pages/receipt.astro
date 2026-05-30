@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/base-layout.astro"
+import ReceiptForm from "../components/receipt-form"
+
+export const prerender = false
+---
+
+<BaseLayout
+  metaTitle="Product Designer in Bristol, UK | Sim Seneca"
+  description="I'm a Product Designer who loves solving customer problems, thinking in systems and sometimes committing code. Living life here in Bristol, UK."
+>
+
+<div class="u-container u-pad-xl">
+  <ReceiptForm client:load />
+</div>
+
+</BaseLayout>

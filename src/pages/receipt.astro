@@ -1,17 +1,106 @@
 ---
-import BaseLayout from "../layouts/base-layout.astro"
-import ReceiptForm from "../components/receipt-form"
+import ReceiptSection from "../components/receipt-section"
+import simProfileImage from '../assets/images/sim_profile_square.png';
+import { Image } from 'astro:assets';
+
+import '../styles/_reset.css';
+import '../styles/_receipt.css';
+
+const title = "Receipt Form | Sim Seneca";
+const description = "A form to submit receipts for processing.";
 
 export const prerender = false
 ---
 
-<BaseLayout
-  metaTitle="Product Designer in Bristol, UK | Sim Seneca"
-  description="I'm a Product Designer who loves solving customer problems, thinking in systems and sometimes committing code. Living life here in Bristol, UK."
->
+<!doctype html>
+<html lang="en">
 
-<div class="u-container u-pad-xl">
-  <ReceiptForm client:load />
-</div>
+  <head>
 
-</BaseLayout>
+    <meta charset="UTF-8" />
+    <meta name="description" property="og:description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- 100% privacy-first analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+	</head>
+  
+	<body>
+		<div class="receipt-container u-pad-xl">
+
+      <div class="receipt-inner"></div>
+    
+      <ReceiptSection client:load />
+
+      <a class="simseneca-button" href="/">
+        <Image src={simProfileImage} alt="Graphic illustration of Sim smiling in a red shirt on a purple background" />
+        <span>simseneca.design</span>
+      </a>
+     
+    </div>
+	</body>
+</html>
+
+<style>
+
+  body {
+    min-height: 100vh;
+    background-color: #60357A;
+    background: linear-gradient(130deg,rgba(96, 53, 122, 1) 0%, rgba(82, 69, 146, 1) 100%);
+    color: var(--lilac);
+    position: relative;
+  }
+
+  .receipt-inner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    margin-left: 2.5vw;
+    margin-top: 2.5vw;
+    background: linear-gradient(180deg, rgba(185, 114, 113, 0.05) 0%, rgba(253, 68, 97, 0.05) 100%);
+    border-radius: 150px 0 0 0;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+  }
+
+  .receipt-container {
+    /* max-width: 1600px; */
+    margin: 0 auto;
+    padding-inline: 10vw;
+  }
+
+  .simseneca-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 6px 16px 6px 6px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color:var(--lilac);
+    text-decoration: none;
+    transition: all .1s ease;
+
+    img {
+      border-radius: 100%;
+      height: 40px;
+      width: 40px;
+      border: 1px solid black;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+</style>

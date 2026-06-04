@@ -1,0 +1,58 @@
+.receipt-section {
+  padding-top: 9vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "header   illustration"
+    "form     illustration";
+}
+
+.receipt-section__header {
+  grid-area: header;
+  align-self: start;
+  max-width: 600px;
+
+  h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px var(--lilac);
+    text-stroke: 1px var(--lilac);
+    color: transparent;
+    line-height: 100%;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+
+  p:not(last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+.receipt-section__form {
+  grid-area: form;
+  /* grid-column-start: 1;
+  grid-row-start: 2; */
+  align-self: end;
+}
+
+.receipt-section__illustration {
+  grid-area: illustration;
+  /* grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 1; */
+  align-self: end;
+}
+
+.receipt-section--error {
+
+  .receipt-section__header {
+    opacity: .5;
+  }
+}

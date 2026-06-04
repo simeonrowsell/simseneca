@@ -1,11 +1,20 @@
 import { useState } from "preact/hooks";
 
-export default function ReceiptForm() {
+interface Props {
+  onSuccess: () => void;
+  onError: () => void;
+  onReset: () => void;
+}
+
+export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
 
   const [responseMessage, setResponseMessage] = useState("");
+  const [formState, setFormState] = useState("ready");
+  const [messageValue, setMessageValue] = useState("");
 
   async function submit(e: SubmitEvent) {
     e.preventDefault();
+    setFormState("waiting");
     const formData = new FormData(e.target as HTMLFormElement);
 
     // Send the form data to the API route
@@ -13,24 +22,69 @@ export default function ReceiptForm() {
       method: "POST",
       body: formData
     });
-    // Handle the response
     const responseData = await response.json();
-    // Update the UI based on the response
-    if (responseData.message) {
+
+    if (response.status === 200) {
+      setFormState("success");
       setResponseMessage(responseData.message);
+      onSuccess();
+    }
+
+    if (response.status === 400 || response.status === 500) {
+      setFormState("error");
+      setResponseMessage(responseData.message);
+      onError();
     }
   }
 
   return (
-    <form onSubmit={submit}>
+    <div class="receipt-form">
+      {formState === "waiting" && 
+        <div class="receipt-form__success">
+          <p>Waiting for response...</p>
+        </div>
+      }
 
-      <label for="receipt-message">Message</label>
-      <textarea id="receipt-message" name="receipt-message" maxlength="50" required></textarea>
+      {formState === "ready" &&
+        <form onSubmit={submit}>
 
-      <button type="submit">Submit</button>
+          <label for="receipt-message">Your message...</label>
+          <textarea 
+            id="receipt-message" 
+            name="receipt-message"
+            placeholder="> Your message..."
+            maxlength={50} 
+            value={messageValue}
+            onInput={(e) => setMessageValue((e.target as HTMLTextAreaElement).value)}
+            required>
+          </textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      }
+
+      {formState === "success" &&
+        <div class="receipt-form__success">
+          <p>Message sent successfully!</p>
+          <button onClick={() => {
+            setFormState("ready");
+            setResponseMessage("");
+            setMessageValue("");
+            onReset();
+          }}>Send another message</button>
+        </div>
+      }
       
-      {responseMessage && <p>{responseMessage}</p>}
-
-    </form>
+      {formState === "error" && 
+        <div class="receipt-form__error">
+          <p>{responseMessage}</p>
+          <button onClick={() => {
+            setFormState("ready");
+            setResponseMessage("");
+            onReset();
+          }}>Try again</button>
+        </div>
+      }
+    </div>
   );
 }

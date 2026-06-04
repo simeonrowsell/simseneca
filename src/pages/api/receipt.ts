@@ -4,20 +4,34 @@ import type { APIRoute } from "astro";
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
-  const receiptMessage = data.get("receipt-message");
+  // Extract fields from the form data and converting to string
+  const receiptMessage = data.get("receipt-message")?.toString() ?? "";
 
   // Validate required fields
   if (!receiptMessage) {
     return new Response(
       JSON.stringify({
-        message: "Missing required fields",
+        message: "Message is empty",
+      }),
+      { status: 400 }
+    );
+  }
+
+  // Sanitize the message to remove any non-printable characters
+  const sanitizedMessage = receiptMessage.replace(/[^\x20-\x7E]/g, "");
+
+  // Validate required fields
+  if (!sanitizedMessage) {
+    return new Response(
+      JSON.stringify({
+        message: "Message contains only non-printable characters",
       }),
       { status: 400 }
     );
   }
 
   // Validate message length
-  if (typeof receiptMessage === "string" && receiptMessage.length > 50) {
+  if (sanitizedMessage.length > 50) {
     return new Response(
       JSON.stringify({
         message: "Message exceeds maximum length of 50 characters",
@@ -26,21 +40,27 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
   
-  // Send to the Pi
-  const piResponse = await fetch(import.meta.env.RECEIPT_URL, {
-    method: "POST",
-    body: JSON.stringify({ message: receiptMessage }),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-      "secret": import.meta.env.RECEIPT_SECRET
-    }
-  });
+  try {
+    // Send to the Pi
+    const piResponse = await fetch(import.meta.env.RECEIPT_URL, {
+      method: "POST",
+      body: JSON.stringify({ message: sanitizedMessage }),
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        "secret": import.meta.env.RECEIPT_SECRET
+      }
+    });
 
-  if(piResponse.status !== 200) {
+    if (piResponse.status !== 200) {
+      return new Response(
+        JSON.stringify({ message: "Ughh, some printer error" }),
+        { status: 500 }
+      );
+    }
+
+  } catch (error) {
     return new Response(
-      JSON.stringify({
-        message: "Failed to send to the Pi",
-      }),
+      JSON.stringify({ message: "Couldn't even reach the printer. Forget it" }),
       { status: 500 }
     );
   }

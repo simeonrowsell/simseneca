@@ -36,7 +36,23 @@ export const prerender = false
 	<body>
 		<div class="receipt-container u-pad-xl">
 
-      <div class="receipt-inner"></div>
+      <div class="receipt-inner">
+        <svg width="0" height="0" style="position: absolute;">
+          <filter id="noise-texture">
+              <feTurbulence 
+                  type="turbulence" 
+                  baseFrequency="1.2" 
+                  numOctaves="5" 
+                  seed="0"
+                  stitchTiles="stitch"/>
+              <feColorMatrix type="saturate" values="0"/>
+              <feComponentTransfer>
+                  <feFuncA type="discrete" tableValues="0 0.6"/>
+              </feComponentTransfer>
+              <feBlend mode="multiply" in="SourceGraphic"/>
+          </filter>
+        </svg>
+      </div>
     
       <ReceiptSection client:load />
 
@@ -78,6 +94,7 @@ export const prerender = false
     /* max-width: 1600px; */
     margin: 0 auto;
     padding-inline: 10vw;
+    padding-bottom: 5vh;
   }
 
   .simseneca-button {
@@ -89,12 +106,13 @@ export const prerender = false
     background-color: rgba(255, 255, 255, 0.05);
     color:var(--lilac);
     text-decoration: none;
-    transition: all .1s ease;
+    transition: all .05s ease;
+    font-family: "Instrument Sans", sans-serif;
 
     img {
       border-radius: 100%;
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
       border: 1px solid black;
     }
 

@@ -5,19 +5,20 @@
   grid-template-areas:
     "header   illustration"
     "form     illustration";
+  margin-bottom: 10vh;
 }
 
 .receipt-section__header {
   grid-area: header;
   align-self: start;
   max-width: 600px;
+  margin-bottom: 10vh;
 
   h1 {
     font-family: "Space Grotesk", sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     -webkit-text-stroke: 1px var(--lilac);
-    text-stroke: 1px var(--lilac);
     color: transparent;
     line-height: 100%;
     font-weight: 600;
@@ -40,6 +41,14 @@
   /* grid-column-start: 1;
   grid-row-start: 2; */
   align-self: end;
+
+  .receipt-section__form-description {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: .9rem;
+    margin-top: 1.3rem;
+    color: var(--lilac);
+    opacity: .8;
+  }
 }
 
 .receipt-section__illustration {

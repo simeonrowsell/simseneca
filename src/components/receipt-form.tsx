@@ -1,6 +1,5 @@
 import { useState } from "preact/hooks";
 
-import './receipt-form.css';
 
 interface Props {
   onSuccess: () => void;
@@ -48,62 +47,84 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
         </svg>
       </div>
 
-      {formState === "waiting" && 
-        <div class="receipt-form__success">
-          <p>Waiting for response...</p>
-        </div>
-      }
+      <div class="receipt-form__inner">
 
-      {formState === "ready" &&
-        <form onSubmit={submit}>
+          {/* {formState === "waiting" && 
+            <div class="receipt-form-waiting">
+              <p>Waiting for response...</p>
+            </div>
+          } */}
 
-          {/* <label for="receipt-message">Your message...</label> */}
-          <div class="receipt-form__input-wrapper">
-            <textarea
-              id="receipt-message"
-              name="receipt-message"
-              placeholder="> Your message..."
-              maxlength={50}
-              value={messageValue}
-              onInput={(e) => setMessageValue((e.target as HTMLTextAreaElement).value)}
-              required>
-            </textarea>
+        {formState === "ready" &&
+          <div class="receipt-form-idle">
+            <form onSubmit={submit}>
 
-            <button type="submit" class="receipt-form__submit-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
-                <path d="M0 13.9999V7.99992C0 6.93906 0.42173 5.92195 1.17188 5.1718C1.92202 4.42165 2.93913 3.99992 4 3.99992H11.5859L9.29297 1.70696C8.90244 1.31643 8.90244 0.683417 9.29297 0.292893C9.68349 -0.0976311 10.3165 -0.0976311 10.707 0.292893L14.707 4.29289C15.0976 4.68342 15.0976 5.31643 14.707 5.70696L10.707 9.70696C10.3165 10.0975 9.68349 10.0975 9.29297 9.70696C8.90244 9.31643 8.90244 8.68342 9.29297 8.29289L11.5859 5.99992H4C3.46957 5.99992 2.96101 6.21079 2.58594 6.58586C2.21086 6.96094 2 7.46949 2 7.99992V13.9999C2 14.5522 1.55228 14.9999 1 14.9999C0.447715 14.9999 0 14.5522 0 13.9999Z" fill="black"/>
+              {/* <label for="receipt-message">Your message...</label> */}
+              
+              <textarea
+                id="receipt-message"
+                name="receipt-message"
+                placeholder="> Your message..."
+                maxlength={50}
+                value={messageValue}
+                onInput={(e) => setMessageValue((e.target as HTMLTextAreaElement).value)}
+                required>
+              </textarea>
+
+              <button type="submit" class="submit-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <path d="M0 13.9999V7.99992C0 6.93906 0.42173 5.92195 1.17188 5.1718C1.92202 4.42165 2.93913 3.99992 4 3.99992H11.5859L9.29297 1.70696C8.90244 1.31643 8.90244 0.683417 9.29297 0.292893C9.68349 -0.0976311 10.3165 -0.0976311 10.707 0.292893L14.707 4.29289C15.0976 4.68342 15.0976 5.31643 14.707 5.70696L10.707 9.70696C10.3165 10.0975 9.68349 10.0975 9.29297 9.70696C8.90244 9.31643 8.90244 8.68342 9.29297 8.29289L11.5859 5.99992H4C3.46957 5.99992 2.96101 6.21079 2.58594 6.58586C2.21086 6.96094 2 7.46949 2 7.99992V13.9999C2 14.5522 1.55228 14.9999 1 14.9999C0.447715 14.9999 0 14.5522 0 13.9999Z" fill="black"/>
+                </svg>
+              </button>
+
+            </form>
+          </div>
+        }
+
+        {formState === "success" &&
+          <div class="receipt-form-success">
+            <p>> {responseMessage}</p>
+            <button 
+              class="again-button"
+              onClick={() => {
+                setFormState("ready");
+                setResponseMessage("");
+                setMessageValue("");
+                onReset();
+              }
+            }>
+              Try again
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                <path d="M3.29297 12.2929C3.68349 11.9024 4.31651 11.9024 4.70703 12.2929C5.09756 12.6834 5.09756 13.3164 4.70703 13.707L3.41406 14.9999H14C14.5304 14.9999 15.039 14.7891 15.4141 14.414C15.7891 14.0389 16 13.5304 16 12.9999V9.99992C16 9.44764 16.4477 8.99992 17 8.99992C17.5523 8.99992 18 9.44764 18 9.99992V12.9999C18 14.0608 17.5783 15.0779 16.8281 15.828C16.078 16.5782 15.0609 16.9999 14 16.9999H3.41406L4.70703 18.2929C5.09755 18.6834 5.09755 19.3164 4.70703 19.707C4.31651 20.0975 3.68349 20.0975 3.29297 19.707L0.292969 16.707C-0.0975556 16.3164 -0.0975556 15.6834 0.292969 15.2929L3.29297 12.2929ZM0 9.99992V6.99992C0 5.93906 0.42173 4.92195 1.17188 4.1718C1.92202 3.42165 2.93913 2.99992 4 2.99992H14.5859L13.293 1.70696C12.9024 1.31643 12.9024 0.683417 13.293 0.292893C13.6835 -0.0976311 14.3165 -0.0976311 14.707 0.292893L17.707 3.29289C18.0976 3.68342 18.0976 4.31643 17.707 4.70696L14.707 7.70696C14.3165 8.09748 13.6835 8.09748 13.293 7.70696C12.9024 7.31643 12.9024 6.68342 13.293 6.29289L14.5859 4.99992H4C3.46957 4.99992 2.96101 5.21079 2.58594 5.58586C2.21086 5.96094 2 6.46949 2 6.99992V9.99992C2 10.5522 1.55228 10.9999 1 10.9999C0.447715 10.9999 0 10.5522 0 9.99992Z" fill="#CCB3EE"/>
               </svg>
             </button>
-
-            <svg class="receipt-form__background-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 138" preserveAspectRatio="none" fill="none">
-              <path d="M5.69997 4.14237C13.7084 -4.36918 376.835 2.66517 439.796 3.95009C445.095 4.05824 449.196 8.22357 449.366 13.5211C450.286 42.2552 452.692 127.503 449.051 133.695C444.667 141.151 12.0336 137.423 5.69997 133.695C-0.633615 129.967 -3.0694 13.4627 5.69997 4.14237Z" fill="black"/>
-            </svg>
           </div>
-        </form>
-      }
+        }
+        
+        {formState === "error" && 
+          <div class="receipt-form-error">
+            <p>> {responseMessage}</p>
+            <button 
+              class="again-button"
+              onClick={() => {
+                setFormState("ready");
+                setResponseMessage("");
+                onReset();
+              }
+            }>
+              Try again
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                <path d="M3.29297 12.2929C3.68349 11.9024 4.31651 11.9024 4.70703 12.2929C5.09756 12.6834 5.09756 13.3164 4.70703 13.707L3.41406 14.9999H14C14.5304 14.9999 15.039 14.7891 15.4141 14.414C15.7891 14.0389 16 13.5304 16 12.9999V9.99992C16 9.44764 16.4477 8.99992 17 8.99992C17.5523 8.99992 18 9.44764 18 9.99992V12.9999C18 14.0608 17.5783 15.0779 16.8281 15.828C16.078 16.5782 15.0609 16.9999 14 16.9999H3.41406L4.70703 18.2929C5.09755 18.6834 5.09755 19.3164 4.70703 19.707C4.31651 20.0975 3.68349 20.0975 3.29297 19.707L0.292969 16.707C-0.0975556 16.3164 -0.0975556 15.6834 0.292969 15.2929L3.29297 12.2929ZM0 9.99992V6.99992C0 5.93906 0.42173 4.92195 1.17188 4.1718C1.92202 3.42165 2.93913 2.99992 4 2.99992H14.5859L13.293 1.70696C12.9024 1.31643 12.9024 0.683417 13.293 0.292893C13.6835 -0.0976311 14.3165 -0.0976311 14.707 0.292893L17.707 3.29289C18.0976 3.68342 18.0976 4.31643 17.707 4.70696L14.707 7.70696C14.3165 8.09748 13.6835 8.09748 13.293 7.70696C12.9024 7.31643 12.9024 6.68342 13.293 6.29289L14.5859 4.99992H4C3.46957 4.99992 2.96101 5.21079 2.58594 5.58586C2.21086 5.96094 2 6.46949 2 6.99992V9.99992C2 10.5522 1.55228 10.9999 1 10.9999C0.447715 10.9999 0 10.5522 0 9.99992Z" fill="#CCB3EE"/>
+              </svg>
+            </button>
+          </div>
+        }
 
-      {formState === "success" &&
-        <div class="receipt-form__success">
-          <p>Message sent successfully!</p>
-          <button onClick={() => {
-            setFormState("ready");
-            setResponseMessage("");
-            setMessageValue("");
-            onReset();
-          }}>Send another message</button>
-        </div>
-      }
-      
-      {formState === "error" && 
-        <div class="receipt-form__error">
-          <p>{responseMessage}</p>
-          <button onClick={() => {
-            setFormState("ready");
-            setResponseMessage("");
-            onReset();
-          }}>Try again</button>
-        </div>
-      }
+      </div>
+
+      <svg class="receipt-form__background-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 138" preserveAspectRatio="none" fill="none">
+        <path d="M5.69997 4.14237C13.7084 -4.36918 376.835 2.66517 439.796 3.95009C445.095 4.05824 449.196 8.22357 449.366 13.5211C450.286 42.2552 452.692 127.503 449.051 133.695C444.667 141.151 12.0336 137.423 5.69997 133.695C-0.633615 129.967 -3.0694 13.4627 5.69997 4.14237Z" fill="black"/>
+      </svg>
     </div>
   );
 }

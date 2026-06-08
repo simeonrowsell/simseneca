@@ -1,8 +1,6 @@
 import { useState } from "preact/hooks";
 import ReceiptForm from "./receipt-form";
 
-import './receipt-section.css';
-
 export default function ReceiptSection() {
   const [sectionState, setSectionState] = useState<"idle" | "success" | "error">("idle");
 
@@ -20,11 +18,11 @@ export default function ReceiptSection() {
           onError={() => setSectionState("error")}
           onReset={() => setSectionState("idle")}
         />
-        <p class="receipt-section__form-description">Max 50 characters, standard ASCII (the printer's not too smart)</p> 
+        <p class="receipt-section__form-description">Max 50 characters, standard ASCII (the printer's not too smart)</p>
       </div>
 
       <div class="receipt-section__illustration">
-        {/* Lottie goes here, receives isSuccess={isSuccess} */}
+        {/* Lottie goes here, receives sectionState */}
         illustration
       </div>
 

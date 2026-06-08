@@ -5,6 +5,9 @@ import { Image } from 'astro:assets';
 
 import '../styles/_reset.css';
 import '../styles/_receipt.css';
+// Import these here so they are loaded before the components are rendered - preventing Flash of Unstyled Content (FOUC)
+import '../components/receipt-section.css';
+import '../components/receipt-form.css';
 
 const title = "Receipt Form | Sim Seneca";
 const description = "A form to submit receipts for processing.";

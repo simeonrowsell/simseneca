@@ -31,10 +31,10 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   // Validate message length
-  if (sanitizedMessage.length > 50) {
+  if (sanitizedMessage.length > 150) {
     return new Response(
       JSON.stringify({
-        message: "Message exceeds maximum length of 50 characters",
+        message: "Message exceeds maximum length of 150 characters",
       }),
       { status: 400 }
     );

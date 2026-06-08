@@ -1,4 +1,5 @@
-import { useState } from "preact/hooks";
+import { useState, useRef, useEffect } from "preact/hooks";
+import { gsap } from "gsap";
 
 
 interface Props {
@@ -13,9 +14,34 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
   const [formState, setFormState] = useState("ready");
   const [messageValue, setMessageValue] = useState("");
 
+  const contentRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const againButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (formState === "ready") {
+      textareaRef.current?.focus();
+    } else if (formState === "success" || formState === "error") {
+      againButtonRef.current?.focus();
+    }
+  }, [formState]);
+
+  function animateToState(newState: string, onSwitch?: () => void) {
+    return new Promise<void>(resolve => {
+      gsap.to(contentRef.current, {
+        opacity: 0,
+        duration: 0.1,
+        onComplete: () => {
+          setFormState(newState);
+          onSwitch?.();
+          gsap.to(contentRef.current, { opacity: 1, duration: 0.1, onComplete: resolve });
+        }
+      });
+    });
+  }
+
   async function submit(e: SubmitEvent) {
     e.preventDefault();
-    setFormState("waiting");
     const formData = new FormData(e.target as HTMLFormElement);
 
     // Send the form data to the API route
@@ -26,15 +52,17 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
     const responseData = await response.json();
 
     if (response.status === 200) {
-      setFormState("success");
-      setResponseMessage(responseData.message);
-      onSuccess();
+      animateToState("success", () => {
+        setResponseMessage(responseData.message);
+        onSuccess();
+      });
     }
 
     if (response.status === 400 || response.status === 500) {
-      setFormState("error");
-      setResponseMessage(responseData.message);
-      onError();
+      animateToState("error", () => {
+        setResponseMessage(responseData.message);
+        onError();
+      });
     }
   }
 
@@ -47,13 +75,7 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
         </svg>
       </div>
 
-      <div class="receipt-form__inner">
-
-          {/* {formState === "waiting" && 
-            <div class="receipt-form-waiting">
-              <p>Waiting for response...</p>
-            </div>
-          } */}
+      <div class="receipt-form__inner" ref={contentRef}>
 
         {formState === "ready" &&
           <div class="receipt-form-idle">
@@ -65,9 +87,16 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
                 id="receipt-message"
                 name="receipt-message"
                 placeholder="> Your message..."
-                maxlength={50}
+                maxlength={150}
                 value={messageValue}
                 onInput={(e) => setMessageValue((e.target as HTMLTextAreaElement).value)}
+                ref={textareaRef}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.ctrlKey && !e.metaKey) {
+                    e.preventDefault();
+                    (e.target as HTMLTextAreaElement).form?.requestSubmit();
+                  }
+                }}
                 required>
               </textarea>
 
@@ -85,15 +114,17 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
           <div class="receipt-form-success">
             <p>> {responseMessage}</p>
             <button 
+              ref={againButtonRef}
               class="again-button"
               onClick={() => {
-                setFormState("ready");
-                setResponseMessage("");
-                setMessageValue("");
-                onReset();
+                animateToState("ready", () => {
+                  setResponseMessage("");
+                  setMessageValue("");
+                  onReset();
+                });
               }
             }>
-              Try again
+              Send another
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
                 <path d="M3.29297 12.2929C3.68349 11.9024 4.31651 11.9024 4.70703 12.2929C5.09756 12.6834 5.09756 13.3164 4.70703 13.707L3.41406 14.9999H14C14.5304 14.9999 15.039 14.7891 15.4141 14.414C15.7891 14.0389 16 13.5304 16 12.9999V9.99992C16 9.44764 16.4477 8.99992 17 8.99992C17.5523 8.99992 18 9.44764 18 9.99992V12.9999C18 14.0608 17.5783 15.0779 16.8281 15.828C16.078 16.5782 15.0609 16.9999 14 16.9999H3.41406L4.70703 18.2929C5.09755 18.6834 5.09755 19.3164 4.70703 19.707C4.31651 20.0975 3.68349 20.0975 3.29297 19.707L0.292969 16.707C-0.0975556 16.3164 -0.0975556 15.6834 0.292969 15.2929L3.29297 12.2929ZM0 9.99992V6.99992C0 5.93906 0.42173 4.92195 1.17188 4.1718C1.92202 3.42165 2.93913 2.99992 4 2.99992H14.5859L13.293 1.70696C12.9024 1.31643 12.9024 0.683417 13.293 0.292893C13.6835 -0.0976311 14.3165 -0.0976311 14.707 0.292893L17.707 3.29289C18.0976 3.68342 18.0976 4.31643 17.707 4.70696L14.707 7.70696C14.3165 8.09748 13.6835 8.09748 13.293 7.70696C12.9024 7.31643 12.9024 6.68342 13.293 6.29289L14.5859 4.99992H4C3.46957 4.99992 2.96101 5.21079 2.58594 5.58586C2.21086 5.96094 2 6.46949 2 6.99992V9.99992C2 10.5522 1.55228 10.9999 1 10.9999C0.447715 10.9999 0 10.5522 0 9.99992Z" fill="#CCB3EE"/>
               </svg>
@@ -105,11 +136,13 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
           <div class="receipt-form-error">
             <p>> {responseMessage}</p>
             <button 
+              ref={againButtonRef}
               class="again-button"
               onClick={() => {
-                setFormState("ready");
-                setResponseMessage("");
-                onReset();
+                animateToState("ready", () => {
+                  setResponseMessage("");
+                  onReset();
+                });
               }
             }>
               Try again

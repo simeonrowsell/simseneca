@@ -1,8 +1,35 @@
-import { useState } from "preact/hooks";
+import { useState, useEffect, useRef } from "preact/hooks";
+import lottie, { type AnimationItem } from "lottie-web";
 import ReceiptForm from "./receipt-form";
 
 export default function ReceiptSection() {
   const [sectionState, setSectionState] = useState<"idle" | "success" | "error">("idle");
+  const lottieRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<AnimationItem | null>(null);
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      animationRef.current = lottie.loadAnimation({
+        container: lottieRef.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "/assets/receipt_printer_printing.json",
+      });
+    }
+    return () => {
+      animationRef.current?.destroy();
+      animationRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (sectionState === "success") {
+      animationRef.current?.goToAndPlay(0, true);
+    } else {
+      animationRef.current?.stop();
+    }
+  }, [sectionState]);
 
   return (
     <section class={`receipt-section${sectionState !== "idle" ? ` receipt-section--${sectionState}` : ""}`}>
@@ -22,8 +49,15 @@ export default function ReceiptSection() {
       </div>
 
       <div class="receipt-section__illustration">
-        {/* Lottie goes here, receives sectionState */}
-        illustration
+        <img
+          src="/assets/receipt_printer_waiting.svg"
+          alt="Receipt printer illustration"
+          style={{ display: sectionState === "idle" ? "block" : "none" }}
+        />
+        <div
+          ref={lottieRef}
+          style={{ display: sectionState === "success" ? "block" : "none" }}
+        />
       </div>
 
     </section>

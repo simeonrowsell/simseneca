@@ -53,14 +53,24 @@
 .receipt-section__illustration {
   grid-area: illustration;
   align-self: end;
+
+  img {
+    width: 100%;
+    transform: translateY(-40px);
+  }
+
+  div {
+    transform: translateY(-43px);
+  }
 }
 
-/* On Error state */
-.receipt-section--error {
+/* On not idle state */
+.receipt-section--error,
+.receipt-section--success {
 
-  .receipt-section__header {
+  .receipt-section__header,
+  .receipt-section__form-description {
     transition: all .2s ease-in-out;
     opacity: .3;
-    transform: translateY(10px);
   }
 }

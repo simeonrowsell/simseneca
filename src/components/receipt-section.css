@@ -53,14 +53,29 @@
 .receipt-section__illustration {
   grid-area: illustration;
   align-self: end;
+  position: relative;
 
   img {
     width: 100%;
-    transform: translateY(-40px);
+    /* transform: translateY(-40px); */
+    pointer-events: none;
   }
 
   div {
-    transform: translateY(-43px);
+    transform: translateY(-3px);
+    pointer-events: none;
+  }
+
+  .receipt-section__illustration-background {
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 150%;
+    height: 60%;
+    background: linear-gradient(111deg, #60357A 13.91%, #524592 88.68%);
+    z-index: -1;
+    border-radius: 100%;
+    opacity: .5;
   }
 }
 

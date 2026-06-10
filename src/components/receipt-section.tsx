@@ -36,7 +36,7 @@ export default function ReceiptSection() {
 
       <div class="receipt-section__header">
         <h1 class="receipt-title">Send a message straight to my printer</h1>
-        <p class="receipt-description">Whatever you write will be instantly printed on the receipt printer sitting on my desk. It's completely anonymous, just you to me, one human to another.</p>
+        <p class="receipt-description">Whatever you write will be instantly printed on the receipt printer sitting on my desk. It's completely anonymous, just you to me, one human to another. Be nice yeh?</p>
       </div>
 
       <div class="receipt-section__form">
@@ -45,7 +45,7 @@ export default function ReceiptSection() {
           onError={() => setSectionState("error")}
           onReset={() => setSectionState("idle")}
         />
-        <p class="receipt-section__form-description">Max 50 characters, standard ASCII (the printer's not too smart)</p>
+        <p class="receipt-section__form-description">Hit enter &#x21B2; to send. Max 150 characters, standard ASCII.</p>
       </div>
 
       <div class="receipt-section__illustration">

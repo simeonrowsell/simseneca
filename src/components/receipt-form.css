@@ -87,6 +87,10 @@
       outline: 2px solid black;
       outline-offset: 2px;
     }
+
+    svg {
+      transform: rotate(180deg);
+    }
   }
 }
 

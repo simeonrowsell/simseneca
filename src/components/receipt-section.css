@@ -54,10 +54,10 @@
   grid-area: illustration;
   align-self: end;
   position: relative;
+  /* overflow-x: hidden; */
 
   img {
     width: 100%;
-    /* transform: translateY(-40px); */
     pointer-events: none;
   }
 
@@ -75,7 +75,7 @@
     background: linear-gradient(111deg, #60357A 13.91%, #524592 88.68%);
     z-index: -1;
     border-radius: 100%;
-    opacity: .5;
+    opacity: .3;
   }
 }
 

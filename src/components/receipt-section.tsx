@@ -55,6 +55,7 @@ export default function ReceiptSection() {
           style={{ display: sectionState === "idle" ? "block" : "none" }}
         />
         <div
+          class="receipt-section__illustration-lottie"
           ref={lottieRef}
           style={{ display: sectionState === "success" ? "block" : "none" }}
         />

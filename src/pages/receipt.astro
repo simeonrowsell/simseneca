@@ -74,6 +74,10 @@ export const prerender = false
 
 <style>
 
+  :root {
+    --container-padding: clamp(1.5rem, 10vw, 10vw);
+  }
+
   body {
     min-height: 100vh;
     background-color: #60357A;
@@ -90,10 +94,7 @@ export const prerender = false
     top: 0;
     left: 0;
     z-index: -1;
-    margin-left: 2.5vw;
-    margin-top: 2.5vw;
     background: linear-gradient(135deg, rgba(253, 68, 97, 0) 0%, rgba(171, 77, 97, 0.5) 100%);
-    border-radius: 150px 0 0 0;
     overflow: hidden;
 
     &::after {
@@ -106,30 +107,49 @@ export const prerender = false
       mix-blend-mode: multiply;
     }
 
-    .receipt-inner__top {
-      position: absolute;
-      top: -13px;
-      left: 0;
-      width: 100%;
-    }
-
-    .receipt-inner__corner {
-      position: absolute;
-      top: 0;
-      left: -1px;
-    }
-
+    .receipt-inner__top,
+    .receipt-inner__corner,
     .receipt-inner__left {
-      height: 100%;
+      display: none;
+    }
+
+    @media (min-width: 1000px) {
+      margin-left: 2.5vw;
+      margin-top: 2.5vw;
+      border-radius: 150px 0 0 0;
+
+      .receipt-inner__top,
+      .receipt-inner__corner,
+      .receipt-inner__left {
+        display: block;
+      }
+
+      .receipt-inner__top {
+        position: absolute;
+        top: -13px;
+        left: 0;
+        width: 100%;
+      }
+
+      .receipt-inner__corner {
+        position: absolute;
+        top: 0;
+        left: -1px;
+      }
+
+      .receipt-inner__left {
+        height: 100%;
+      }
     }
   }
 
   .receipt-container {
     /* max-width: 1600px; */
     margin: 0 auto;
-    padding-inline: 10vw;
+    padding-inline: var(--container-padding);
     padding-bottom: 5vh;
   }
+
 
   .simseneca-button {
     display: inline-flex;

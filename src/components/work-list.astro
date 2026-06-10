@@ -10,7 +10,7 @@ import { Image } from 'astro:assets';
   {works.map(work => (
     <li>
       <div class="work-thumb">
-        <a href={`/work/${work.slug}`}>
+        <a href={`/work/${work.id}`}>
           <Image src={work.data.cover} alt={work.data.coverAlt} class="work-thumb__image u-mrg-be-l" />
           <h2 class="work-thumb__title u-fontsize-3 u-mrg-be-s">{work.data.title}</h2>
           <p class="work-thumb__description u-fontsize-1 u-mrg-be-m">{work.data.metaDescription}</p>

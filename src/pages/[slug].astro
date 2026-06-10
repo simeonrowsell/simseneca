@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   const pages = await getCollection('pages');
   // Return an array with the paths and props for each entry
   return pages.map(page => ({
-    params: { slug: page.slug },
+    params: { slug: page.id },
     props: { page },
   }));
 }

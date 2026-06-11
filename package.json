@@ -12,10 +12,7 @@
     "@astrojs/mdx": "^6.0.1",
     "@astrojs/netlify": "^7.0.13",
     "@astrojs/preact": "^5.1.4",
-    "@astrojs/react": "^5.0.6",
     "@astrojs/rss": "^4.0.18",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.6",
     "astro": "^6.4.2",
     "classnames": "^2.5.1",
     "gsap": "^3.15.0",
@@ -23,8 +20,7 @@
     "marked": "^15.0.7",
     "preact": "^10.25.4",
     "sanitize-html": "^2.14.0",
-    "simple-icons": "^15.9.0",
-    "styled-components": "^6.1.18"
+    "simple-icons": "^15.9.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.50.0",

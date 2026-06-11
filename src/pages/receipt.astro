@@ -78,13 +78,16 @@ const description = "A form to submit receipts for processing.";
     --container-padding: clamp(1.5rem, 10vw, 10vw);
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     min-height: 100vh;
-    background-color: #60357A;
     background: linear-gradient(130deg,rgba(96, 53, 122, 1) 0%, rgba(82, 69, 146, 1) 100%);
     color: var(--lilac);
     position: relative;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   .receipt-inner {

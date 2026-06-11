@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import ReceiptSection from "../components/receipt-section"
 import simProfileImage from '../assets/images/sim_profile_square.png';
 import { Image } from 'astro:assets';
@@ -11,8 +13,6 @@ import '../components/receipt-form.css';
 
 const title = "Receipt Form | Sim Seneca";
 const description = "A form to submit receipts for processing.";
-
-export const prerender = false;
 ---
 
 <!doctype html>

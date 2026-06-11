@@ -38,7 +38,7 @@ const description = "A form to submit receipts for processing.";
 
 	</head>
   
-	<body>
+	<body style="opacity: 0">
 		<div class="receipt-container u-pad-xl">
 
       <div class="receipt-inner">
@@ -88,6 +88,11 @@ const description = "A form to submit receipts for processing.";
     color: var(--lilac);
     position: relative;
     overflow-x: hidden;
+    transition: opacity 0.2s ease;
+  }
+
+  body.is-loaded {
+    opacity: 1;
   }
 
   .receipt-inner {
@@ -163,8 +168,9 @@ const description = "A form to submit receipts for processing.";
     background-color: rgba(255, 255, 255, 0.05);
     color:var(--lilac);
     text-decoration: none;
-    transition: all .05s ease;
+    transition: background-color .05s ease, opacity 0.1s ease 0.2s;
     font-family: "Instrument Sans", sans-serif;
+    opacity: 0;
 
     img {
       border-radius: 100%;
@@ -176,6 +182,10 @@ const description = "A form to submit receipts for processing.";
     &:hover {
       background-color: rgba(255, 255, 255, 0.15);
     }
+  }
+
+  body.is-loaded .simseneca-button {
+    opacity: 1;
   }
 
 </style>

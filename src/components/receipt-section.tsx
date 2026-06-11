@@ -17,6 +17,8 @@ export default function ReceiptSection() {
         path: "/assets/receipt_printer_printing.json",
       });
     }
+    document.body.classList.add("is-loaded");
+    document.body.style.opacity = "1";
     return () => {
       animationRef.current?.destroy();
       animationRef.current = null;

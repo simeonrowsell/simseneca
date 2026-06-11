@@ -112,7 +112,7 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
 
         {formState === "success" &&
           <div class="receipt-form-success">
-            <p>> {responseMessage}</p>
+            <p>{'>'} {responseMessage}</p>
             <button 
               ref={againButtonRef}
               class="again-button"
@@ -134,7 +134,7 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
         
         {formState === "error" && 
           <div class="receipt-form-error">
-            <p>> {responseMessage}</p>
+            <p>{'>'} {responseMessage}</p>
             <button 
               ref={againButtonRef}
               class="again-button"

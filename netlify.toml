@@ -1,11 +1,16 @@
-# 1. Your working external footer link (processed first)
-[[redirects]]
-  from = "/your-footer-path"
-  to = "https://external-url.com"
-  status = 301
+[build]
+  command = "npm run build"
+  publish = "dist"
 
-# 2. Force Netlify to look for the serverless background function
+[functions]
+  directory = ".netlify/v1/functions"
+
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/entry"
+  from = "/receipt"
+  to = "/.netlify/functions/ssr"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/ssr"
   status = 200

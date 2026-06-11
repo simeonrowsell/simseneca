@@ -45,7 +45,7 @@ export default function ReceiptSection() {
           onError={() => setSectionState("error")}
           onReset={() => setSectionState("idle")}
         />
-        <p class="receipt-section__form-description">Hit enter &#x21B2; to send. Max 150 characters, standard ASCII.</p>
+        <p class="receipt-section__form-description">Max 150 characters, standard ASCII.</p>
       </div>
 
       <div class="receipt-section__illustration">

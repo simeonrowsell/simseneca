@@ -40,6 +40,8 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
   
+  console.log(`[receipt] Sending message (${sanitizedMessage.length} chars): "${sanitizedMessage}"`);
+
   try {
     // Send to the Pi
     const piResponse = await fetch(import.meta.env.RECEIPT_URL, {

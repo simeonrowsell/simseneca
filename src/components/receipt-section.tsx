@@ -3,7 +3,7 @@ import lottie, { type AnimationItem } from "lottie-web";
 import ReceiptForm from "./receipt-form";
 
 export default function ReceiptSection() {
-  const [sectionState, setSectionState] = useState<"idle" | "success" | "error">("idle");
+  const [sectionState, setSectionState] = useState<"idle" | "success" | "error" | "waiting">("idle");
   const lottieRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<AnimationItem | null>(null);
 
@@ -28,6 +28,8 @@ export default function ReceiptSection() {
   useEffect(() => {
     if (sectionState === "success") {
       animationRef.current?.goToAndPlay(0, true);
+    } else if (sectionState === "waiting") {
+      animationRef.current?.goToAndPlay(0, true);
     } else {
       animationRef.current?.stop();
     }
@@ -45,6 +47,7 @@ export default function ReceiptSection() {
         <ReceiptForm
           onSuccess={() => setSectionState("success")}
           onError={() => setSectionState("error")}
+          onWaiting={() => setSectionState("waiting")}
           onReset={() => setSectionState("idle")}
         />
         <p class="receipt-section__form-description">Max 150 characters, standard ASCII.</p>
@@ -54,7 +57,7 @@ export default function ReceiptSection() {
         <img
           src="/assets/receipt_printer_waiting.svg"
           alt="Receipt printer illustration"
-          style={{ display: sectionState === "idle" ? "block" : "none" }}
+          style={{ display: sectionState === "idle" || sectionState === "waiting" ? "block" : "none" }}
         />
         <div
           class="receipt-section__illustration-lottie"

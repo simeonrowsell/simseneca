@@ -5,10 +5,11 @@ import { gsap } from "gsap";
 interface Props {
   onSuccess: () => void;
   onError: () => void;
+  onWaiting: () => void;
   onReset: () => void;
 }
 
-export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
+export default function ReceiptForm({ onSuccess, onError, onReset, onWaiting }: Props) {
 
   const [responseMessage, setResponseMessage] = useState("");
   const [formState, setFormState] = useState("ready");
@@ -49,7 +50,9 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
 
     const formData = new FormData(e.target as HTMLFormElement);
 
-    await animateToState("waiting");
+    await animateToState("waiting", () => {
+      onWaiting();
+    });
 
     // Send the form data to the API route
     const response = await fetch("/api/receipt", {

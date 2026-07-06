@@ -134,6 +134,7 @@
 
 /* On not idle state */
 .receipt-section--error,
+.receipt-section--waiting,
 .receipt-section--success {
 
   .receipt-section__header,

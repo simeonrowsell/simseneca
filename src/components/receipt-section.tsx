@@ -37,8 +37,8 @@ export default function ReceiptSection() {
     <section class={`receipt-section${sectionState !== "idle" ? ` receipt-section--${sectionState}` : ""}`}>
 
       <div class="receipt-section__header">
-        <h1 class="receipt-title">Send a message straight to my printer</h1>
-        <p class="receipt-description">Whatever you write will be instantly printed on the receipt printer sitting on my desk. It's completely anonymous, just you to me, one human to another. Be nice yeh?</p>
+        <h1 class="receipt-title">Send a message straight to my desk</h1>
+        <p class="receipt-description">Whatever you write will be instantly printed on the thermal printer sitting on my desk. Just you to me, one human to another, totally anonymous. Be nice yeh?</p>
       </div>
 
       <div class="receipt-section__form">

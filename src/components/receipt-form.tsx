@@ -44,6 +44,8 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
 
+    await animateToState("waiting");
+
     // Send the form data to the API route
     const response = await fetch("/api/receipt", {
       method: "POST",
@@ -107,6 +109,12 @@ export default function ReceiptForm({ onSuccess, onError, onReset }: Props) {
               </button>
 
             </form>
+          </div>
+        }
+
+        {formState === "waiting" &&
+          <div class="receipt-form-waiting">
+            <p>Printing...</p>
           </div>
         }
 

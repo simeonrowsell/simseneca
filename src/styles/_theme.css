@@ -28,6 +28,8 @@
   --purple-dark: #5D4296;
   --purple: #6D4EB1;
   --purple-bright: #9A7ADE;
+  --green-bright: #57F6A9;
+  --green-dull: #157d4b;
 
   /* Fluid typography */
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
@@ -407,6 +409,8 @@
   --border-secondary: var(--white);
   --border-third: var(--navy);
 
+  --green-action: var(--green-dull);
+
   /* Exceptions to the rule */
   [data-collection="work"] {
     --bg-primary: var(--beige);
@@ -430,6 +434,8 @@
   --border-primary: var(--navy-lighter);
   --border-secondary: var(--navy-lighter);
   --border-third: var(--beige-dark);
+
+  --green-action: var(--green-bright);
 }
 
 /* Light/dark theme fade */

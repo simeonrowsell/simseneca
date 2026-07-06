@@ -94,8 +94,26 @@
   }
 }
 
+/* .receipt-form-waiting {
+  height: 100%;
+  background-color: var(--lilac);
+  padding: .8rem;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1.1rem;
+    color: black;
+    opacity: .7;
+  }
+} */
+
 .receipt-form-error,
-.receipt-form-success {
+.receipt-form-success,
+.receipt-form-waiting {
   height: 100%;
   background: var(--lilac-dark);
   padding: .8rem;
@@ -143,4 +161,8 @@
   p {
     -webkit-text-stroke: 1px var(--green);
   }
+}
+
+.receipt-form-waiting p {
+  color: var(--lilac-light);
 }

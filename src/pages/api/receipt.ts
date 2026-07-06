@@ -44,13 +44,14 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     // Send to the Pi
-    const piResponse = await fetch(import.meta.env.RECEIPT_URL, {
+    const piResponse = await fetch(import.meta.env.RECEIPT_PRINT_URL, {
       method: "POST",
       body: JSON.stringify({ message: sanitizedMessage }),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
         "secret": import.meta.env.RECEIPT_SECRET
-      }
+      },
+      signal: AbortSignal.timeout(5_000)
     });
 
     if (piResponse.status !== 200) {

@@ -372,6 +372,12 @@
       margin-inline-start: 0;
       margin-block-end: var(--space-l);
     }
+
+    video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
   }  
 
   /*

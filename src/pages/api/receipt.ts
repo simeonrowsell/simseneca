@@ -2,15 +2,6 @@ export const prerender = false
 
 import type { APIRoute } from "astro";
 
-export const config = {
-  path: "/api/receipt",
-  rateLimit: {
-    windowLimit: 10,        // 10 requests per window
-    windowSize: 60,         // 60 second window = 10 per minute
-    aggregateBy: ["ip", "domain"],  // per-IP limit
-  }
-};
-
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
   // Extract fields from the form data and converting to string

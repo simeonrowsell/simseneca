@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/post-layout.astro
-title: "I made a receipt printer"
+title: "Send a message straight to my desk"
 pubDate: 2026-09-01T20:02Z
 edition: 15
-description: "Send me a message straight to my desk! Whatever you write will be instantly printed right here next to me. It's sort of like one-way fax."
+description: "Whatever you write will be instantly printed right here next to me. It's sort of like one-way fax."
 author: 'Sim Seneca'
 image:
     url: ''
@@ -12,9 +12,9 @@ tags: ["raspberry pi", "fun"]
 draft: false
 ---
 
-TL;DR: <a href="/receipt">Send a message straight to my desk!</a>
+TL;DR: <a href="/receipt">Send a message straight to my desk!</a>.
 
-# ADD A GIF HERE
+<video src="https://res.cloudinary.com/dgfefaqv9/video/upload/v1788381822/receipt_demo_qq1drc.mp4" controls></video>
 
 I don't think I'm alone in missing the physicality of technology. Not only the touch of tactile buttons and satisfying flicky switches, or even the variation of materials and customisability. More than that I find myself increasingly missing the friction inherent in real world objects.
 
@@ -42,25 +42,25 @@ The second image in my head was from Thunderbirds. On the wall back at Tracey Is
 
 I love this combination of [mythically convenient technology](https://www.themythicbody.com/podcast/you-want-to-be-sorcerer-age-mythic-powers-ai-episode/) butting up against the inconvenience of the physical world.
 
-Anyway, those initial ideas shifted around a bit. I was inspired by __ and ___ (who nailed it first!) and, combined with [my new Raspberry Pi](https://simseneca.design/blog/dont-forget-to-have-fun/) and a willingness to find a use for a receipt printer, the project found its form.
+Anyway, those initial ideas shifted around a bit. I was inspired by [Sam Rose](https://samwho.dev/ping) and [Andrew Schmelyun](https://aschmelyun.com/blog/i-invited-strangers-to-message-me-through-a-receipt-printer/?pubDate=20251020) (who both nailed it!) and, combined with [my new Raspberry Pi](https://simseneca.design/blog/dont-forget-to-have-fun/) and a willingness to find a use for a receipt printer, the project found its form.
 
-So you can now send me a message directly and immediately from my site to the thermal receipt printer sitting next to me on my desk.
+So you can now send me a message from my site directly to the thermal receipt printer sitting next to me on my desk.
 
 <a href="/receipt">Try it out</a>
 
-No filter, no 'accept incoming message', no phone notification. I don't even ask for your name. You hit send, it prints out and there it sits until I see it and rip it off (*shwiiip*).
+No filter, no 'accept incoming message', no phone notification. I don't even ask for your name. You hit send, it prints out and there it sits until I see it and rip it off.
 
 Inconvenient as heck, wonderfully physical.
 
 ## Affect my physical space
 
-Aside from the satisfaction of reading a printed message, what I'm interested in is giving someone, anyone, anywhere in the world the ability to directly affect my physical space.
+Aside from the satisfaction of reading a printed message, what's cool is that someone, anyone, anywhere in the world has the ability to directly affect my physical space.
 
-We've become used to our digital spaces being interrupted by friends and strangers alike; emails, WhatsApp's, DMs - but not so much our physical spaces.
+We've become used to our digital spaces being interrupted by friends and strangers alike; emails, WhatsApp's, DMs - but not so much our physical ones.
 
-One second there's no note on my desk, the next there is.
+One second there's no note on my desk, the next there is!
 
-That's kind of why I've left it so open for anyone to do so. That feels a bit risky re people sending abuse (there is rate limiting!), but the excitement is partly in the unfiltered nature of it. I'll just switch it off if it gets weird.
+It feels a bit risky re people sending abuse (there is rate limiting!), but the excitement is partly in the unfiltered nature of it. I'll just switch it off if it gets weird.
 
 I think you're nice though, so go on, <a class="button" href="/receipt">affect my physical space</a>.
 
@@ -70,11 +70,11 @@ Future ideas along this same thought include a light coming on when someone's vi
 
 Initially I thought this post might be a big technical walkthrough but honestly it's not so interesting to write. At least not now, in the future perhaps. If you want more details though, hit me up - sim@simseneca.design!
 
-For a quick summary though here's what it technically looks like:
+For a quick summary here's what it technically looks like:
 
 ## Learning with Claude
 
-A big chunk of the enjoyment and reason for this personal project was to learn stuff I've never done; mostly because I've never had a reason to day-to-day.
+A big chunk of the reason for this personal project was to learn stuff I've never done; mostly because I've never had a reason to day-to-day.
 
 I've absolutely got [conflicting feelings towards AI](/blog/vignettes-as-the-bots-begin-consolidating/) but this kind of tinkering feels like a sweet spot for Claude. It allowed me to learn what I wanted (I prompted it to _teach_ me rather than do it for me which worked well for the most part), skip what I wasn't interested in going deeper on and fit it all into my busy toddler-focussed life. For someone who likes making things and has more ideas than time, this feels, maybe... exciting?
 
@@ -91,7 +91,7 @@ Stuff I learned-ish.
 
 Stuff I didn't learn in the slightest.
 
-1. How to write some sort of wrapper around some niche, outdated or not working thermal receipt printer drivers to get it printing properly
+1. How to write some sort of wrapper around some niche, outdated or otherwise not working thermal receipt printer drivers
 2. How to write a `systemd` service to auto-start it all when I boot my Pi
 3. How to setup the rate limiting
 

@@ -92,6 +92,7 @@
     width: 100%;
     max-width: 300px;
     pointer-events: none;
+    user-select: none;
   }
 
   .receipt-section__illustration-lottie {

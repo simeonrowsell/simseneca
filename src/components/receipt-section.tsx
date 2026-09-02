@@ -40,7 +40,8 @@ export default function ReceiptSection() {
 
       <div class="receipt-section__header">
         <h1 class="receipt-title">Send a message straight to my desk</h1>
-        <p class="receipt-description">Whatever you write will be instantly printed on the thermal printer sitting on my desk. Just you to me, one human to another, totally anonymous. Be nice yeh?</p>
+        <p class="receipt-description">Whatever you write will be instantly printed on my thermal printer right here next to me. Just you to me, one human to another, totally anonymous. It's sort of like one-way fax.</p>
+        <p class="receipt-description">Be nice yeh?</p>
       </div>
 
       <div class="receipt-section__form">

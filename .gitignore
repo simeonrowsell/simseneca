@@ -20,6 +20,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Windows download metadata
+*:Zone.Identifier
+
 # jetbrains setting folder
 .idea/
 
@@ -31,3 +34,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Claude Code local settings
+.claude/

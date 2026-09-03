@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   const works = await getCollection('work');
   // Return an array with the paths and props for each entry
   return works.map(work => ({
-    params: { slug: work.slug },
+    params: { slug: work.id },
     props: { work },
   }));
 }

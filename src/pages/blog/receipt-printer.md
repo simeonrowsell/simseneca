@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post-layout.astro
 title: "Send a message straight to my desk"
-pubDate: 2026-09-01T20:02Z
+pubDate: 2026-09-03T20:02Z
 edition: 15
 description: "Whatever you write will be instantly printed right here next to me. It's sort of like one-way fax."
 author: 'Sim Seneca'

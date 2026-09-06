@@ -40,6 +40,9 @@ The first image in my head was a patchwork of other references. Imagine Captain 
 
 The second image in my head was from Thunderbirds. On the wall back at Tracey Island there's a row of portraits of the guys (and maybe Lady Penelope? She always seemed unofficial, I was never quite clear on her membership status), each of which doubles as a screen. When Virgil video calls HQ from wherever Thunderbird 2 is - like 40 years ahead of Skype - the eyes of his portrait light up (*beep beep beep*) and to answer Mr Tracey has to *not be anywhere else* other than in front of that flashing portrait, on the wall, in the living room. The video stream can reach across the globe but can't make the final stretch from the living room to the pool, where Jeff would rather be lazing around in his trunks with Brains.
 
+![Thunderbird portraits on the wall](https://res.cloudinary.com/dgfefaqv9/image/upload/v1788722782/thunderbirds-framed_hbrfdb.webp)
+*Image © [Gerry Anderson Productions](https://gerryanderson.com)*
+
 I love this combination of [mythically convenient technology](https://www.themythicbody.com/podcast/you-want-to-be-sorcerer-age-mythic-powers-ai-episode/) butting up against the inconvenience of the physical world.
 
 Anyway, those initial ideas shifted around a bit. I was inspired by [Sam Rose](https://samwho.dev/ping) and [Andrew Schmelyun](https://aschmelyun.com/blog/i-invited-strangers-to-message-me-through-a-receipt-printer/?pubDate=20251020) (who both nailed it!) and, combined with [my new Raspberry Pi](https://simseneca.design/blog/dont-forget-to-have-fun/) and a willingness to find a use for a receipt printer, the project found its form.

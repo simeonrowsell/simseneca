@@ -343,6 +343,7 @@
       & + em {
         display: block;
         text-align: center;
+        font-size: var(--fontsize-0);
       }
     }
 

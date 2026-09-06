@@ -102,7 +102,8 @@ export default function ReceiptForm({ onSuccess, onError, onReset, onWaiting }: 
                 onInput={(e) => setMessageValue((e.target as HTMLTextAreaElement).value)}
                 ref={textareaRef}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.ctrlKey && !e.metaKey) {
+                  // ctrl/cmd + enter to submit
+                  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
                     e.preventDefault();
                     (e.target as HTMLTextAreaElement).form?.requestSubmit();
                   }

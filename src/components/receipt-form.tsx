@@ -111,7 +111,13 @@ export default function ReceiptForm({ onSuccess, onError, onReset, onWaiting }: 
                 required>
               </textarea>
 
-              <button type="submit" class="submit-button" ref={submitButtonRef}>
+              <button 
+                type="submit" 
+                class="submit-button" 
+                ref={submitButtonRef}
+                data-umami-event="form-submit"
+                data-umami-event-form="receipt-form"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                   <path d="M0 13.9999V7.99992C0 6.93906 0.42173 5.92195 1.17188 5.1718C1.92202 4.42165 2.93913 3.99992 4 3.99992H11.5859L9.29297 1.70696C8.90244 1.31643 8.90244 0.683417 9.29297 0.292893C9.68349 -0.0976311 10.3165 -0.0976311 10.707 0.292893L14.707 4.29289C15.0976 4.68342 15.0976 5.31643 14.707 5.70696L10.707 9.70696C10.3165 10.0975 9.68349 10.0975 9.29297 9.70696C8.90244 9.31643 8.90244 8.68342 9.29297 8.29289L11.5859 5.99992H4C3.46957 5.99992 2.96101 6.21079 2.58594 6.58586C2.21086 6.96094 2 7.46949 2 7.99992V13.9999C2 14.5522 1.55228 14.9999 1 14.9999C0.447715 14.9999 0 14.5522 0 13.9999Z" fill="black"/>
                 </svg>
